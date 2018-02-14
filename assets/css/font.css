@@ -1,0 +1,105 @@
+body p,
+body span,
+body label,
+body{
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: #161616;
+    line-height: 1.5;
+}
+
+a{
+    text-decoration: none !important;
+    -webkit-transition: all .25s ease;
+       -moz-transition: all .25s ease;
+        -ms-transition: all .25s ease;
+         -o-transition: all .25s ease;
+            transition: all .25s ease;
+}
+h1,h2,h3,h4,h5{
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+p.light,label.light,a.light,span.light,h1.light,h2.light,h3.light,h4.light,h5.light,a.light,button.light
+{
+    font-weight: 300;
+}
+p.regular,label.regular,a.regular,span.regular,h1.regular,h2.regular,h3.regular,h4.regular,h5.regular,a.regular,button.regular
+{
+    font-weight: 400;
+}
+p.semi-bold,label.semi-bold,a.semi-bold,span.semi-bold,h1.semi-bold,h2.semi-bold,h3.semi-bold,h4.semi-bold,h5.semi-bold,a.semi-bold,button.semi-bold
+{
+    font-weight: 600;
+}
+p.bold,label.bold,a.bold,span.bold,h1.bold,h2.bold,h3.bold,h4.bold,h5.bold,a.bold,button.bold
+{
+    font-weight: 700;
+}
+p.extra-bold,label.extra-bold,a.extra-bold,span.extra-bold,h1.extra-bold,h2.extra-bold,h3.extra-bold,h4.extra-bold,h5.extra-bold,a.extra-bold,button.extra-bold
+{
+    font-weight: 800;
+}
+
+h1{
+    font-size: 44px;
+}
+h2{
+    font-size: 35px;
+}
+h3{
+    font-size: 24px;
+}
+h4{
+    font-size: 18px;
+}
+h5{
+    font-size: 15px;
+}
+
+.textWhite{
+    color: #fff;
+}
+.textYellow{
+    color: #FBC816;
+}
+.textBlue{
+    color: #09aca0;
+}
+.textGrey{
+    color: #7d7d7d;
+}
+h1.borderBottom:after,h2.borderBottom:after,h3.borderBottom:after,h4.borderBottom:after,h5.borderBottom:after{
+    content: '';
+    display: block;
+    position: relative;
+    width: 150px;
+    height: 2px;
+    background-color: #FBC816;
+    margin-top: 10px;
+}
+
+
+@media (max-width : 1200px) {
+
+}
+
+@media (max-width : 991px) {
+
+}
+
+@media (max-width : 768px) {
+
+}
+
+@media (max-width : 480px) {
+    h1, h2, h3, h4, h5, p, span, label{
+        width: 100%;
+        word-wrap: break-word;
+    }
+}
+
+@media (max-width : 400px) {
+
+}

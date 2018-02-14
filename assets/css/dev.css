@@ -1,0 +1,1221 @@
+/*MAQUETACION GRALS*/
+.backWhite{
+    background-color: #FFFFFF;
+}
+a.btn1{
+    display: inline-block;
+    position: relative;
+    float: left;
+    padding: 7px 20px;
+    background-color: #e81319;
+    color: #FFFFFF;
+    font-weight: 100;
+    border: 1px solid transparent;
+    -webkit-transition: all .25s ease;
+       -moz-transition: all .25s ease;
+        -ms-transition: all .25s ease;
+         -o-transition: all .25s ease;
+            transition: all .25s ease;
+}
+a.btn1:hover{
+    background-color: transparent;
+    border: 1px solid #e81319;
+    color: #e81319;
+}
+
+h1.lined, h2.lined, h3.lined, h4.lined{
+    display: inline-block;
+    position: relative;
+    float: left;
+    width: 100%;
+    padding-left: 10px;
+    margin: 0px;
+}
+h1.lined:before, h2.lined:before, h3.lined:before, h4.lined:before{
+    content: '';
+    display: inline-block;
+    position: absolute;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto 0px;
+    width: 2px;
+    background-color: #FFFFFF;
+}
+
+div.checkbox{
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    width: auto;
+}
+div.checkbox>input{
+    opacity: 0;
+    position: absolute;
+}
+div.checkbox>div{
+    display: inline-block;
+    position: relative;
+    float: left;
+}
+div.checkbox>div>svg{
+    display: inline-block;
+    position: relative;
+    float: left;
+    width: 20px;
+}
+div.checkbox>div>svg#nochecked{
+    display: inline-block;
+}
+div.checkbox>div>svg#checked{
+    display: none;
+}
+div.checkbox.active>div>svg#nochecked{
+    display: none;
+}
+div.checkbox.active>div>svg#checked{
+    display: inline-block;
+}
+div.checkbox>div>svg#nochecked>.unchecked{
+    fill:none;
+    stroke:#FFFFFF;
+    stroke-miterlimit:10;
+}
+div.checkbox>div>svg#checked>.cheked_1{
+    fill:#FFFFFF;
+}
+div.checkbox>div>svg#checked>.checked_2{
+    fill:none;stroke:#FFFFFF;stroke-miterlimit:10;
+}
+
+div.dicrease{
+    float: none;
+    margin: 0px auto;
+    width: 150px;
+}
+div.dicrease>div.input{
+    display: inline-block;
+    position: relative;
+    float: left;
+    width: 100%;
+    padding: 0px 40px;
+}
+div.dicrease>div.input>input{
+    display: inline-block;
+    position: relative;
+    float: left;
+    width: 100%;
+    height: 35px;
+    padding: 0px;
+    text-align: center;
+}
+div.dicrease>a{
+    display: inline-block;
+    position: absolute;
+    width: 40px;
+    height: 35px;
+    top: 0;
+    text-align: center;
+}
+div.dicrease>a.minus{
+    left: 0;
+}
+div.dicrease>a.plus{
+    right: 0;
+}
+div.dicrease>a>img{
+    display: inline-block;
+    position: absolute;
+    float: left;
+    max-width: 100%;
+    max-height: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+
+
+section#Home{
+    height: 100vh;
+    background-position: 50% 50%;
+    background-size: 100%;
+    background-size: cover;
+}
+section#Home div.vertical.backImage{
+    height: 100%;
+    background-position: 50% 50%;
+    background-size: 100%;
+    background-size: cover;
+}
+
+section#Productos{
+    height: auto;
+    background-color: #272727;
+    padding: 75px 0px;
+}
+section#Productos div.vertical.backImage{
+    height: 100%;
+    background-position: 50% 50%;
+    background-size: 100%;
+    background-size: cover;
+}
+section#Productos ul.linea{
+    display: inline-block;
+    position: relative;
+    float: left;
+    width: 100%;
+    list-style-type: none;
+    -webkit-margin-before: 0;
+    -webkit-margin-after: 0;
+    -webkit-margin-start: 0;
+    -webkit-margin-end: 0;
+    -webkit-padding-start: 0;
+}
+section#Productos ul.linea>li{
+    display: inline-block;
+    position: relative;
+    float: none;
+    width: 25%;
+}
+section#Productos ul.linea>li>a{
+    color: #FFFFFF;
+    font-weight: 100;
+    font-size: 14px;
+    background-color: #343434;
+    display: inline-block;
+    position: relative;
+    float: left;
+    width: 100%;
+    padding: 15px 0px;
+    text-align: center;
+    border: 1px solid #ddd;
+    -webkit-transition: all .25s ease;
+       -moz-transition: all .25s ease;
+        -ms-transition: all .25s ease;
+         -o-transition: all .25s ease;
+            transition: all .25s ease;
+}
+section#Productos ul.linea>li>a:hover{
+    background-color: #2a2a2a;
+}
+section#Productos ul.linea>li>a.active{
+    background-color: #ff0000 !important;
+}
+
+section#Productos div.tabsGeneral{
+    
+}
+section#Productos div.tabsGeneral div.item{
+    outline: none;
+}
+section#Productos div.tabsGeneral div.item div.subItem{
+    outline: none;
+}
+section#Productos div.tabsGeneral div.item div.subItem>a{
+    border: 1px solid #DDD;
+    width: 200px;
+    outline: none;
+}
+section#Productos div.tabsGeneral div.item div.subItem>a>div.img{
+    height: 150px;
+    border-bottom: 1px solid #DDDDDD;
+}
+section#Productos div.tabsGeneral div.item div.subItem>a>div.img>img{
+    display: inline-block;
+    position: absolute;
+    max-width: 75%;
+    max-height: 75%;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+section#Productos div.tabsGeneral div.item div.subItem>a span{
+    display: inline-block;
+    position: relative;
+    float: left;
+    width: 100%;
+    padding: 3px 0px;
+    color: #FFFFFF;
+}
+
+section#Productos div.productos{
+
+}
+section#Productos div.productos>div.item{
+    padding: 15px 0px;
+}
+section#Productos div.productos>div.item>div{
+    border: 1px solid #DDDDDD;
+}
+section#Productos div.productos>div.item>div div.height{
+    height: 150px;
+}
+
+section#Productos div.productos>div.item>div>div.sect:nth-child(1),
+section#Productos div.productos>div.item>div>div.sect:nth-child(2){
+    border-right: 1px solid #DDDDDD;
+}
+section#Productos div.productos>div.item img.product{
+    display: inline-block;
+    position: absolute;
+    max-width: 75%;
+    max-height: 75%;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+section#Productos div.arrows{
+    pointer-events: none;
+}
+section#Productos div.arrows a{
+    display: inline-block;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    pointer-events: auto;
+    margin: auto 0px;
+    top: 0;
+    bottom: 0;
+    opacity: .75;
+    z-index: 5;
+    -webkit-transition: opacity .25s ease;
+       -moz-transition: opacity .25s ease;
+        -ms-transition: opacity .25s ease;
+         -o-transition: opacity .25s ease;
+            transition: opacity .25s ease;
+}
+section#Productos div.arrows a:hover{
+    opacity: 1;
+}
+
+
+section#Productos div.arrows a>img{
+    display: inline-block;
+    position: absolute;
+    max-width: 100%;
+    max-height: 100%;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+section#Productos div.arrows a.next{
+    right: -50px;
+}
+section#Productos div.arrows a.prev{
+    left: -50px;
+}
+
+
+
+section#Experiencia{
+    height: 100vh;
+    background-position: 50% 50%;
+    background-size: 100%;
+    background-size: cover;
+}
+section#Experiencia div.vertical.backDark{
+    background-color: rgba(0, 0, 0, 0.14);
+}
+section#Experiencia div.vertical.backImage{
+    height: 100%;
+    background-position: 50% 50%;
+    background-size: 100%;
+    background-size: cover;
+}
+
+section#ClientesMarcasPartners{
+    height: 100vh;
+    background-color: #b94e85;
+}
+section#ClientesMarcasPartners div.ulContent{
+
+}
+section#ClientesMarcasPartners div.ulContent>div{
+    display: inline-block;
+    position: relative;
+    width: auto;
+}
+section#ClientesMarcasPartners div.ulContent>div>ul{
+    display: inline-block;
+    position: relative;
+    float: left;
+    list-style-type: none;
+    -webkit-margin-before: 0;
+    -webkit-margin-after: 0;
+    -webkit-margin-start: 0;
+    -webkit-margin-end: 0;
+    -webkit-padding-start: 0;
+}
+section#ClientesMarcasPartners div.ulContent>div>ul>li{
+    display: inline-block;
+    position: relative;
+    float: left;
+    width: 185px;
+    height: 120px;
+}
+section#ClientesMarcasPartners div.ulContent>div>ul>li:after{
+    content: '';
+    display: inline-block;
+    position: absolute;
+    height: 100%;
+    width: 2px;
+    background-color: #FFFFFF;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+section#ClientesMarcasPartners div.ulContent>div>ul>li>div>a{
+    display: inline-block;
+    position: relative;
+    float: left;
+    width: 100%;
+    padding: 15px 0px;
+    margin: 0px 0px;
+    font-size: 30px;
+    text-align: center;
+    -webkit-transition: all .25s ease;
+       -moz-transition: all .25s ease;
+        -ms-transition: all .25s ease;
+         -o-transition: all .25s ease;
+            transition: all .25s ease;
+}
+section#ClientesMarcasPartners div.ulContent>div>ul>li>div>a:hover{
+    opacity: .7;
+    color: #FFFFFF;
+}
+section#ClientesMarcasPartners div.vertical.backImage{
+    height: 100%;
+    background-position: 50% 50%;
+    background-size: 100%;
+    background-size: cover;
+}
+
+section#Servicios_1{
+    height: 100vh;
+    background-color: #272727;
+}
+section#Servicios_1 div.vertical.backImage{
+    height: 100%;
+    background-position: 50% 50%;
+    background-size: 100%;
+    background-size: cover;
+}
+
+section#Servicios_1 div.tabs{
+    
+}
+section#Servicios_1 div.tabs>div{
+
+}
+section#Servicios_1 div.tabs>div>a{
+    display: inline-block;
+    position: relative;
+    float: left;
+    width: 100%;
+    padding: 10px 15px;
+    margin: 5px 0px;
+    text-align: center;
+    color: #FFFFFF;
+    font-weight: 100;
+    font-size: 14px;
+    background-color: #343434;
+    -webkit-transition: background-color .25s ease;
+       -moz-transition: background-color .25s ease;
+        -ms-transition: background-color .25s ease;
+         -o-transition: background-color .25s ease;
+            transition: background-color .25s ease;
+}
+section#Servicios_1 div.tabs>div>a:hover{
+    background-color: #2a2a2a;
+}
+section#Servicios_1 div.tabs>div>a.active{
+    background-color: #ff0000 !important;
+}
+
+section#Servicios_1 div.containerTabs{
+
+}
+section#Servicios_1 div.containerTabs div.tabed{
+    border: 3px solid #606060;
+    margin: 5px 0px;
+    outline: none;
+}
+section#Servicios_1 div.containerTabs div.tabed>div.tittle{
+
+}
+section#Servicios_1 div.containerTabs div.tabed>div.tittle>img{
+    display: inline-block;
+    position: absolute;
+    float: left;
+    left: 10px;
+    top: 0;
+    bottom: 0;
+    width: 50px;
+    margin: auto 0px;
+}
+section#Servicios_1 div.containerTabs div.tabed>div.tittle>h3{
+    display: inline-block;
+    position: relative;
+    float: left;
+    width: 100%;
+    padding: 15px;
+    padding-left: 70px;
+    text-align: left;
+}
+section#Servicios_1 div.containerTabs div.tabed>div.tittle>h3:before{
+    display: inline-block;
+    position: relative;
+    float: left;
+    width: 100%;
+    padding: 5px 0px;
+    color: #ffffff;
+    text-shadow: 1px 1px #e81319;
+    font-size: 17px;
+    font-weight: 500;
+}
+
+
+section#Servicios_2{
+    height: 100vh;
+    background-color: #005ed3;
+}
+section#Servicios_2 div.vertical.backImage{
+    height: 100%;
+    background-position: 50% 50%;
+    background-size: 100%;
+    background-size: cover;
+}
+section#Servicios_2 div.item{
+
+}
+section#Servicios_2 div.item>div{
+    width: 200px;
+    padding: 15px 0px;
+}
+section#Servicios_2 div.item>div>div{
+    
+}
+section#Servicios_2 div.item>div>div>img{
+    width: 100px;
+}
+section#Servicios_2 div.item>div>p{
+    display: inline-block;
+    position: relative;
+    float: left;
+    width: 100%;
+    padding: 10px 15px;
+    text-align: center;
+    height: 75px;
+    margin: 0;
+}
+
+
+section#anios{
+    height: 100vh;
+    background-position: 50% 50%;
+    background-size: 100%;
+    background-size: cover;
+}
+section#anios div.vertical.backImage{
+    height: 100%;
+    background-position: 50% 50%;
+    background-size: 100%;
+    background-size: cover;
+}
+section#anios img.img20{
+    width: 500px;
+}
+
+section#nuestrosClientes{
+    height: 100vh;
+    background-color: #FFFFFF;
+}
+section#nuestrosClientes div.vertical.backDark{
+    background-color: rgba(0, 0, 0, 0.14);
+}
+section#nuestrosClientes div.vertical.backImage{
+    height: 100%;
+    background-position: 50% 50%;
+    background-size: 100%;
+    background-size: cover;
+}
+section#nuestrosClientes div.item{
+    height: 100px;
+}
+section#nuestrosClientes div.item>img{
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    max-width: 75%;
+    max-height: 60%;
+    height: auto;
+    margin: auto;
+}
+section#nuestrosClientes div.item:before{
+    content: '';
+    display: inline-block;
+    position: absolute;
+    width: auto;
+    height: 2px;
+    left: 50px;
+    right: 50px;
+    bottom: 0;
+    background-color: #d9d9d9;
+}
+section#nuestrosClientes div.item:after{
+    content: '';
+    display: inline-block;
+    position: absolute;
+    width: 2px;
+    height: 60%;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: #d9d9d9;
+    margin: auto 0px;
+}
+section#nuestrosClientes div.item>div{
+    display: inline-block;
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    background-color: #d9d9d9;
+    right: -9px;
+    bottom: -9px;
+    border-radius: 50%;
+}
+section#nuestrosClientes div.item>div:after{
+    content: '';
+    display: inline-block;
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background-color: #FFFFFF;
+    border-radius: 50%;
+}
+
+section#proyectos{
+    height: 100vh;
+    background-color: #000400;
+}
+section#proyectos div.vertical.backImage{
+    height: 100%;
+    background-position: 50% 50%;
+    background-size: 100%;
+    background-size: cover;
+}
+section#proyectos ul.projectList{
+    display: inline-block;
+    position: relative;
+    float: left;
+    width: 100%;
+    list-style-type: none;
+    -webkit-margin-before: 0;
+    -webkit-margin-after: 0;
+    -webkit-margin-start: 0;
+    -webkit-margin-end: 0;
+    -webkit-padding-start: 0;
+}
+section#proyectos ul.projectList>li{
+    display: inline-block;
+    position: relative;
+    float: left;
+    width: 100%;
+    padding: 15px 0px;
+    text-align: center;
+}
+section#proyectos ul.projectList>li>a{
+    display: inline-block;
+    position: relative;
+    width: 200px;
+    margin: 0px auto;
+    float: none;
+}
+section#proyectos ul.projectList>li>a>img{
+    display: inline-block;
+    position: absolute;
+    left: 10px;
+    width: 50px;
+    top: 0;
+    bottom: 0;
+    margin: auto 0px;
+}
+section#proyectos ul.projectList>li>a>span{
+    display: inline-block;
+    position: relative;
+    float: left;
+    width: 100%;
+    padding: 5px 0px 5px 80px;
+    color: #FFFFFF;
+    font-weight: 100;
+    font-size: 16px;
+    -webkit-transition: color .25s ease;
+    -moz-transition: color .25s ease;
+    -ms-transition: color .25s ease;
+    -o-transition: color .25s ease;
+    transition: color .25s ease;
+    text-align: left;
+}
+section#proyectos ul.projectList>li>a.active>span{
+    color: #ff0000 !important;
+}
+section#proyectos ul.projectList>li>a.active>span:before{
+    background-color: #ff0000 !important;
+}
+section#proyectos ul.projectList>li>a:hover>span{
+    color: #ff0000;
+}
+section#proyectos ul.projectList>li>a>span:before{
+    content: '';
+    display: inline-block;
+    position: absolute;
+    left: 70px;
+    top: 0;
+    bottom: 0;
+    height: 35px;
+    width: 2px;
+    background-color: #6b6b6b;
+    margin: auto 0px;
+    -webkit-transition: background-color .25s ease;
+       -moz-transition: background-color .25s ease;
+        -ms-transition: background-color .25s ease;
+         -o-transition: background-color .25s ease;
+            transition: background-color .25s ease;
+}
+section#proyectos ul.projectList>li>a:hover>span:before{
+    background-color: #ff0000;
+}
+section#proyectos div.containerFullHeight>div{
+    height: 100vh;
+}
+section#proyectos div.backImg{
+    background-size: 100%;
+    background-size: cover;
+    background-position: 50% 50%;
+    padding: 15px;
+    text-align: left;
+}
+section#proyectos div.backImg>span{
+    text-shadow: 1px 1px #000;
+    display: inline-block;
+    position: relative;
+}
+section#proyectos div.content div.slideItem{
+    outline: none;
+}
+section#proyectos div.content div.first>div:nth-child(1)>div:nth-child(1){
+    height: 40vh;
+}
+section#proyectos div.content div.first>div:nth-child(1)>div:nth-child(2){
+    height: 40vh;
+}
+section#proyectos div.content div.first>div:nth-child(2)>div:nth-child(1){
+    height: 60vh;
+}
+section#proyectos div.content div.first>div:nth-child(2)>div:nth-child(2)>div:nth-child(1){
+    height: 30vh;
+}
+section#proyectos div.content div.first>div:nth-child(2)>div:nth-child(2)>div:nth-child(2){
+    height: 30vh;
+}
+section#proyectos div.content div.dark{
+    background-color: rgba(0, 0, 0, 0.62);
+}
+
+section#proyectos div.content div.second>div:nth-child(1)>div,
+section#proyectos div.content div.second>div:nth-child(2)>div{
+    display: inline-block;
+    position: relative;
+    float: left;
+    background-color: rgba(0, 0, 0, 0.77);
+    padding: 15px;
+    height: 50vh;
+    width: 275px;
+}
+section#proyectos div.content div.second>div:nth-child(1)>div{
+    float: left;
+}
+section#proyectos div.content div.second>div:nth-child(2)>div{
+    float: right;
+}
+
+section#proyectos div.content div.second>div:nth-child(1),
+section#proyectos div.content div.second>div:nth-child(2){
+    background-size: 100%;
+    background-size: cover;
+    background-position: 50% 50%;
+}
+
+
+
+section#proyectos1Anio{
+    height: 100vh;
+    background-position: 50% 50%;
+    background-size: 100%;
+    background-size: cover;
+}
+section#proyectos1Anio div.vertical.backDark{
+    background-color: rgba(0, 0, 0, 0.14);
+}
+section#proyectos1Anio div.vertical.backImage{
+    height: 100%;
+    background-position: 50% 50%;
+    background-size: 100%;
+    background-size: cover;
+}
+
+section#Marcas{
+    height: 100vh;
+    background-color: #FFFFFF;
+}
+section#Marcas div.vertical.backDark{
+    background-color: rgba(0, 0, 0, 0.14);
+}
+section#Marcas div.vertical.backImage{
+    height: 100%;
+    background-position: 50% 50%;
+    background-size: 100%;
+    background-size: cover;
+}
+section#Marcas div.item{
+    height: 125px;
+}
+section#Marcas div.item>img{
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    max-width: 50%;
+    max-height: 50%;
+    height: auto;
+    margin: auto;
+}
+section#Marcas div.item:before{
+    content: '';
+    display: inline-block;
+    position: absolute;
+    width: auto;
+    height: 2px;
+    left: 50px;
+    right: 50px;
+    bottom: 0;
+    background-color: #d9d9d9;
+}
+section#Marcas div.item:after{
+    content: '';
+    display: inline-block;
+    position: absolute;
+    width: 2px;
+    height: 60%;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: #d9d9d9;
+    margin: auto 0px;
+}
+section#Marcas div.item:nth-child(2):after, section#Marcas div.item:nth-child(2):after{
+    display: none;
+}
+section#Marcas div.item>div{
+    display: inline-block;
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    background-color: #d9d9d9;
+    right: -9px;
+    bottom: -9px;
+    border-radius: 50%;
+}
+section#Marcas div.item>div:after{
+    content: '';
+    display: inline-block;
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background-color: #FFFFFF;
+    border-radius: 50%;
+}
+
+section#Partners{
+    height: 100vh;
+    background-color: #FFFFFF;
+}
+section#Partners div.vertical.backDark{
+    background-color: rgba(0, 0, 0, 0.14);
+}
+section#Partners div.vertical.backImage{
+    height: 100%;
+    background-position: 50% 50%;
+    background-size: 100%;
+    background-size: cover;
+}
+section#Partners div.item{
+    height: 125px;
+}
+section#Partners div.item>img{
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    max-width: 50%;
+    max-height: 50%;
+    height: auto;
+    margin: auto;
+}
+section#Partners div.item:before{
+    content: '';
+    display: inline-block;
+    position: absolute;
+    width: auto;
+    height: 2px;
+    left: 50px;
+    right: 50px;
+    bottom: 0;
+    background-color: #d9d9d9;
+}
+section#Partners div.item:after{
+    content: '';
+    display: inline-block;
+    position: absolute;
+    width: 2px;
+    height: 60%;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: #d9d9d9;
+    margin: auto 0px;
+}
+section#Partners div.item:nth-child(3):after, section#Partners div.item:nth-child(3):after{
+    display: none;
+}
+section#Partners div.item:nth-child(5):after, section#Partners div.item:nth-child(5):after{
+    display: none;
+}
+section#Partners div.item>div{
+    display: inline-block;
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    background-color: #d9d9d9;
+    right: -9px;
+    bottom: -9px;
+    border-radius: 50%;
+}
+section#Partners div.item>div:after{
+    content: '';
+    display: inline-block;
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background-color: #FFFFFF;
+    border-radius: 50%;
+}
+
+section#Innovaled{
+    height: 100vh;
+    background-position: 50% 50%;
+    background-size: 100%;
+    background-size: cover;
+}
+section#Innovaled div.vertical.bottom{
+    -webkit-justify-content: flex-end;
+    -ms-flex-pack: flex-end;
+    justify-content: flex-end;
+    pointer-events: none;
+}
+section#Innovaled div.vertical.bottom ul{
+    display: inline-block;
+    position: relative;
+    float: left;
+    list-style-type: none;
+    -webkit-margin-before: 0;
+    -webkit-margin-after: 0;
+    -webkit-margin-start: 0;
+    -webkit-margin-end: 0;
+    -webkit-padding-start: 0;
+}
+section#Innovaled div.vertical.bottom ul>li{
+    display: inline-block;
+    position: relative;
+    float: left;
+    padding: 0px 15px;
+}
+section#Innovaled div.vertical.bottom ul>li>img{
+    display: inline-block;
+    position: absolute;
+    left: 10px;
+    top: 0;
+    bottom: 0;
+    width: 50px;
+    margin: auto 0px;
+}
+section#Innovaled div.vertical.bottom ul>li>a{
+    display: inline-block;
+    position: relative;
+    float: left;
+    width: 100%;
+    padding-left: 60px;
+    color: #FFFFFF;
+    font-size: 16px;
+    font-weight: 500;
+    pointer-events: auto;
+    -webkit-transition: color .25s ease;
+       -moz-transition: color .25s ease;
+        -ms-transition: color .25s ease;
+         -o-transition: color .25s ease;
+            transition: color .25s ease;
+}
+section#Innovaled div.vertical.bottom ul>li>a:hover{
+    color: #000000;
+}
+section#Innovaled .backRed{
+    background-color: #e81319;
+    padding-top: 20px;
+    padding-bottom: 15px;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+
+section#botSection{
+    background-color: #009bdc;
+    padding: 30px 0px;
+}
+section#botSection a.textWhite{
+    font-size: 13px;
+    -webkit-transition: all .25s ease;
+       -moz-transition: all .25s ease;
+        -ms-transition: all .25s ease;
+         -o-transition: all .25s ease;
+            transition: all .25s ease;
+}
+section#botSection a.textWhite:hover{
+    color: #a90a0e;
+}
+section#botSection span.textWhite{
+    font-size: 14px;
+    -webkit-transition: all .25s ease;
+       -moz-transition: all .25s ease;
+        -ms-transition: all .25s ease;
+         -o-transition: all .25s ease;
+            transition: all .25s ease;
+}
+section#botSection div.item{
+
+}
+section#botSection div.item>div{
+    width: 300px;
+}
+
+section#footer{
+    background-color: #3c414c;
+    padding: 30px 0px;
+}
+section#footer div.item{
+
+}
+section#footer div.item>div{
+    width: 250px;
+}
+section#footer div.item span,
+section#footer div.item a
+{
+    color: #797e87;
+}
+section#footer ul{
+    display: inline-block;
+    position: relative;
+    float: left;
+    width: 100%;
+    list-style-type: none;
+    -webkit-margin-before: 0;
+    -webkit-margin-after: 0;
+    -webkit-margin-start: 0;
+    -webkit-margin-end: 0;
+    -webkit-padding-start: 0;
+}
+section#footer ul>li{
+    display: inline-block;
+    position: relative;
+    float: left;
+    width: 100%;
+}
+section#footer ul>li>a{
+    display: inline-block;
+    position: relative;
+    float: left;
+    width: 100%;
+}
+section#footer ul>li>a>img{
+    display: inline-block;
+    position: absolute;
+    width: 40px;
+    left: 10px;
+    top: 0;
+    bottom: 0;
+    margin: auto 0px;
+}
+section#footer ul>li>a>span{
+    display: inline-block;
+    position: relative;
+    float: left;
+    width: 100%;
+    padding: 20px;
+    padding-left: 60px;
+    padding-right: 0px;
+}
+section#footer img.logoFooter{
+    width: 200px;
+}
+
+
+section#copyright{
+    background-color: #343942;
+    padding: 15px 0px;
+}
+section#copyright span{
+    color: #797e87;
+}
+@media (max-width : 1200px) {
+    section#footer div.item>div {
+        width: 240px;
+    }
+    section#Productos div.tabsGeneral div.item div.subItem>a {
+        width: 185px;
+    }
+}
+
+@media (max-width : 991px) {
+    section#botSection div.item>div {
+        width: 220px;
+    }
+    section#footer div.item>div {
+        width: 180px;
+    }
+    section#footer img.logoFooter{
+        width: 100%;
+    }
+    section#anios img.img20 {
+        width: 350px;
+    }
+}
+
+@media (max-width : 768px) {
+    section#footer div.item {
+        height: 220px;
+    }
+    section#Innovaled div.vertical.bottom ul>li {
+        padding: 20px 15px;
+    }
+    section#Innovaled div.vertical.bottom ul {
+        width: 340px;
+    }
+    section{
+        height: auto;
+    }
+    section div.contentV{
+        position: relative;
+        display: inline-block;
+        height: auto;
+        padding: 75px 0px;
+    }
+    section#ClientesMarcasPartners div.ulContent>div {
+        width: 250px;
+    }
+    section#ClientesMarcasPartners div.ulContent>div>ul>li:after {
+        content: '';
+        display: inline-block;
+        position: absolute;
+        height: 2px;
+        width: 125px;
+        background-color: #FFFFFF;
+        right: 0;
+        left: 0;
+        top: auto;
+        bottom: 0;
+        margin: 0px auto;
+    }
+    section#Productos div.productos>div.item>div div.height {
+        height: auto;
+    }
+    section#Productos div.productos>div.item div.vertical{
+        display: inline-block;
+        position: relative;
+    }
+    section#Productos div.productos>div.item{
+        text-align: center;
+    }
+    section#Productos div.productos>div.item>div{
+        display: inline-block;
+        float: none;
+        margin: 0px auto;
+        width: 400px;
+    }
+    section#Productos div.tabsGeneral div.item div.subItem>a {
+        max-width: 95%;
+    }
+}
+
+@media (max-width : 480px) {
+    section#footer div.item>div {
+        width: 100%;
+    }
+    section#anios img.img20 {
+        width: 250px;
+    }
+    section#Productos div.productos>div.item>div{
+        max-width: 95%;
+    }
+}
+
+@media (max-width : 400px) {
+
+}
+
+@media (max-height : 625px) {
+    section{
+        height: auto !important;
+    }
+    section div.contentV{
+        position: relative;
+        display: inline-block;
+        height: auto;
+        padding: 75px 0px;
+    }
+    section#Home div.contentV {
+        padding: 35vh 0px;
+    }
+}

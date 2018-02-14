@@ -1,0 +1,121 @@
+@font-face {
+    font-family: 'Heavitas';
+    font-weight: 500;
+    font-style: normal;
+    src: url('Fonts/Heavitas.ttf');
+    src:
+        url('Fonts/Heavitas.ttf')
+        format('truetype');
+}
+
+body p,
+body span,
+body label,
+body{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    color: #17212a;
+    line-height: 1.4;
+}
+a{
+  cursor: pointer;
+    text-decoration: none !important;
+    -webkit-transition: all .25s ease;
+       -moz-transition: all .25s ease;
+        -ms-transition: all .25s ease;
+         -o-transition: all .25s ease;
+            transition: all .25s ease;
+}
+small{
+    font-size: inherit !important;
+    color: inherit !important;
+}
+
+.ligh{
+    font-weight: 300;
+}
+.regular{
+    font-weight: 400;
+}
+.semi-bold{
+    font-weight: 600;
+}
+.bold{
+    font-weight: 700;
+}
+.extra-bold{
+    font-weight: 800;
+}
+
+.Heav{
+    font-family: 'Heavitas';
+}
+h1{
+    font-size: 50px;
+}
+h2{
+    font-size: 28px;
+}
+h3{
+    font-size: 20px;
+}
+h4{
+    font-size: 16px;
+}
+h5{
+    font-size: 15px;
+}
+h1, h2, h3, h4, h5{
+    margin: 0px;
+    padding: 15px 0px;
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    float: left;
+}
+p{
+    margin: 0px;
+    padding: 15px 0px;
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    float: left;
+}
+.textWhite{
+	color: #fff;
+}
+.textGrey{
+    color: #424242;
+}
+.textDark{
+    color: #333333;
+}
+.textRed{
+    color: #ff3241;
+}
+
+
+
+@media (max-width : 768px) {
+    h1{
+        font-size: 40px;
+    }
+    h2{
+        font-size: 21px;
+    }
+    h3 {
+        font-size: 18px;
+    }
+}
+
+@media (max-width : 480px) {
+    div#modal-youtube {
+        left: 0px;
+        margin-left: 0px !important;
+    }
+}
+
+@media (max-width : 20px) {
+
+}

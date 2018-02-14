@@ -1,0 +1,126 @@
+/*FIX*/
+.app.app-loaded .app-container .app-sidebar {
+    min-height: 100vh;
+}
+.input-group.TipoUser .input-group-addon {
+    background-color: #2d3349;
+    color: #fff;
+}
+.app .block > .block-heading {
+    margin-bottom: 0px;
+}
+label.error{
+	display: block;
+    position: relative;
+    left: 0px;
+    font-size: 13px;
+    font-weight: 100;
+    color: #f04e51;
+}
+input.error, select.error, textarea.error{
+    background-color: rgba(240, 78, 81, 0.06);
+}
+.app .contact.contact-lg > div.imgProfile, .app .contact.contact-xlg > div.imgProfile, .app .contact.contact-single > div.imgProfile {
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    position: absolute;
+    float: left;
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    left: 0px;
+    border-radius: 50%;
+}
+div.itemToList button{
+	position: absolute;
+    background-color: transparent !important;
+    border: none;
+}
+div.itemToList button span::before{
+	color: #bdbdbd;
+    -webkit-transition: all 300ms ease;
+       -moz-transition: all 300ms ease;
+        -ms-transition: all 300ms ease;
+         -o-transition: all 300ms ease;
+            transition: all 300ms ease;
+}
+div.itemToList button:hover span::before{
+	color: #000;
+}
+.marginV{
+    margin-bottom: 15px;
+}
+
+/*ESTILOS PERSONALIZADOS*/
+.nopadding{
+	padding: 0px !important;
+}
+.noVPadding{
+	padding-top: 0px !important;
+	padding-bottom: 0px !important;
+}
+.noHPadding{
+	padding-right: 0px !important;
+	padding-left: 0px !important;
+}
+.nomargin{
+	margin: 0px !important;
+}
+.centered{
+	margin: 0px auto;
+	float: none;
+}
+/*ESTILOS AGREGADOS*/
+div.imgProfileUpdate{
+    width: 200px;
+    height: 200px;
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    position: relative;
+    float: none;
+    display: inline-block;
+    margin: 0px auto;
+}
+ul#sortable{
+
+}
+ul#sortable>li{
+    cursor: pointer;
+}
+ul#sortable>li:nth-child(odd) {
+    background-color: #f5f5f5;
+}
+div.loader{
+    display: flex;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0px;
+    right: 0px;
+    z-index: 100;
+    background-color: #2d3349;
+}
+.centered{
+    margin: 0px auto;
+    float: none;
+}
+.vertical {
+    display: table-cell;
+    vertical-align: middle;
+    position: relative;
+    margin-top: auto;
+    margin-bottom: auto;
+    top: 0;
+    bottom: 0;
+    width: auto;
+}
+
+@media print
+{    
+    .noPrint, .noPrint *
+    {
+        display: none !important;
+    }
+}

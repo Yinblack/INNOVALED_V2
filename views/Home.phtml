@@ -1,0 +1,860 @@
+<section id="Home" style="background-image: url('assets/img/img_1.jpg');">
+	<div class="vertical backImage" style="background-image: url('assets/img/img_2.svg');"></div>
+	<div class="vertical contentV">
+		<div class="container">
+			<div class="row text-center">
+				<div class="col-xs-12 nopadding">
+					<div class="col-xs-12 nopadding text-left">
+						<h1 class="extra-bold vpadding textWhite lined">Especialistas en Calidad,
+						<br>Eficiencia y ahorro.</h1>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<?php
+$link = mysql_connect('localhost', 'root', '') or die('No se pudo conectar: ' . mysql_error());
+mysql_select_db('innovale_system') or die('No se pudo seleccionar la base de datos');
+$queryLineas = "SELECT * FROM linea ORDER BY IdLinea ASC";
+$lineas = mysql_query($queryLineas) or die('Consulta fallida: ' . mysql_error());
+$querySublineas = "SELECT * FROM sublinea ORDER BY IdLinea ASC";
+$sublineas = mysql_query($querySublineas) or die('Consulta fallida: ' . mysql_error());
+?>
+<section id="Productos">
+	<div class="vertical backImage" style="background-image: url('assets/img/img_7.svg');"></div>
+		<div class="container">
+			<div class="row text-center">
+				<div class="col-xs-12 nopadding">
+					<ul class="linea">
+					<?php
+						$counter=0;
+						while($result = mysql_fetch_assoc($lineas)) {
+							$active = ($counter==0) ? 'active' : '';
+							$IdLinea=$result['IdLinea'];
+							$Linea=utf8_encode ($result['Etiqueta']);
+ 					?>
+					<li>
+						<a href="<?=$counter;?>" class="<?=$active;?>"><?=$Linea;?></a>
+					</li>
+ 					<?php
+ 							$counter++;
+ 						}
+ 					?>
+					</ul>
+				</div>
+				<div class="col-xs-12 nopadding">
+					<div class="col-xs-12 vxpadding nopadding tabsGeneral">
+					<?php
+						$IdLinea='';
+						$arrayLineas = array();
+						$arraySublineas = array();
+						$counter=0;
+						$counter2=0;
+						while($result = mysql_fetch_assoc($sublineas)) {
+							$arraySublineas[$counter]['IdSubLinea']=$result['IdSubLinea'];
+							$arraySublineas[$counter]['IdLinea']=$result['IdLinea'];
+							$arraySublineas[$counter]['Etiqueta']=$result['Etiqueta'];
+							if ($IdLinea!=$result['IdLinea']) {
+								$arrayLineas[$counter2]=$result['IdLinea'];
+								$counter2++;
+							}
+							$IdLinea=$result['IdLinea'];
+							$counter++;
+						}
+ 					?>
+					<?php foreach ($arrayLineas as $key => $value): ?>
+						<div class="col-xs-12 nopadding item">
+						<?php foreach ($arraySublineas as $keyTwo => $valueTwo): ?>
+							<?php if ($arrayLineas[$key]==$arraySublineas[$keyTwo]['IdLinea']): ?>
+								<div class="col-xs-12 nopadding subItem text-center">
+									<a href="<?=$arraySublineas[$keyTwo]['IdSubLinea'];?>" class="col-xs-12 nopadding centered">
+										<div class="col-xs-12 nopadding img">
+											<img src="Productos/assets/img/Sublineas/<?=$arraySublineas[$keyTwo]['IdSubLinea'];?>/img.png" alt="">
+										</div>
+										<div class="col-xs-12 nopadding text-center">
+											<span><?=$arraySublineas[$keyTwo]['Etiqueta'];?></span>
+										</div>
+									</a>
+								</div>
+							<?php endif ?>
+						<?php endforeach ?>
+						</div>
+					<?php endforeach ?>
+
+					</div>
+					<div class="vertical arrows">
+						<div class="col-xs-12 nopadding">
+							<a href="#" class="next">
+								<img src="assets/img/next.svg" alt="">
+							</a>
+							<a href="#" class="prev">
+								<img src="assets/img/prev.svg" alt="">
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-12 nopadding productos">
+					<div class="col-xs-12 item">
+						<div class="col-xs-12 nopadding">
+							<div class="sect height col-xs-12 col-sm-1 col-md-1 nopadding">
+								<div class="vertical">
+									<div class="col-xs-12 nopadding">
+										<div class="checkbox">
+  											<input type="checkbox" tabindex="0">
+  											<div>
+												<svg version="1.1" id="nochecked" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 39.2 41.6" style="enable-background:new 0 0 39.2 41.6;" xml:space="preserve">
+													<path class="unchecked" d="M1.5,6.6H34c0.6,0,1,0.4,1,1v32.5c0,0.6-0.4,1-1,1H1.5c-0.6,0-1-0.4-1-1V7.6C0.5,7.1,0.9,6.6,1.5,6.6z"></path>
+												</svg>
+												<svg version="1.1" id="checked" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 39.2 41.6" style="enable-background:new 0 0 39.2 41.6;" xml:space="preserve">
+													<path class="cheked_1" d="M3.8,20.9c4.9,5.1,9.1,10.9,12.4,17.2c6-12.9,13.7-25,23.1-35.7L37.1,0C30.8,6.2,21,18,15.9,27.5
+														c-2.4-3.9-5.2-7.6-8.4-10.8L3.8,20.9L3.8,20.9z"></path>
+													<path class="checked_2" d="M35,17.5v22.6c0,0.6-0.4,1-1,1H1.5c-0.6,0-1-0.4-1-1V7.6c0-0.6,0.4-1,1-1H21"></path>
+												</svg>
+  											</div>
+  										</div>
+									</div>
+								</div>
+							</div>
+							<div class="sect col-xs-12 col-sm-8 col-md-9 nopadding">
+								<div class="col-xs-12 col-sm-3 height">
+									<img src="Productos/assets/img/Productos/13/img_1.jpg" alt="" class="product">
+								</div>
+								<div class="col-xs-12 col-sm-6 height text-left">
+									<h5 class="col-xs-12 noHorizontalPadding vpadding nopaddingBottom nomargin bold textWhite">CINTA LED ZIGZAG SMD2835 IP20</h5>
+									<p class="col-xs-12 noHorizontalPadding vpadding nopaddingBottom nomargin light textWhite">Las cintas led zigzag son ideales para letras corporeas. Su curvatura evita que se tenga que cortar ...</p>
+								</div>
+								<div class="col-xs-12 col-sm-3 height">
+									<h5 class="col-xs-12 noHorizontalPadding vpadding nomargin regular textWhite">S/ 38.00</h5>
+									<div class="vertical end" style="pointer-events: none;">
+										<a href="#" class="col-xs-12 noHorizontalPadding vpadding nopaddingTop text-center textWhite regular" style="pointer-events: auto;">VER MAS</a>
+									</div>
+								</div>
+							</div>
+							<div class="sect col-xs-12 col-sm-3 col-md-2 height">
+								<div class="vertical">
+									<div class="col-xs-12 nopadding text-center">
+										<div class="col-xs-12 nopadding dicrease">
+											<div class="input">
+												<input type="text">
+											</div>
+											<a href="#" class="minus">
+												<img src="assets/img/minus.svg" alt="">
+											</a>
+											<a href="#" class="plus">
+												<img src="assets/img/plus.svg" alt="">
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>					
+					<div class="col-xs-12 item">
+						<div class="col-xs-12 nopadding">
+							<div class="sect height col-xs-12 col-sm-1 col-md-1 nopadding">
+								<div class="vertical">
+									<div class="col-xs-12 nopadding">
+										<div class="checkbox">
+  											<input type="checkbox" tabindex="0">
+  											<div>
+												<svg version="1.1" id="nochecked" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 39.2 41.6" style="enable-background:new 0 0 39.2 41.6;" xml:space="preserve">
+													<path class="unchecked" d="M1.5,6.6H34c0.6,0,1,0.4,1,1v32.5c0,0.6-0.4,1-1,1H1.5c-0.6,0-1-0.4-1-1V7.6C0.5,7.1,0.9,6.6,1.5,6.6z"></path>
+												</svg>
+												<svg version="1.1" id="checked" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 39.2 41.6" style="enable-background:new 0 0 39.2 41.6;" xml:space="preserve">
+													<path class="cheked_1" d="M3.8,20.9c4.9,5.1,9.1,10.9,12.4,17.2c6-12.9,13.7-25,23.1-35.7L37.1,0C30.8,6.2,21,18,15.9,27.5
+														c-2.4-3.9-5.2-7.6-8.4-10.8L3.8,20.9L3.8,20.9z"></path>
+													<path class="checked_2" d="M35,17.5v22.6c0,0.6-0.4,1-1,1H1.5c-0.6,0-1-0.4-1-1V7.6c0-0.6,0.4-1,1-1H21"></path>
+												</svg>
+  											</div>
+  										</div>
+									</div>
+								</div>
+							</div>
+							<div class="sect col-xs-12 col-sm-8 col-md-9 nopadding">
+								<div class="col-xs-12 col-sm-3 height">
+									<img src="Productos/assets/img/Productos/13/img_1.jpg" alt="" class="product">
+								</div>
+								<div class="col-xs-12 col-sm-6 height text-left">
+									<h5 class="col-xs-12 noHorizontalPadding vpadding nopaddingBottom nomargin bold textWhite">CINTA LED ZIGZAG SMD2835 IP20</h5>
+									<p class="col-xs-12 noHorizontalPadding vpadding nopaddingBottom nomargin light textWhite">Las cintas led zigzag son ideales para letras corporeas. Su curvatura evita que se tenga que cortar ...</p>
+								</div>
+								<div class="col-xs-12 col-sm-3 height">
+									<h5 class="col-xs-12 noHorizontalPadding vpadding nomargin regular textWhite">S/ 38.00</h5>
+									<div class="vertical end" style="pointer-events: none;">
+										<a href="#" class="col-xs-12 noHorizontalPadding vpadding nopaddingTop text-center textWhite regular" style="pointer-events: auto;">VER MAS</a>
+									</div>
+								</div>
+							</div>
+							<div class="sect col-xs-12 col-sm-3 col-md-2 height">
+								<div class="vertical">
+									<div class="col-xs-12 nopadding text-center">
+										<div class="col-xs-12 nopadding dicrease">
+											<div class="input">
+												<input type="text">
+											</div>
+											<a href="#" class="minus">
+												<img src="assets/img/minus.svg" alt="">
+											</a>
+											<a href="#" class="plus">
+												<img src="assets/img/plus.svg" alt="">
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+</section>
+
+<section id="Experiencia" style="background-image: url('assets/img/img_3.jpg');">
+	<div class="vertical backDark"></div>
+	<div class="vertical backImage" style="background-image: url('assets/img/img_4.svg');"></div>
+	<div class="vertical contentV">
+		<div class="container">
+			<div class="row text-center">
+				<div class="col-xs-12 nopadding">
+					<div class="col-xs-12 col-sm-5 nopadding text-left">
+						<h2 class="extra-bold vpadding textWhite lined">5 años de experiencia brindando soluciones en tecnología LED</h2>
+						<div class="col-xs-12 noHorizontalPadding vxpadding text-center">
+							<img src="assets/img/img_5.png" alt="" class="col-xs-12 centered" style="width: 100px;">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section id="ClientesMarcasPartners">
+	<div class="vertical backImage" style="background-image: url('assets/img/img_6.svg');"></div>
+	<div class="vertical contentV">
+		<div class="container">
+			<div class="row text-center">
+				<div class="col-xs-12 nopadding ulContent text-center">
+					<div class="centered">
+						<ul class="text-center">
+							<li class="centered">
+								<div class="vertical">
+									<a href="#" class="textWhite">Nuestros Clientes</a>
+								</div>
+							</li>
+							<li class="centered">
+								<div class="vertical">
+									<a href="#" class="textWhite">Marcas</a>
+								</div>
+							</li>
+							<li class="centered">
+								<div class="vertical">
+									<a href="#" class="textWhite">Partners</a>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section id="Servicios_1">
+	<div class="vertical backImage" style="background-image: url('assets/img/img_7.svg');"></div>
+	<div class="vertical contentV">
+		<div class="container">
+			<div class="row text-center">
+				<div class="col-xs-12 noHorizontalPadding vxpadding text-center">
+					<h2 class="textWhite regular">SERVICIOS</h2>
+				</div>
+				<div class="col-xs-12 nopadding">
+					<div class="col-xs-12 col-sm-3 tabs">
+						<div class="col-xs-12">
+							<a href="#" slideTo="0" class="active">Venta e Instalación de Iluminarias LED</a>
+						</div>
+						<div class="col-xs-12">
+							<a href="#" slideTo="1">Programación y dimensionamiento de Sistema LED</a>
+						</div>
+						<div class="col-xs-12">
+							<a href="#" slideTo="2">Elaboración de proyectos de Iluminación LED</a>
+						</div>
+						<div class="col-xs-12">
+							<a href="#" slideTo="3">Venta e Instalación de Pantallas LED</a>
+						</div>
+						<div class="col-xs-12">
+							<a href="#" slideTo="4">Mantenimiento de Pantallas LED</a>
+						</div>
+						<div class="col-xs-12">
+							<a href="#" slideTo="5">Venta e Instalación de Kits Solares</a>
+						</div>
+					</div>
+					<div class="col-xs-12 col-sm-9 containerTabs">
+						<div class="col-xs-12 tabed">
+							<div class="col-xs-12 tittle">
+								<img src="assets/img/img_8.svg" alt="">
+								<h3 class="textWhite regular">Venta e Instalación de Iluminarias LED</h3>
+							</div>
+							<div class="col-xs-12 nopadding">
+								<img src="assets/img/img_9.jpg" alt="" class="col-xs-12 noHorizontalPadding vpadding nopaddingTop">
+							</div>
+						</div>
+						<div class="col-xs-12 tabed">
+							<div class="col-xs-12 tittle">
+								<img src="assets/img/img_8.svg" alt="">
+								<h3 class="textWhite regular">Programación y dimensionamiento de Sistema LED</h3>
+							</div>
+							<div class="col-xs-12 nopadding">
+								<img src="assets/img/img_9.jpg" alt="" class="col-xs-12 noHorizontalPadding vpadding nopaddingTop">
+							</div>
+						</div>
+						<div class="col-xs-12 tabed">
+							<div class="col-xs-12 tittle">
+								<img src="assets/img/img_8.svg" alt="">
+								<h3 class="textWhite regular">Elaboración de proyectos de Iluminación LED</h3>
+							</div>
+							<div class="col-xs-12 nopadding">
+								<img src="assets/img/img_9.jpg" alt="" class="col-xs-12 noHorizontalPadding vpadding nopaddingTop">
+							</div>
+						</div>
+						<div class="col-xs-12 tabed">
+							<div class="col-xs-12 tittle">
+								<img src="assets/img/img_8.svg" alt="">
+								<h3 class="textWhite regular">Venta e Instalación de Pantallas LED</h3>
+							</div>
+							<div class="col-xs-12 nopadding">
+								<img src="assets/img/img_9.jpg" alt="" class="col-xs-12 noHorizontalPadding vpadding nopaddingTop">
+							</div>
+						</div>
+						<div class="col-xs-12 tabed">
+							<div class="col-xs-12 tittle">
+								<img src="assets/img/img_8.svg" alt="">
+								<h3 class="textWhite regular">Mantenimiento de Pantallas LED</h3>
+							</div>
+							<div class="col-xs-12 nopadding">
+								<img src="assets/img/img_9.jpg" alt="" class="col-xs-12 noHorizontalPadding vpadding nopaddingTop">
+							</div>
+						</div>
+						<div class="col-xs-12 tabed">
+							<div class="col-xs-12 tittle">
+								<img src="assets/img/img_8.svg" alt="">
+								<h3 class="textWhite regular">Venta e Instalación de Kits Solares</h3>
+							</div>
+							<div class="col-xs-12 nopadding">
+								<img src="assets/img/img_9.jpg" alt="" class="col-xs-12 noHorizontalPadding vpadding nopaddingTop">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section id="Servicios_2">
+	<div class="vertical backImage" style="background-image: url('assets/img/img_10.svg');"></div>
+	<div class="vertical contentV">
+		<div class="container">
+			<div class="row text-center">
+				<div class="col-xs-12 noHorizontalPadding vxpadding text-center">
+					<h2 class="textWhite regular">Servicios</h2>
+				</div>
+				<div class="col-xs-12 nopadding">
+					<div class="col-xs-12 col-sm-4 nopadding text-center item">
+						<div class="col-xs-12 centered">
+							<div class="col-xs-12 nopadding text-center">
+								<img src="assets/img/img_11.svg" class="col-xs-12 nopadding centered" alt="">
+							</div>
+							<p class="col-xs-12 textWhite light">Venta e Instalación de Productos LED</p>
+						</div>
+					</div>
+					<div class="col-xs-12 col-sm-4 nopadding text-center item">
+						<div class="col-xs-12 centered">
+							<div class="col-xs-12 nopadding text-center">
+								<img src="assets/img/img_12.svg" class="col-xs-12 nopadding centered" alt="">
+							</div>
+							<p class="col-xs-12 textWhite light">Elaboración de proyectos de Iluminación LED</p>
+						</div>
+					</div>
+					<div class="col-xs-12 col-sm-4 nopadding text-center item">
+						<div class="col-xs-12 centered">
+							<div class="col-xs-12 nopadding text-center">
+								<img src="assets/img/img_13.svg" class="col-xs-12 nopadding centered" alt="">
+							</div>
+							<p class="col-xs-12 textWhite light">Mantenimiento de Sistemas de Iluminación LED</p>
+						</div>
+					</div>
+					<div class="col-xs-12 col-sm-4 nopadding text-center item">
+						<div class="col-xs-12 centered">
+							<div class="col-xs-12 nopadding text-center">
+								<img src="assets/img/img_14.svg" class="col-xs-12 nopadding centered" alt="">
+							</div>
+							<p class="col-xs-12 textWhite light">Venta e Instalación de Pantallas LED</p>
+						</div>
+					</div>
+					<div class="col-xs-12 col-sm-4 nopadding text-center item">
+						<div class="col-xs-12 centered">
+							<div class="col-xs-12 nopadding text-center">
+								<img src="assets/img/img_15.svg" class="col-xs-12 nopadding centered" alt="">
+							</div>
+							<p class="col-xs-12 textWhite light">Mantenimiento de Pantallas LED</p>
+						</div>
+					</div>
+					<div class="col-xs-12 col-sm-4 nopadding text-center item">
+						<div class="col-xs-12 centered">
+							<div class="col-xs-12 nopadding text-center">
+								<img src="assets/img/img_16.svg" class="col-xs-12 nopadding centered" alt="">
+							</div>
+							<p class="col-xs-12 textWhite light">Venta e Instalación de Kits Solares</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section id="anios" style="background-image: url('assets/img/img_18.jpg');">
+	<div class="vertical backDark"></div>
+	<div class="vertical backImage" style="background-image: url('assets/img/img_17.svg');"></div>
+	<div class="vertical contentV">
+		<div class="container">
+			<div class="row text-center">
+				<div class="col-xs-12 nopadding">
+					<div class="col-xs-12 col-sm-5 nopadding text-left">
+						<h2 class="extra-bold vpadding textWhite lined">2 años realizando proyectos de digital signage</h2>
+						<div class="col-xs-12 noHorizontalPadding vxpadding text-center">
+							<img src="assets/img/img_19.svg" alt="" class="col-xs-12 centered" style="width: 140px;">
+						</div>
+					</div>
+					<div class="col-xs-12 col-sm-7 nopadding text-center">
+						<img src="assets/img/img_20.png" alt="" class="col-xs-12 centered img20">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section id="nuestrosClientes">
+	<div class="vertical backImage" style="background-image: url('assets/img/img_21.svg');"></div>
+	<div class="vertical contentV">
+		<div class="container">
+			<div class="row text-center">
+				<div class="col-xs-12 nopadding">
+					<div class="col-xs-12 nopadding text-left">
+						<div class="col-xs-12 noHorizontalPadding vxpadding text-center">
+							<h2 class="textGrey regular">Nuestros Clientes</h2>
+						</div>
+						<div class="col-xs-12 noHorizontalPadding vxpadding text-center">
+							<div class="col-xs-12 col-sm-10 centered">
+								<div class="col-xs-12 col-sm-4 item text-center">
+									<img src="assets/img/clientes/logo1.png" alt="">
+									<div></div>
+								</div>
+								<div class="col-xs-12 col-sm-4 item text-center">
+									<img src="assets/img/clientes/logo2.png" alt="">
+									<div></div>
+								</div>
+								<div class="col-xs-12 col-sm-4 item text-center">
+									<img src="assets/img/clientes/logo3.png" alt="">
+									<div></div>
+								</div>
+								<div class="col-xs-12 col-sm-4 item text-center">
+									<img src="assets/img/clientes/logo4.png" alt="">
+									<div></div>
+								</div>
+								<div class="col-xs-12 col-sm-4 item text-center">
+									<img src="assets/img/clientes/logo5.png" alt="">
+									<div></div>
+								</div>
+								<div class="col-xs-12 col-sm-4 item text-center">
+									<img src="assets/img/clientes/logo6.png" alt="">
+									<div></div>
+								</div>
+								<div class="col-xs-12 col-sm-4 item text-center">
+									<img src="assets/img/clientes/logo7.png" alt="">
+									<div></div>
+								</div>
+								<div class="col-xs-12 col-sm-4 item text-center">
+									<img src="assets/img/clientes/logo8.png" alt="">
+									<div></div>
+								</div>
+								<div class="col-xs-12 col-sm-4 item text-center">
+									<img src="assets/img/clientes/logo9.png" alt="">
+									<div></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section id="proyectos">
+	<div class="vertical backImage" style="background-image: url('assets/img/img_22.svg');"></div>
+	<div class="col-xs-12 nopadding">
+		<div class="row nopadding nomargin text-center containerFullHeight">
+			<div class="col-xs-12 col-sm-3 nopadding">
+				<div class="vertical">
+					<div class="col-xs-12 nopadding">
+						<div class="col-xs-12 text-center">
+							<h3 class="textWhite semi-bold">PROYECTOS</h3>
+						</div>
+						<div class="col-xs-12 nopadding">
+							<ul class="projectList">
+								<li>
+									<a href="0" class="active">
+										<img src="assets/img/img_23.svg" alt="">
+										<span>Iluminación LED</span>
+									</a>
+								</li>
+								<li>
+									<a href="1">
+										<img src="assets/img/img_24.svg" alt="">
+										<span>Digital Signage</span>
+									</a>
+								</li>
+								<li>
+									<a href="2">
+										<img src="assets/img/img_25.svg" alt="">
+										<span>Pantallas LED</span>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-9 nopadding content" id="slideProjects">
+				<div class="col-xs-12 first slideItem">
+					<div class="col-xs-12 nopadding">
+						<div class="col-xs-12 col-sm-5 backImg" style="background-image: url('assets/img/img26.jpg');">
+							<span class="textWhite">SISTEMA ILUMINARIA</span>
+						</div>
+						<div class="col-xs-12 col-sm-7 backImg" style="background-image: url('assets/img/img27.jpg');">
+							<div class="vertical dark"></div>
+							<span class="textWhite">PANTALLAS LED</span>
+						</div>
+					</div>
+					<div class="col-xs-12 nopadding">
+						<div class="col-xs-12 col-sm-5 backImg" style="background-image: url('assets/img/img28.jpg');">
+							<div class="vertical dark"></div>
+							<span class="textWhite">VIDEO WALL</span>
+						</div>
+						<div class="col-xs-12 col-sm-7 nopadding">
+							<div class="col-xs-12 backImg" style="background-image: url('assets/img/img29.jpg');">
+								<div class="vertical dark"></div>
+								<span class="textWhite">TOTEM</span>
+							</div>
+							<div class="col-xs-12 backImg" style="background-image: url('assets/img/img30.jpg');">
+								<span class="textWhite">REFLECTORES LED</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-12 second slideItem">
+					<div class="col-xs-12 nopadding" style="background-image: url('assets/img/img27.jpg');">
+						<div>
+							<div class="vertical">
+								<div class="col-xs-12 nopadding">
+									<h3 class="col-xs-12 noHorizontalPadding vpadding nomargin nopaddingTop textWhite">TIENDA REVLON</h3>
+									<p class="col-xs-12 noHorizontalPadding vpadding nomargin nopaddingBottom textWhite light">Mantenimiento de Sistemas de Iluminación LED</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-xs-12 nopadding" style="background-image: url('assets/img/img_9.jpg');">
+						<div>
+							<div class="vertical">
+								<div class="col-xs-12 nopadding">
+									<h3 class="col-xs-12 noHorizontalPadding vpadding nomargin nopaddingTop textWhite">TIENDA REVLON</h3>
+									<p class="col-xs-12 noHorizontalPadding vpadding nomargin nopaddingBottom textWhite light">Mantenimiento de Sistemas de Iluminación LED</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-12 third slideItem">
+
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section id="proyectos1Anio" style="background-image: url('assets/img/img_32.jpg');">
+	<div class="vertical backDark"></div>
+	<div class="vertical backImage" style="background-image: url('assets/img/img_31.svg');"></div>
+	<div class="vertical contentV">
+		<div class="container">
+			<div class="row text-center">
+				<div class="col-xs-12 nopadding">
+					<div class="col-xs-12 col-sm-5 nopadding text-left">
+						<h2 class="extra-bold vpadding textWhite lined">1 año en proyectos eficiencia energética residencial</h2>
+						<div class="col-xs-12 noHorizontalPadding vxpadding text-center">
+							<img src="assets/img/img_33.svg" alt="" class="col-xs-12 centered" style="width: 150px;">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+<section id="ClientesMarcasPartners">
+	<div class="vertical backImage" style="background-image: url('assets/img/img_6.svg');"></div>
+	<div class="vertical contentV">
+		<div class="container">
+			<div class="row text-center">
+				<div class="col-xs-12 nopadding ulContent text-center">
+					<div class="centered">
+						<ul>
+							<li>
+								<div class="vertical">
+									<a href="#" class="textWhite">Nuestros Clientes</a>
+								</div>
+							</li>
+							<li>
+								<div class="vertical">
+									<a href="#" class="textWhite">Marcas</a>
+								</div>
+							</li>
+							<li>
+								<div class="vertical">
+									<a href="#" class="textWhite">Partners</a>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section id="Marcas">
+	<div class="vertical backImage" style="background-image: url('assets/img/img_21.svg');"></div>
+	<div class="vertical contentV">
+		<div class="container">
+			<div class="row text-center">
+				<div class="col-xs-12 nopadding">
+					<div class="col-xs-12 nopadding text-left">
+						<div class="col-xs-12 noHorizontalPadding vxpadding text-center">
+							<h2 class="textGrey regular">Marcas</h2>
+						</div>
+						<div class="col-xs-12 noHorizontalPadding vxpadding text-center">
+							<div class="col-xs-12 col-sm-10 centered">
+								<div class="col-xs-6 item text-center">
+									<img src="assets/img/marcas/logo1.png" alt="">
+									<div></div>
+								</div>
+								<div class="col-xs-6 item text-center">
+									<img src="assets/img/marcas/logo2.png" alt="">
+								</div>
+								<div class="col-xs-12 noHorizontalPadding vxxpadding text-center">
+									<img class="col-xs-12 nopadding centered" src="assets/img/marcas/logo3.png" alt="" style="width: 220px;">
+								</div>
+								<div class="col-xs-12 nopadding text-center">
+									<div class="col-xs-12 noHorizontalPadding vpadding text-center">
+										<p class="textGrey nopadding nomargin">Certificaciones de nuestros productos:</p>
+									</div>
+									<div class="col-xs-12 nopadding text-center">
+										<img src="assets/img/marcas/logo4.png" alt="" class="centered" style="width: 200px;">
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section id="Partners">
+	<div class="vertical backImage" style="background-image: url('assets/img/img_21.svg');"></div>
+	<div class="vertical contentV">
+		<div class="container">
+			<div class="row text-center">
+				<div class="col-xs-12 nopadding">
+					<div class="col-xs-12 nopadding text-left">
+						<div class="col-xs-12 nopadding text-center">
+							<h2 class="textGrey regular nopadding">Partners</h2>
+						</div>
+						<div class="col-xs-12 noHorizontalPadding vxpadding text-center">
+							<div class="col-xs-12 col-sm-10 centered">
+								<div class="col-xs-12 col-sm-4 item text-center">
+									<img src="assets/img/marcas/logo1.png" alt="">
+									<div></div>
+								</div>
+								<div class="col-xs-12 col-sm-4 item text-center">
+									<img src="assets/img/marcas/logo2.png" alt="">
+									<div></div>
+								</div>
+								<div class="col-xs-12 col-sm-4 item text-center">
+									<img src="assets/img/marcas/logo2.png" alt="">
+								</div>
+								<div class="col-xs-12 col-sm-6 item text-center">
+									<img src="assets/img/marcas/logo2.png" alt="">
+									<div></div>
+								</div>
+								<div class="col-xs-12 col-sm-6 item text-center">
+									<img src="assets/img/marcas/logo2.png" alt="">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section id="Innovaled" style="background-image: url('assets/img/img_34.jpg');">
+	<div class="vertical contentV">
+		<div class="container">
+			<div class="row text-center">
+				<div class="col-xs-12 nopadding text-center">
+					<div class="col-xs-12 nopadding text-center">
+						<img src="assets/img/logo.png" alt="" class="col-xs-12 nopadding centered" style="width: 350px;">
+					</div>
+					<div class="col-xs-12 nopadding text-center">
+						<h3 class="textWhite semi-bold">CALIDAD QUE ILUMINA</h3>
+					</div>
+					<div class="col-xs-12 nopadding text-center">
+						<h4 class="textWhite regular">tu estilo de vida</h4>
+					</div>
+					<div class="col-xs-12 nopadding text-center">
+						<a href="#" class="btn1 centered">COTIZAR</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="vertical bottom">
+		<div class="col-xs-12 text-center backRed">
+			<ul class="centered">
+				<li>
+					<img src="assets/img/icon_email.svg" alt="">
+					<a href="#">Llámenos: (01) 393-4964</a>
+				</li>
+				<li>
+					<img src="assets/img/icon_telephone.svg" alt="">
+					<a href="#">Escríbenos: ventas@innovaled.pe</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</section>
+
+<section id="botSection">
+	<div class="container">
+		<div class="row text-center">
+			<div class="col-xs-12 nopadding text-center">
+				<div class="col-xs-12 col-sm-4 text-center item">
+					<div class="col-xs-12 nopadding centered">
+						<div class="col-xs-12 nopadding text-center">
+							<img src="assets/img/footer_telephone.svg" alt="" class="col-xs-12 nopadding centered" style="width: 40px;">
+						</div>
+						<span class="col-xs-12 noHorizontalPadding vpadding nopaddingBottom text-center textWhite regular">CENTRAL TELEFÓNICA</span>
+						<a href="#" class="col-xs-12 nopadding text-center textWhite light">(511)436-7600</a>
+						<a href="#" class="col-xs-12 nopadding text-center textWhite light">(511)436-7500</a>
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-4 text-center item">
+					<div class="col-xs-12 nopadding centered">
+						<div class="col-xs-12 nopadding text-center">
+							<img src="assets/img/footer_location.svg" alt="" class="col-xs-12 nopadding centered" style="width: 40px;">
+						</div>
+						<span class="col-xs-12 noHorizontalPadding vpadding nopaddingBottom text-center textWhite regular">OFICINA CORPORATIVA</span>
+						<a href="#" class="col-xs-12 nopadding text-center textWhite light">AV. SEPARADORA INDUSTRIAL 1750 LA MOLINA - LIMA - PERÚ</a>
+						<span class="col-xs-12 noHorizontalPadding vpadding nopaddingBottom text-center textWhite regular">LOCAL COMERCIAL</span>
+						<a href="#" class="col-xs-12 nopadding text-center textWhite light">JR. PARURO 1018 - CERCADO DE LIMA - LIMA - PERÚ</a>
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-4 text-center item">
+					<div class="col-xs-12 nopadding centered">
+						<div class="col-xs-12 nopadding text-center">
+							<img src="assets/img/footer_email.svg" alt="" class="col-xs-12 nopadding centered" style="width: 40px;">
+						</div>
+						<span class="col-xs-12 noHorizontalPadding vpadding nopaddingBottom text-center textWhite regular">ESCRIBENOS</span>
+						<span class="col-xs-12 noHorizontalPadding vpadding nopaddingBottom text-center textWhite light">COMUNICATE CON NUESTRO DEPARTAMENTO DE VENTAS</span>
+						<a href="#" class="col-xs-12 nopadding text-center textWhite light">VENTAS@SCIENTIFICSATELLITE.NET</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<section id="footer">
+	<div class="container">
+		<div class="row text-center">
+			<div class="col-xs-12 nopadding text-center">
+				<div class="col-xs-6 col-sm-3 item text-center">
+					<div class="col-xs-12 nopadding centered text-left">
+						<div class="col-xs-12 nopadding">
+							<img class="col-xs-12 nopadding logoFooter" src="assets/img/footer_logo.jpg" alt="">
+						</div>
+						<div class="col-xs-12 noHorizontalPadding vpadding nopaddingBottom">
+							<span class="col-xs-12 nopadding light">Atendemos a clientes de Sur América, Centro América y Estados Unidos por supuesto.</span>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-6 col-sm-3 item text-center">
+					<div class="col-xs-12 nopadding centered text-left">
+						<a href="#" class="col-xs-12 noHorizontalPadding vpadding nopaddingTop">REGÍSTRATE | INICIAR SESIÓN</a>
+						<a href="#" class="col-xs-12 noHorizontalPadding vpadding nopaddingTop">NOSOTROS</a>
+						<a href="#" class="col-xs-12 noHorizontalPadding vpadding nopaddingTop">CONTÁCTENOS</a>
+					</div>
+				</div>
+				<div class="col-xs-6 col-sm-3 item text-center">
+					<div class="col-xs-12 nopadding centered text-left">
+						<span class="col-xs-12 noHorizontalPadding vpadding nopaddingTop bold">LÍNEAS DE PRODUCTO</span>
+						<a href="#" class="col-xs-12 noHorizontalPadding vpadding nopaddingTop light">INTERNET</a>
+						<a href="#" class="col-xs-12 noHorizontalPadding vpadding nopaddingTop light">SEÑAL DIGITAL</a>
+						<a href="#" class="col-xs-12 noHorizontalPadding vpadding nopaddingTop light">FIBRA ÓPTICA</a>
+						<a href="#" class="col-xs-12 noHorizontalPadding vpadding nopaddingTop light">ELECTRÓNICA</a>
+						<a href="#" class="col-xs-12 nopadding light">EQUIPOS</a>
+					</div>
+				</div>
+				<div class="col-xs-6 col-sm-3 item text-center">
+					<div class="col-xs-12 nopadding centered text-left">
+						<ul>
+							<li>
+								<a href="#">
+									<img src="assets/img/SocialNet/facebook.svg" alt="">
+									<span>FACEBOOK</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="assets/img/SocialNet/twitter.svg" alt="">
+									<span>TWITTER</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="assets/img/SocialNet/youtube.svg" alt="">
+									<span>YOUTUBE</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<section id="copyright">
+	<div class="container">
+		<div class="row text-center">
+			<div class="col-xs-12 nopadding text-center">
+				<span class="light">COPYRIGHT 2017 © SCIENTIFIC SATELLITE, TODOS LOS DERECHOS RESERVADOS</span>
+			</div>
+		</div>
+	</div>
+</section>

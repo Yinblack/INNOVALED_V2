@@ -1,0 +1,293 @@
+/*MAQUETACION ESTRUCTURA*/
+body{
+    width: 100%;
+    position: relative;
+    display: block;
+}
+
+body>section,
+footer>section
+{
+    width: 100%;
+    position: relative;
+    display: block;
+    text-align: center;
+    background-color: transparent;
+    float: none;
+    padding: 0px;
+}
+.nopadding{
+	padding: 0px !important;
+}
+.vpadding{
+    padding-top: 15px !important;
+    padding-bottom: 15px !important;
+}
+.vxpadding{
+    padding-top: 30px !important;
+    padding-bottom: 30px !important;
+}
+.vxxpadding{
+    padding-top: 45px !important;
+    padding-bottom: 45px !important;
+}
+.nopaddingBottom{
+    padding-bottom: 0px !important;
+}
+.nopaddingTop{
+    padding-top: 0px !important;
+}
+.nopaddingRight{
+    padding-right: 0px !important;
+}
+.nopaddingLeft{
+    padding-left: 0px !important;
+}
+.noVerticalPadding{
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+}
+.noHorizontalPadding{
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.nomargin{
+	margin: 0px;
+}
+.nomarginTop{
+	margin-top: 0px;
+}
+.nomarginBot{
+	margin-bottom: 0px;
+}
+.centered{
+	margin: 0px auto;
+	float: none !important;
+    display: inline-block;
+}
+.vertical{
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-align-items: flex-start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+.vertical.end{
+    -webkit-justify-content: flex-end;
+    -ms-flex-pack: flex-end;
+    justify-content: flex-end;
+}
+.vertical.start{
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: flex-start;
+    justify-content: flex-start;
+}
+
+.fullHeight{
+    min-height: 100vh;
+}
+
+
+
+/*LOADER*/
+div.loaderPage{
+    display: block;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    z-index: 99;
+    background-color: #5eacb6;
+    text-align: center;
+    top: 0px;
+    bottom: 0px;
+}
+div.loaderPage>div.cSVG{
+    display: inline-flex;
+    position: relative;
+    height: 100%;
+    right: 0px;
+    left: 0px;
+}
+div.loaderPage>div.cSVG>img{
+    display: table-cell;
+    vertical-align: middle;
+    position: relative;
+    margin-top: auto;
+    margin-bottom: auto;
+    top: 0;
+    bottom: 0;
+    width: 40px;
+}
+
+/*MENU*/
+
+div#hamburgerMenu{
+    display: inline-block;
+    position: absolute;
+    float: left;
+    width: 100%;
+    z-index: 15;
+}
+div#hamburgerMenu>a{
+    display: inline-block;
+    position: relative;
+    float: left;
+    padding: 30px 20px;
+}
+div#hamburgerMenu>a>img{
+    display: inline-block;
+    position: relative;
+    float: right;
+    width: 200px;
+}
+div#hamburgerMenu>div{
+    display: inline-block;
+    position: relative;
+    float: right;
+    width: auto;
+}
+div#hamburgerMenu>div>a{
+    display: inline-block;
+    position: relative;
+    float: right;
+    padding: 25px 5px;
+    -webkit-transition: all .25s ease;
+       -moz-transition: all .25s ease;
+        -ms-transition: all .25s ease;
+         -o-transition: all .25s ease;
+            transition: all .25s ease;
+}
+div#hamburgerMenu>div>a:hover{
+    opacity: .7;
+}
+div#hamburgerMenu>div>a>svg{
+    display: inline-block;
+    position: relative;
+    float: left;
+    width: 22px;
+}
+div#hamburgerMenu>div>a>svg>path{
+    fill: #FFFFFF;
+}
+div#hamburgerMenu>div>button{
+    display: inline-block;
+    position: relative;
+    float: right;
+    padding: 25px 20px;
+}
+div#hamburgerMenu>div>button .hamburger-inner, div#hamburgerMenu>div>button .hamburger-inner:after, div#hamburgerMenu>div>button .hamburger-inner:before{
+    background-color: #FFFFFF;
+}
+
+
+
+div#menu{
+    display: inline-block;
+    position: fixed;
+    top: 0px;
+    bottom: 0px;
+    height: 100%;
+    right: 0;
+    width: 250px;
+    z-index: 10;
+    pointer-events: none;
+}
+div#menu>div{
+
+}
+div#menu>div>div>ul{
+    display: inline-block;
+    position: relative;
+    text-align: right;
+    list-style-type: none;
+    -webkit-margin-before: 0;
+    -webkit-margin-after: 0;
+    -webkit-margin-start: 0;
+    -webkit-margin-end: 0;
+    -webkit-padding-start: 0;
+    width: 150px;
+}
+div#menu>div>div>ul>li{
+    display: inline-block;
+    position: relative;
+    float: left;
+    width: 100%;
+    padding: 5px 0px;
+}
+div#menu>div>div>ul>li>a{
+    display: inline-block;
+    position: relative;
+    float: left;
+    width: 100%;
+    padding: 5px 0px;
+    color: #FFFFFF;
+    font-size: 17px;
+    text-shadow: 1px 1px #f00;
+    font-weight: 500;
+    pointer-events: auto;
+}
+div#menu>div>div>ul>li>a:before{
+    content: '';
+    display: inline-block;
+    position: absolute;
+    right: -20px;
+    top: 2px;
+    bottom: 0;
+    width: 2px;
+    height: 50px;
+    background-color: #FFFFFF;
+    margin: auto 0px;
+}
+div#menu>div>div>ul>li>a:after{
+    content: '';
+    display: inline-block;
+    position: absolute;
+    right: -25px;
+    top: 2px;
+    bottom: 0;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #FFFFFF;
+    margin: auto 0px;
+}
+div#menu>div>div>ul>li>a.active{
+    color: #b00303;
+}
+div#menu>div>div>ul>li>a.active:after{
+    background-color: #b00303;
+}
+@media (max-width : 1200px) {
+
+}
+
+@media (max-width : 991px) {
+
+}
+
+@media (max-width : 768px) {
+
+}
+
+@media (max-width : 480px) {
+
+}
+
+@media (max-width : 20px) {
+
+}
