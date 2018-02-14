@@ -248,7 +248,7 @@ section#Productos div.productos{
 
 }
 section#Productos div.productos>div.item{
-    padding: 15px 0px;
+    padding: 10px 0px 0px 0px;
 }
 section#Productos div.productos>div.item>div{
     border: 1px solid #DDDDDD;
