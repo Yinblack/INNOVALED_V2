@@ -426,39 +426,125 @@ class Producto_m extends CI_Model {
         if ($items->num_rows() > 0){
             $counter=0;
             $arrayResult=array();
+            $html='';
             foreach ($items->result() as $row){
-                $arrayResult[$counter]['OnCart']='No';
-                if ($this->cart->total_items()>0) {
-                    $Cart=$this->cart->contents();
-                    foreach ($Cart as $item){
-                        if ($item['id']==$row->IdProducto) {
-                             $arrayResult[$counter]['OnCart']='Si';
-                        }
-                    }
+                $IdProducto=$row->IdProducto;
+                $enCarrito=$this->getExistenciaEnCarrito($IdProducto);
+                if ($enCarrito>0) {
+                    $class='active';
                 }else{
-                    $arrayResult[$counter]['OnCart']='No';
+                    $class='';
                 }
-                                $this->db->select('*');
-                                $this->db->from('precioescala');
-                                $this->db->where('precioescala.IdProducto', $row->IdProducto);
-                                $result = $this->db->get();
-                                if ($result->num_rows() > 0){
-                                    $arrayResult[$counter]['PrecioEscala']=1;
-                                }else{
-                                    $arrayResult[$counter]['PrecioEscala']=0;
-                                }
-                $arrayResult[$counter]['IdProducto']=$row->IdProducto;
-                $arrayResult[$counter]['NombreProducto']=$row->NombreProducto;
-                $arrayResult[$counter]['Marca']=$row->Marca;
-                                $arrayResult[$counter]['Precio']=number_format($row->Precio, 2, '.', ',');
-                $arrayResult[$counter]['MostrarPrecio']=$row->MostrarPrecio;
-                $arrayResult[$counter]['Descripcion']=$row->Descripcion;
-                $arrayResult[$counter]['Moneda']=$row->Moneda;
-                $arrayResult[$counter]['Sublinea']=$row->Sublinea;
-                $arrayResult[$counter]['Linea']=$row->Linea;
-                $counter++;
+                $tienePrecioEscala=$this->tienePrecioEscala($IdProducto);
+                if ($tienePrecioEscala) {
+                    $html1='
+                                    <div class="vertical end">
+                                        <p class="col-xs-12 nopadding nomargin text-center textRed light">
+                                            <small>Descuento por cantidad</small>
+                                        </p>
+                                    </div>
+                    ';
+                }else{
+                    $html1='';
+                }
+                $NombreProducto=$row->NombreProducto;
+                $Marca=$row->Marca;
+                $Precio=number_format($row->Precio, 2, '.', ',');
+                $MostrarPrecio=$row->MostrarPrecio;
+                $Descripcion=$row->Descripcion;
+                if (strlen($Descripcion) > 50){
+                    $Descripcion=substr($Descripcion, 0, 50).'...';
+                }
+                $Moneda=$row->Moneda;
+                $Sublinea=$row->Sublinea;
+                $Linea=$row->Linea;
+                $html.='
+                    <div class="col-xs-12 item">
+                        <div class="col-xs-12 nopadding">
+                            <div class="sect height col-xs-12 col-sm-1 col-md-1 nopadding">
+                                <div class="vertical">
+                                    <div class="col-xs-12 nopadding">
+                                        <div class="checkbox '.$class.'">
+                                            <input type="checkbox" tabindex="0">
+                                            <div>
+                                                <svg version="1.1" id="nochecked" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 39.2 41.6" style="enable-background:new 0 0 39.2 41.6;" xml:space="preserve">
+                                                    <path class="unchecked" d="M1.5,6.6H34c0.6,0,1,0.4,1,1v32.5c0,0.6-0.4,1-1,1H1.5c-0.6,0-1-0.4-1-1V7.6C0.5,7.1,0.9,6.6,1.5,6.6z"></path>
+                                                </svg>
+                                                <svg version="1.1" id="checked" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 39.2 41.6" style="enable-background:new 0 0 39.2 41.6;" xml:space="preserve">
+                                                    <path class="cheked_1" d="M3.8,20.9c4.9,5.1,9.1,10.9,12.4,17.2c6-12.9,13.7-25,23.1-35.7L37.1,0C30.8,6.2,21,18,15.9,27.5
+                                                        c-2.4-3.9-5.2-7.6-8.4-10.8L3.8,20.9L3.8,20.9z"></path>
+                                                    <path class="checked_2" d="M35,17.5v22.6c0,0.6-0.4,1-1,1H1.5c-0.6,0-1-0.4-1-1V7.6c0-0.6,0.4-1,1-1H21"></path>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="sect col-xs-12 col-sm-8 col-md-9 nopadding">
+                                <div class="col-xs-12 col-sm-3 height">
+                                    '.$html1.'
+                                    <img src="Productos/assets/img/Productos/'.$IdProducto.'/img_1.jpg" alt="" class="product">
+                                </div>
+                                <div class="col-xs-12 col-sm-6 height text-left">
+                                    <h5 class="col-xs-12 noHorizontalPadding vpadding nopaddingBottom nomargin bold textWhite">'.$NombreProducto.'</h5>
+                                    <p class="col-xs-12 noHorizontalPadding vpadding nopaddingBottom nomargin light textWhite">'.$Descripcion.'</p>
+                                </div>
+                                <div class="col-xs-12 col-sm-3 height">
+                                    <h5 class="col-xs-12 noHorizontalPadding vpadding nomargin regular textWhite">'.$Moneda.' '.$Precio.'</h5>
+                                    <div class="vertical end" style="pointer-events: none;">
+                                        <a href="DetalleProducto?IdProducto='.$IdProducto.'" class="col-xs-12 noHorizontalPadding vpadding nopaddingTop text-center textWhite regular" style="pointer-events: auto;">VER MAS</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="sect col-xs-12 col-sm-3 col-md-2 height">
+                                <div class="vertical">
+                                    <div class="col-xs-12 nopadding text-center">
+                                        <div class="col-xs-12 nopadding dicrease">
+                                            <div class="input">
+                                                <input type="text" value="'.$enCarrito.'">
+                                            </div>
+                                            <a href="#" class="minus">
+                                                <img src="assets/img/minus.svg" alt="">
+                                            </a>
+                                            <a href="#" class="plus">
+                                                <img src="assets/img/plus.svg" alt="">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                ';
             }
-            return $arrayResult;
+            return $html;
+        }else{
+            return false;
+        }
+    }
+
+    function getExistenciaEnCarrito($IdProducto){
+        if ($this->cart->total_items()>0) {
+            $Cart=$this->cart->contents();
+            foreach ($Cart as $item){
+                if ($item['id']==$IdProducto) {
+                    //obtener cantidad del producto en carrito
+                    $enCarrito=1;
+                }
+            }
+        }else{
+            $enCarrito=0;
+        }
+        return $enCarrito;
+    }
+
+    function tienePrecioEscala($IdProducto){
+        $this->db->select('*');
+        $this->db->from('precioescala');
+        $this->db->where('precioescala.IdProducto', $IdProducto);
+        $result = $this->db->get();
+        if ($result->num_rows() > 0){
+            return true;
         }else{
             return false;
         }

@@ -34,8 +34,6 @@ window.addEventListener("load", function () {
 (function listen () {
     if (window.loaded) {
       $('div.loaderPage').hide();
-       initMap();
-       checkMenuType();
        heightItems();
     } else {
       window.setTimeout(listen, 50);

@@ -14,14 +14,16 @@ $("section#Productos div.tabsGeneral div.item div.subItem>a").click(function(e){
     	$("section#Productos div.tabsGeneral div.item div.subItem>a").removeClass('active');
     	var IdSublinea=$(this).attr('href');
     	showProductos(IdSublinea);
+    	$(this).addClass('active');
     }
 });
 
-function showProductos(IdSublinea){
+function showProductos(IdSubLinea){
   	var formData = new FormData();
-  	formData.append('IdSublinea', IdSublinea);
+  	formData.append('IdSubLinea', IdSubLinea);
+  	var containerProductos=$('div#containerProductos');
     $.ajax({
-        url: window.base_url+'Producto_c/getSubLineasFromLinea',
+        url: window.base_url+'Producto_c/getProductosFromSublineaReturnItems',
         type: 'POST',
         data: formData,
         cache: false,
@@ -31,13 +33,10 @@ function showProductos(IdSublinea){
           console.log('Procesando');
         },
         success: function(data){
-          if (data=='success'){
-            notification('Inicio de sesión <strong>Correcto!</strong>','success','topRight', false);
-            setTimeout(function() {
-              location.reload();
-            }, 350);
+          if (data!='error'){
+          		containerProductos.html(data);
           }else{
-            notification('Usuario o contraseña incorrectos','error','topRight', 2000);
+          		containerProductos.html("<h3 class='col-xs-12 text-center textWhite'>NO HAY PRODUCTOS EN ESTA SUBLINEA</h3>");
           }
           console.log(data);
         },

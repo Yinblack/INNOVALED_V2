@@ -219,6 +219,14 @@ section#Productos div.tabsGeneral div.item div.subItem>a{
     border: 1px solid #DDD;
     width: 200px;
     outline: none;
+    -webkit-transition: border .25s ease;
+       -moz-transition: border .25s ease;
+        -ms-transition: border .25s ease;
+         -o-transition: border .25s ease;
+            transition: border .25s ease;
+}
+section#Productos div.tabsGeneral div.item div.subItem>a.active{
+    border: 1px solid #f00;
 }
 section#Productos div.tabsGeneral div.item div.subItem>a>div.img{
     height: 150px;
