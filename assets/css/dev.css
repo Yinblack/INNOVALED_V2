@@ -117,7 +117,19 @@ div.dicrease>a{
     height: 35px;
     top: 0;
     text-align: center;
+    opacity: 1;
+    -webkit-transition: all .25s ease;
+       -moz-transition: all .25s ease;
+        -ms-transition: all .25s ease;
+         -o-transition: all .25s ease;
+            transition: all .25s ease;
 }
+div.dicrease>a:hover,
+div.dicrease>a:focus,
+div.dicrease>a:active{
+    opacity: .75;
+}
+
 div.dicrease>a.minus{
     left: 0;
 }

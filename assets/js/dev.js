@@ -1,7 +1,6 @@
 var base_url;
 window.base_url = "http://localhost/INNOVALED_V2/Productos/";
 $( document ).ready(function() {
-    checkMenuType();
     $('#principal').parallax();
     window.sr = ScrollReveal({ duration: 1000 }).reveal('.reveal');
 });
@@ -34,7 +33,6 @@ window.addEventListener("load", function () {
 (function listen () {
     if (window.loaded) {
       $('div.loaderPage').hide();
-       heightItems();
     } else {
       window.setTimeout(listen, 50);
     }

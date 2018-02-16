@@ -127,6 +127,7 @@ $('section#Productos div.arrows a.prev').click(function(e){
 });
 
 /*CHECKBOX*/
+/*checkbox normal*/
 $('div.checkbox').click(function(e){
     e.preventDefault();
     if ($(this).hasClass('active')) {
@@ -136,4 +137,32 @@ $('div.checkbox').click(function(e){
         $(this).addClass('active');
         $(this).children("input").prop('checked', true);
     }
+});
+/*checkbox creado*/
+$("section#Productos div.productos").on("click", "div.checkbox", function(e){
+    e.preventDefault();
+    if ($(this).hasClass('active')) {
+        $(this).removeClass('active');
+        $(this).children("input").prop('checked', false);
+    }else{
+        $(this).addClass('active');
+        $(this).children("input").prop('checked', true);
+    }
+});
+
+$("section#Productos div.productos").on("click", "div.dicrease>a", function(e){
+    e.preventDefault();
+    if ($(this).hasClass('minus')){
+    	var input=$(this).prev('div').children('input');
+    	var value=input.val();
+    	value=parseInt(value);
+    	value=value-1;
+    }else if ($(this).hasClass('plus')){
+    	var input=$(this).prev('a').prev('div').children('input');
+    	value=parseInt(value);
+    	console.log(value);
+    	var value=input.val();
+    	value=value++;
+    }
+    input.val(value);
 });
