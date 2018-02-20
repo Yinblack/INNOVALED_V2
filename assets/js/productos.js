@@ -144,11 +144,79 @@ $("section#Productos div.productos").on("click", "div.checkbox", function(e){
     if ($(this).hasClass('active')) {
         $(this).removeClass('active');
         $(this).children("input").prop('checked', false);
+        var IdProducto=$(this).attr('IdProducto');
+        deleteProductoFromCart(IdProducto);
     }else{
         $(this).addClass('active');
         $(this).children("input").prop('checked', true);
+        var IdProducto=$(this).attr('IdProducto');
+        var Cantidad=$('input#Cantidad'+IdProducto).val();
+        addProductoToCart(IdProducto, Cantidad);
     }
 });
+
+function addProductoToCart(IdProducto, Cantidad){
+  var formData = new FormData();
+  formData.append('IdProducto', IdProducto);
+  formData.append('Cantidad', Cantidad);
+  console.log('IdProducto: '+IdProducto);
+  console.log('+++++');
+  console.log('Cantidad: '+Cantidad);
+    $.ajax({
+        url: window.base_url+'Cart_c/addProductoToCart',
+        type: 'POST',
+        data: formData,
+        cache: false,
+        contentType: false,
+        processData: false,
+        beforeSend: function(){
+          console.log('Procesando');
+        },
+        success: function(data){
+          if (data=='Success'){
+            notification('Producto agregado', '', 'success');
+          }else if (data=='Cantidad'){
+            $('div#item'+IdProducto+' div.checkbox ').removeClass('active');
+            notification('Seleccione una cantidad', '', 'info');
+          }else{
+            notification('Error al agregar', '', 'error');
+          }
+          console.log(data);
+        },
+        error: function(data){
+          console.log('Error Ajax Peticion');
+          console.log(data);
+        }
+    });
+}
+function deleteProductoFromCart(IdProducto){
+  var formData = new FormData();
+  formData.append('IdProducto', IdProducto);
+    $.ajax({
+        url: window.base_url+'Cart_c/deleteProductoFromCart',
+        type: 'POST',
+        data: formData,
+        cache: false,
+        contentType: false,
+        processData: false,
+        beforeSend: function(){
+          console.log('Eliminando');
+        },
+        success: function(data){
+          if (data=='Success'){
+            notification('Producto eliminado', '', 'info');
+            $('input#Cantidad'+IdProducto).val(0);
+          }else{
+            notification('Error al eliminar', '', 'error');
+          }
+          console.log(data);
+        },
+        error: function(data){
+          console.log('Error Ajax Peticion');
+          console.log(data);
+        }
+    });
+}
 
 $("section#Productos div.productos").on("click", "div.dicrease>a", function(e){
     e.preventDefault();
@@ -159,10 +227,11 @@ $("section#Productos div.productos").on("click", "div.dicrease>a", function(e){
     	value=value-1;
     }else if ($(this).hasClass('plus')){
     	var input=$(this).prev('a').prev('div').children('input');
+      var value=input.val();
     	value=parseInt(value);
-    	console.log(value);
-    	var value=input.val();
-    	value=value++;
+    	value++;
     }
-    input.val(value);
+    if (value>=1) {
+        input.val(value);
+    }
 });

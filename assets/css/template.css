@@ -272,6 +272,28 @@ div#menu>div>div>ul>li>a.active{
 div#menu>div>div>ul>li>a.active:after{
     background-color: #b00303;
 }
+div#menu>div>div>ul>li.carrito{
+
+}
+div#menu>div>div>ul>li.carrito>a{
+
+}
+div#menu>div>div>ul>li.carrito>a>svg{
+    display: inline-block;
+    position: relative;
+    float: right;
+    width: 40px;
+}
+div#menu>div>div>ul>li.carrito>a>svg path,
+div#menu>div>div>ul>li.carrito>a>svg circle{
+    fill: #ff0000;
+}
+div#menu>div>div>ul>li.carrito>a:before {
+    height: 60px;
+}
+
+
+
 @media (max-width : 1200px) {
 
 }

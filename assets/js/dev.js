@@ -109,3 +109,12 @@ $("div#menu>div>div>ul>li>a").click(function(e){
     }
   }
 });
+
+function notification(tittle, text, type){
+  PNotify.removeAll();
+  new PNotify({
+    title: tittle,
+    text: text,
+    type: type
+  });
+}

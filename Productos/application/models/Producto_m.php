@@ -459,12 +459,12 @@ class Producto_m extends CI_Model {
                 $Sublinea=$row->Sublinea;
                 $Linea=$row->Linea;
                 $html.='
-                    <div class="col-xs-12 item">
+                    <div class="col-xs-12 item" id="item'.$IdProducto.'">
                         <div class="col-xs-12 nopadding">
                             <div class="sect height col-xs-12 col-sm-1 col-md-1 nopadding">
                                 <div class="vertical">
                                     <div class="col-xs-12 nopadding">
-                                        <div class="checkbox '.$class.'">
+                                        <div class="checkbox '.$class.'" IdProducto="'.$IdProducto.'">
                                             <input type="checkbox" tabindex="0">
                                             <div>
                                                 <svg version="1.1" id="nochecked" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 39.2 41.6" style="enable-background:new 0 0 39.2 41.6;" xml:space="preserve">
@@ -501,7 +501,7 @@ class Producto_m extends CI_Model {
                                     <div class="col-xs-12 nopadding text-center">
                                         <div class="col-xs-12 nopadding dicrease">
                                             <div class="input">
-                                                <input type="text" value="'.$enCarrito.'">
+                                                <input type="text" value="'.$enCarrito.'" id="Cantidad'.$IdProducto.'">
                                             </div>
                                             <a href="#" class="minus">
                                                 <img src="assets/img/minus.svg" alt="">
@@ -524,16 +524,15 @@ class Producto_m extends CI_Model {
     }
 
     function getExistenciaEnCarrito($IdProducto){
+        $enCarrito=0;
         if ($this->cart->total_items()>0) {
             $Cart=$this->cart->contents();
             foreach ($Cart as $item){
                 if ($item['id']==$IdProducto) {
-                    //obtener cantidad del producto en carrito
-                    $enCarrito=1;
+                    $qty=$item['qty'];
+                    $enCarrito=$qty;
                 }
             }
-        }else{
-            $enCarrito=0;
         }
         return $enCarrito;
     }

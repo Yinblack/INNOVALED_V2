@@ -12,40 +12,45 @@ class Cart_c extends CI_Controller {
 
 	public function addProductoToCart(){
 		$IdProducto =$_POST['IdProducto'];
-		$Qty        =$_POST['Qty'];
-		$exist=true;
-		if ($this->cart->total_items()>0){
-			foreach ($this->cart->contents() as $items){
-				if ($items['id']==$IdProducto) {
-					$exist=false;
-				}
-			}
-		}
-		if ($exist!=false) {
-			$Producto=$this->Producto_m->getProductoByIdFix($IdProducto);
-
-			$porcentajeDescuento=$this->Cotizacion_m->getPrecioDescuento($IdProducto, $Qty);
-			if ($porcentajeDescuento!=false) {
-				$precioUnitario=$Producto['Precio']-(($Producto['Precio']*$porcentajeDescuento)/100);
-			}else{
-				$precioUnitario=$Producto['Precio'];
-			}
-			$dataProducto = array(
-			    'id'      => $IdProducto,
-			    'qty'     => $Qty,
-			    'price'   => $precioUnitario,
-			    'name'    => $Producto['NombreProducto'],
-			    'marca'    => $Producto['Marca']
-			);
-			if ($this->cart->insert($dataProducto)) {
-				echo $this->Cotizacion_m->totalItems();
-			}else{
-				echo "Error";
-			}
-		}else{
-			echo "Existe";
-		}
+		$Qty        =$_POST['Cantidad'];
+    if ($Qty==0) {
+      echo "Cantidad";
+    }else{
+		  $Producto=$this->Producto_m->getProductoByIdFix($IdProducto);
+		  $porcentajeDescuento=$this->Cotizacion_m->getPrecioDescuento($IdProducto, $Qty);
+		  if ($porcentajeDescuento!=false) {
+		  	$precioUnitario=$Producto['Precio']-(($Producto['Precio']*$porcentajeDescuento)/100);
+		  }else{
+		  	$precioUnitario=$Producto['Precio'];
+		  }
+		  $dataProducto = array(
+		      'id'      => $IdProducto,
+		      'qty'     => $Qty,
+		      'price'   => $precioUnitario,
+		      'name'    => $Producto['NombreProducto'],
+		      'marca'    => $Producto['Marca']
+		  );
+		  if ($this->cart->insert($dataProducto)) {
+		  	echo 'Success';
+		  }else{
+		  	echo "Error";
+		  }
+    }
 	}
+
+  public function deleteProductoFromCart(){
+    $IdProducto =$_POST['IdProducto'];
+    foreach ($this->cart->contents() as $items){
+      if ($items['id']==$IdProducto) {
+        $rowid=$items['rowid'];
+      }
+    }
+    if ($this->cart->remove($rowid)) {
+      echo "Success";
+    }else{
+      echo "Error";
+    }
+  }
 
   public function getProductosFromCarrito(){
     if ($this->cart->contents()) {
@@ -97,18 +102,6 @@ class Cart_c extends CI_Controller {
 			echo "error";
 		}
 	}
-
-  public function deleteProductoCart(){
-    $IdProducto =$_POST['id'];
-    foreach ($this->cart->contents() as $items){
-      if ($items['id']==$IdProducto) {
-        $rowid=$items['rowid'];
-      }
-    }
-    if ($this->cart->remove($rowid)) {
-      echo "success";
-    }
-  }
 
 /*COTIZACION SERVICIOS*/
   public function sendCotizacionServicio(){
