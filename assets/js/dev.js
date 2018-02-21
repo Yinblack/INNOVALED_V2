@@ -89,7 +89,7 @@ $("section#proyectos ul.projectList>li>a").click(function(e){
       $('div#slideProjects').slick('slickGoTo', index);
     }
 });
-$("div#menu>div>div>ul>li>a").click(function(e){
+$("div#menu>div>div>ul>li>a.scroll").click(function(e){
   if (!$(this).hasClass('directLink')) {
   e.preventDefault();
     if (!$( this ).hasClass( "active" )) {

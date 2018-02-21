@@ -1,5 +1,5 @@
 
-<div class="modal fade" id="carrito" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal fade" id="carritoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -18,18 +18,31 @@
   			  		</li>
   				</ul>
   				<div class="tab-content">
-  				  <div role="tabpanel" class="tab-pane active" id="cart">
-  				  	1
-  				  </div>
-  				  <div role="tabpanel" class="tab-pane" id="quote">
-  				  	2
-  				  </div>
+  				  	<div role="tabpanel" class="tab-pane active" id="cart">
+  				  		<div class="col-xs-12 nopadding" id='carrito'>
+							<table class="table table-bordered">
+								<thead>
+									<tr>
+										<th>#</th>
+										<th>Producto</th>
+										<th>Cantidad</th>
+										<th>Precio</th>
+										<th>Importe</th>
+										<th>Eliminar</th>
+									</tr>
+								</thead>
+								<tbody>
+
+								</tbody>
+							</table>
+  				  		</div>
+  				  	</div>
+  				  	<div role="tabpanel" class="tab-pane" id="quote">
+  				  		
+  				  	</div>
   				</div>
           	</div>
         </div>
-      </div>
-      <div class="modal-footer">
-
       </div>
     </div>
   </div>
@@ -47,4 +60,5 @@
 <script src='assets/js/form.js'></script>
 <script src='assets/js/dev.js'></script>
 <script src='assets/js/productos.js'></script>
+<script src='assets/js/carrito.js'></script>
 </html>

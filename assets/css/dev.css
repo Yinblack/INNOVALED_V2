@@ -149,7 +149,7 @@ div.dicrease>a>img{
     margin: auto;
 }
 /*MODAL*/
-div#carrito{
+div#carritoModal{
   -webkit-flex-direction: column !important;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -166,16 +166,16 @@ div#carrito{
   top: 0;
   bottom: 0;
 }
-div#carrito>div.modal-dialog{
+div#carritoModal>div.modal-dialog{
 
 }
-div#carrito>div.modal-dialog>div.modal-content{
+div#carritoModal>div.modal-dialog>div.modal-content{
   box-shadow: none;
   background-color: #fff;
   border: none;
   border-radius: 0px;
 }
-div#carrito>div.modal-dialog>div.modal-content:before{
+div#carritoModal>div.modal-dialog>div.modal-content:before{
   content: '';
   display: inline-block;
   position: absolute;
@@ -187,23 +187,23 @@ div#carrito>div.modal-dialog>div.modal-content:before{
   z-index: -1;
 }
 .modal-backdrop{
-  background-color: rgba(255, 255, 255, 0.35) !important;
+  background-color: rgba(0, 0, 0, 0.75) !important;
 }
-div#carrito ul.nav-tabs{
+div#carritoModal ul.nav-tabs{
     display: inline-block;
     position: relative;
     float: left;
     width: 100%;
     border: 1px solid #ff2c2c;
 }
-div#carrito ul.nav-tabs>li{
+div#carritoModal ul.nav-tabs>li{
     display: inline-block;
     position: relative;
     float: left;
     width: 50%;
     margin: 0px;
 }
-div#carrito ul.nav-tabs>li>a{
+div#carritoModal ul.nav-tabs>li>a{
     display: inline-block;
     position: relative;
     float: left;
@@ -214,7 +214,7 @@ div#carrito ul.nav-tabs>li>a{
     border: 0;
     color: #7d7d7d;
 }
-div#carrito ul.nav-tabs>li.active>a{
+div#carritoModal ul.nav-tabs>li.active>a{
     background-color: #ff2c2c;
     color: #FFFFFF;
 }

@@ -276,7 +276,7 @@ div#menu>div>div>ul>li.carrito{
 
 }
 div#menu>div>div>ul>li.carrito>a{
-
+    outline: none;
 }
 div#menu>div>div>ul>li.carrito>a>svg{
     display: inline-block;

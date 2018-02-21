@@ -54,20 +54,42 @@ class Cart_c extends CI_Controller {
 
   public function getProductosFromCarrito(){
     if ($this->cart->contents()) {
-      $counter=0;
-      $arrayResult=array();
+      $html='';
+      $counter=1;
       foreach ($this->cart->contents() as $item){
-        $arrayResult[$counter]['id']=$item['id'];
-				$arrayResult[$counter]['totalPrecioByProducto']=number_format($item['qty']*$item['price'], 2, '.', ',');
-        $arrayResult[$counter]['name']=$item['name'];
-        $arrayResult[$counter]['qty']=$item['qty'];
-				$arrayResult[$counter]['price']=number_format($item['price'], 2, '.', ',');
-        $arrayResult[$counter]['rowid']=$item['rowid'];
+        $IdProducto=$item['id'];
+        $Nombre=$item['name'];
+        $Cantidad=$item['qty'];
+        $Precio=number_format($item['price'], 2, '.', ',');
+        $Importe=number_format($item['qty']*$item['price'], 2, '.', ',');
+        $rowId=$item['rowid'];
+        $html.='
+          <tr IdProducto="'.$IdProducto.'">
+            <th scope="row">'.$counter.'</th>
+            <td class="text-left">'.$Nombre.'</td>
+            <td>
+              <div class="col-xs-12 nopadding dicrease">
+                  <div class="input">
+                      <input type="text" value="'.$Cantidad.'" id="Cantidad'.$IdProducto.'">
+                  </div>
+                  <a href="#" class="minus">
+                      <img src="assets/img/minusGrey.svg" alt="">
+                  </a>
+                  <a href="#" class="plus">
+                      <img src="assets/img/plusGrey.svg" alt="">
+                  </a>
+              </div>
+            </td>
+            <td>'.$Precio.'</td>
+            <td>'.$Importe.'</td>
+            <td></td>
+          </tr>
+        ';
         $counter++;
       }
-      print_r(json_encode($arrayResult));
+      print_r($html);
     }else{
-      echo "Nan";
+      echo "Carrito vacio";
     }
   }
 
