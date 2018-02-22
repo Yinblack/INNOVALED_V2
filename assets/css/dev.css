@@ -219,6 +219,18 @@ div#carritoModal ul.nav-tabs>li.active>a{
     color: #FFFFFF;
 }
 
+div#carritoModal a.delete{
+    display: inline-block;
+    position: relative;
+    float: none;
+    width: 25px;
+}
+div#carritoModal a.delete>img{
+    display: inline-block;
+    position: relative;
+    float: left;
+    width: 100%;
+}
 
 
 

@@ -53,18 +53,24 @@ class Cart_c extends CI_Controller {
   }
 
   public function getProductosFromCarrito(){
+    $configuracion=$this->Configuracion_m->getConfiguracion();
+    $iva=$configuracion['ImpuestoPorcentaje']/100;
     if ($this->cart->contents()) {
       $html='';
       $counter=1;
+      $SubtotalGeneral=0;
       foreach ($this->cart->contents() as $item){
         $IdProducto=$item['id'];
         $Nombre=$item['name'];
         $Cantidad=$item['qty'];
-        $Precio=number_format($item['price'], 2, '.', ',');
-        $Importe=number_format($item['qty']*$item['price'], 2, '.', ',');
+        $Precio=$item['price'];
+        $Subtotal=$Cantidad*$Precio;
+        $SubtotalGeneral=$SubtotalGeneral+$Subtotal;
+        $PrecioFormateado=number_format($Precio, 2, '.', ',');
+        $SubtotalFormateado=number_format($Subtotal, 2, '.', ',');
         $rowId=$item['rowid'];
         $html.='
-          <tr IdProducto="'.$IdProducto.'">
+          <tr id="'.$IdProducto.'" IdProducto="'.$IdProducto.'">
             <th scope="row">'.$counter.'</th>
             <td class="text-left">'.$Nombre.'</td>
             <td>
@@ -80,13 +86,38 @@ class Cart_c extends CI_Controller {
                   </a>
               </div>
             </td>
-            <td>'.$Precio.'</td>
-            <td>'.$Importe.'</td>
-            <td></td>
+            <td class="precio" precio="'.$PrecioFormateado.'">'.$PrecioFormateado.'</td>
+            <td class="importe" importe="'.$SubtotalFormateado.'">'.$SubtotalFormateado.'</td>
+            <td>
+              <a href="#" class="delete" onclick="deleteProductoFromCartModal('.$IdProducto.');">
+                <img src="assets/img/delete.svg" alt=""/>
+              </a>
+            </td>
           </tr>
         ';
         $counter++;
       }
+      $SubtotalGeneralConIva=($SubtotalGeneral*$iva)+$SubtotalGeneral;
+      $SubtotalGeneralFormateado=number_format($SubtotalGeneral, 2, '.', ',');
+      $SubtotalGeneralConIvaFormateado=number_format($SubtotalGeneralConIva, 2, '.', ',');
+      $html.='
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Subtotal</td>
+          <td id="subtotal">'.$SubtotalGeneralFormateado.'</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Total(IVA: '.$iva.')</td>
+          <td id="total" iva="'.$iva.'">'.$SubtotalGeneralConIvaFormateado.'</td>
+          <td></td>
+        </tr>
+      ';
       print_r($html);
     }else{
       echo "Carrito vacio";
@@ -94,34 +125,31 @@ class Cart_c extends CI_Controller {
   }
 
 	public function uploadQtyCart(){
-    $rowid =$_POST['rowid'];
-    $Qty   =$_POST['Qty'];
+    $IdProducto =$_POST['IdProducto'];
+    $Value      =$_POST['Value'];
 
 		foreach ($this->cart->contents() as $item){
-			if ($item['rowid']==$rowid){
-				$IdProducto=$item['id'];
+			if ($item['id']==$IdProducto){
+				$rowid=$item['rowid'];
 			}
 		}
 
 		$Producto=$this->Producto_m->getProductoByIdFix($IdProducto);
-		$porcentajeDescuento=$this->Cotizacion_m->getPrecioDescuento($IdProducto, $Qty);
+		$porcentajeDescuento=$this->Cotizacion_m->getPrecioDescuento($IdProducto, $Value);
 		if ($porcentajeDescuento!=false) {
 			$precioUnitario=$Producto['Precio']-(($Producto['Precio']*$porcentajeDescuento)/100);
 		}else{
 			$precioUnitario=$Producto['Precio'];
 		}
-
 		$data = array(
 				'rowid'  => $rowid,
 				'price'   => $precioUnitario,
-				'qty' => $Qty
+				'qty' => $Value
 		);
-		//print_r($this->cart->contents());
-		//die();
 		if ($this->cart->update($data)) {
-			echo "success";
+			echo "Success";
 		}else{
-			echo "error";
+			echo "Error";
 		}
 	}
 

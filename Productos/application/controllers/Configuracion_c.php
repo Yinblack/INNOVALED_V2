@@ -25,6 +25,12 @@ class Configuracion_c extends CI_Controller {
     	}
     }
 
+    public function getConfiguracion(){
+      $result=$this->Configuracion_m->getConfiguracion();
+      if ($result!=false) {
+        print($result);
+      }
+    }
 
 
 }

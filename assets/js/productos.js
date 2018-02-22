@@ -235,27 +235,3 @@ $("section#Productos div.productos").on("click", "div.dicrease>a", function(e){
         input.val(value);
     }
 });
-
-/*CAMBIO DE CANTIDAD EN CARRITO*/
-$("div#carrito tbody").on("click", "div.dicrease>a", function(e){
-    e.preventDefault();
-    var IdProducto=$(this).parent('div').parent('td').prev('td').prev('th').parent('tr').attr('IdProducto');
-    if ($(this).hasClass('minus')){
-      var input=$(this).prev('div').children('input');
-      var value=input.val();
-      value=parseInt(value);
-      value=value-1;
-    }else if ($(this).hasClass('plus')){
-      var input=$(this).prev('a').prev('div').children('input');
-      var value=input.val();
-      value=parseInt(value);
-      value++;
-    }
-    if (value>=1) {
-        input.val(value);
-        updateValueProductoCart(value, IdProducto);
-    }
-});
-function updateValueProductoCart(value, IdProducto){
-  console.log(value+'---'+IdProducto);
-}
