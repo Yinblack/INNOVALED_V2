@@ -25,7 +25,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 //$config['base_url'] = 'http://192.168.0.201:81/Vaeo_advance/Admin/';
 //$config['base_url'] = 'http://vekaconsulting.com/inova/';
-$config['base_url'] = 'http://localhost/INNOVALED_V2/Productos/';
+$config['base_url'] = 'http://localhost/INNOVALED_V2/Admin/';
 /*
 |--------------------------------------------------------------------------
 | Index File

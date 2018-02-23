@@ -38,7 +38,46 @@
   				  		</div>
   				  	</div>
   				  	<div role="tabpanel" class="tab-pane" id="quote">
-  				  		
+  				  		<form id="formCotizar" class="col-xs-12 noHorizontalPadding vxpadding">
+                    <div class="col-xs-12 col-sm-6 form-group"> 
+                        <label class="sr-only" for="exampleInputAmount">Nombre</label> 
+                        <div class="input-group"> 
+                            <div class="input-group-addon">Nombre</div> 
+                            <input class="form-control" id="nombre" name="nombre" placeholder="Nombre"> 
+                        </div> 
+                    </div>
+                    <div class="col-xs-12 col-sm-6 form-group"> 
+                        <label class="sr-only" for="exampleInputAmount">Correo</label> 
+                        <div class="input-group"> 
+                            <div class="input-group-addon">Correo</div> 
+                            <input class="form-control group" id="correo" name="correo" placeholder="Correo"> 
+                        </div> 
+                    </div>
+                    <div class="col-xs-12 col-sm-6 form-group"> 
+                        <label class="sr-only" for="exampleInputAmount">Telefono</label> 
+                        <div class="input-group"> 
+                            <div class="input-group-addon">Telefono</div> 
+                            <input class="form-control group" id="telefono" name="telefono" placeholder="Telefono"> 
+                        </div> 
+                    </div>
+                    <div class="col-xs-12 col-sm-6 form-group"> 
+                        <label class="sr-only" for="exampleInputAmount">Empresa</label> 
+                        <div class="input-group"> 
+                            <div class="input-group-addon">Empresa</div> 
+                            <input class="form-control" id="empresa" name="empresa" placeholder="Empresa"> 
+                        </div> 
+                    </div>
+                    <div class="col-xs-12 form-group"> 
+                        <label class="sr-only" for="exampleInputAmount">Observaciones</label> 
+                        <div class="input-group"> 
+                            <div class="input-group-addon">Observaciones</div>
+                            <textarea class="form-control" name="observaciones" id="observaciones" rows="5" placeholder="Observaciones"></textarea>
+                        </div> 
+                    </div>
+                </form>
+                <div class="col-xs-12">
+                  <a href="#" class="btn1 pull-right" id="btnCotizar">COTIZAR</a>
+                </div>
   				  	</div>
   				</div>
           	</div>
@@ -53,6 +92,7 @@
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.16.0/jquery.validate.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/additional-methods.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollReveal.js/3.3.6/scrollreveal.min.js"></script>
 <script src='assets/js/pnotify.custom.min.js'></script>
 <script src='assets/js/parallax.min.js'></script>

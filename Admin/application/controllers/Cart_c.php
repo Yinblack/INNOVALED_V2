@@ -909,16 +909,6 @@ class Cart_c extends CI_Controller {
       }
   }
 
-
-
-
-
-
-
-
-
-
-
 /*COTIZACION PRODUCTOS*/
 	public function sendCotizacion(){
 		$nombre        =$this->input->post('nombre');
@@ -1417,77 +1407,76 @@ class Cart_c extends CI_Controller {
                       </table>';
                       $counter=0;
                       $subTotal=0;
-                      foreach ($this->cart->contents() as $item):
+                      $configuracion=$this->Configuracion_m->getConfiguracion();
+                      $impuesto=$configuracion['ImpuestoPorcentaje']/100;
+                      foreach ($this->cart->contents() as $item){
                       	$counter++;
-
 												$porcentajeDescuento=$this->Cotizacion_m->getPrecioDescuento($item['id'], $item['qty']);
 												if ($porcentajeDescuento!=false) {
 													$precioUnitario=$item['price']-(($item['price']*$porcentajeDescuento)/100);
 												}else{
 													$precioUnitario=$item['price'];
 												}
-
-
                       	$subTotal=$subTotal+($precioUnitario*$item['qty']);
                       	$subTotalFormated=number_format($subTotal, 2);
 
-	                    	$Impuestos=$subTotal*.18;
+	                    	$Impuestos=$subTotal*$impuesto;
 	                    	$Impuestos=number_format($Impuestos, 2);
 
                       	$subTotalPorProducto=$precioUnitario*$item['qty'];
                       	$subTotalPorProducto = number_format($subTotalPorProducto, 2);
-                      $mensaje.='
-                      <!--  PRODUCTOS -->
-                      <table cellspacing="0" cellpadding="0" width="100%" bgcolor="#ffffff">
-                        <tr>
-                          <td class="mobile-block" align="center" width="5%">
-                            <table cellspacing="0" cellpadding="0" class="force-full-width">
-                              <tr>
-                                <td style="text-align: center;padding: 10px 5px 10px 5px;font-weight: 300;font-size: 15px;border-bottom: 1px solid #ddd;height: 50px;">
-                                  '.$counter.'
-                                </td>
-                              </tr>
-                            </table>
-                          </td>
-                          <td class="mobile-block" align="center" width="50%">
-                            <table cellspacing="0" cellpadding="0" class="force-full-width">
-                              <tr>
-                                <td style="text-align: center;padding: 10px 5px 10px 5px;font-weight: 300;font-size: 15px;border-bottom: 1px solid #ddd;height: 50px;">
-                                  '.$item['name'].'
-                                </td>
-                              </tr>
-                            </table>
-                          </td>
-                          <td class="mobile-block" align="center" width="15%">
-                            <table cellspacing="0" cellpadding="0" class="force-full-width">
-                              <tr>
-                                <td style="text-align: center;padding: 10px 5px 10px 5px;font-weight: 300;font-size: 15px;border-bottom: 1px solid #ddd;height: 50px;">
-                                  '.$item['qty'].'
-                                </td>
-                              </tr>
-                            </table>
-                          </td>
-                          <td class="mobile-block" align="center" width="15%">
-                            <table cellspacing="0" cellpadding="0" class="force-full-width">
-                              <tr>
-                                <td style="text-align: center;padding: 10px 5px 10px 5px;font-weight: 300;font-size: 15px;border-bottom: 1px solid #ddd;height: 50px;">
-                                  '.$precioUnitario.'
-                                </td>
-                              </tr>
-                            </table>
-                          </td>
-                          <td class="mobile-block" align="center" width="15%">
-                            <table cellspacing="0" cellpadding="0" class="force-full-width">
-                              <tr>
-                                <td style="text-align: center;padding: 10px 5px 10px 5px;font-weight: 300;font-size: 15px;border-bottom: 1px solid #ddd;height: 50px;">
-                                  '.$subTotalPorProducto.'
-                                </td>
-                              </tr>
-                            </table>
-                          </td>
-                        </tr>
-                      </table>';
-                      endforeach;
+                        $mensaje.='
+                          <!--  PRODUCTOS -->
+                          <table cellspacing="0" cellpadding="0" width="100%" bgcolor="#ffffff">
+                            <tr>
+                              <td class="mobile-block" align="center" width="5%">
+                                <table cellspacing="0" cellpadding="0" class="force-full-width">
+                                  <tr>
+                                    <td style="text-align: center;padding: 10px 5px 10px 5px;font-weight: 300;font-size: 15px;border-bottom: 1px solid #ddd;height: 50px;">
+                                      '.$counter.'
+                                    </td>
+                                  </tr>
+                                </table>
+                              </td>
+                              <td class="mobile-block" align="center" width="50%">
+                                <table cellspacing="0" cellpadding="0" class="force-full-width">
+                                  <tr>
+                                    <td style="text-align: center;padding: 10px 5px 10px 5px;font-weight: 300;font-size: 15px;border-bottom: 1px solid #ddd;height: 50px;">
+                                      '.$item['name'].'
+                                    </td>
+                                  </tr>
+                                </table>
+                              </td>
+                              <td class="mobile-block" align="center" width="15%">
+                                <table cellspacing="0" cellpadding="0" class="force-full-width">
+                                  <tr>
+                                    <td style="text-align: center;padding: 10px 5px 10px 5px;font-weight: 300;font-size: 15px;border-bottom: 1px solid #ddd;height: 50px;">
+                                      '.$item['qty'].'
+                                    </td>
+                                  </tr>
+                                </table>
+                              </td>
+                              <td class="mobile-block" align="center" width="15%">
+                                <table cellspacing="0" cellpadding="0" class="force-full-width">
+                                  <tr>
+                                    <td style="text-align: center;padding: 10px 5px 10px 5px;font-weight: 300;font-size: 15px;border-bottom: 1px solid #ddd;height: 50px;">
+                                      '.$precioUnitario.'
+                                    </td>
+                                  </tr>
+                                </table>
+                              </td>
+                              <td class="mobile-block" align="center" width="15%">
+                                <table cellspacing="0" cellpadding="0" class="force-full-width">
+                                  <tr>
+                                    <td style="text-align: center;padding: 10px 5px 10px 5px;font-weight: 300;font-size: 15px;border-bottom: 1px solid #ddd;height: 50px;">
+                                      '.$subTotalPorProducto.'
+                                    </td>
+                                  </tr>
+                                </table>
+                              </td>
+                            </tr>
+                          </table>';
+                        }
                       $mensaje.='
                       <!--  SUBTOTAL -->
                       <table cellspacing="0" cellpadding="0" width="100%" bgcolor="#f8fafa">
@@ -1704,67 +1693,62 @@ class Cart_c extends CI_Controller {
 </body>
 </html>
 			';
-      $subject = stripslashes('Cotizacion Innovaled');
+      $subject = stripslashes('Cotización Innovaled');
       $subject = iconv('UTF-8', 'windows-1252', $subject);
-
       require_once(APPPATH.'libraries/phpmailer/PHPMailerAutoload.php');
-			$mail = new PHPMailer;
-			//$mail->SMTPDebug = 3;                               // Enable verbose debug output
-			$mail->isSMTP();                                      // Set mailer to use SMTP
-			$mail->Host = 'in-v3.mailjet.com';  // Specify main and backup SMTP servers
-			$mail->SMTPAuth = true;                               // Enable SMTP authentication
-			$mail->Username = '312aee5a0d2831720b12e1f3cc069e18';                 // SMTP username
-			$mail->Password = 'cfd5c6b31a51a06e5b13d7f6c80d2494';                           // SMTP password
-			$mail->SMTPSecure = 'TLS';                            // Enable TLS encryption, `ssl` also accepted
-			$mail->Port = 25;                                    // TCP port to connect to
-
-			$mail->setFrom('ventas@innovaled.pe', $subject);
-			$email=$this->Configuracion_m->getConfiguracion();
-			if ($email['Correo1']!='') {
-				$emaila=$email['Correo1'];
+      $mail = new PHPMailer;
+      $mail->isSMTP();
+      $mail->Host = 'in-v3.mailjet.com';
+      $mail->SMTPAuth = true;
+      $mail->Username = '312aee5a0d2831720b12e1f3cc069e18';
+      $mail->Password = 'cfd5c6b31a51a06e5b13d7f6c80d2494';
+      $mail->SMTPSecure = 'TLS';
+      $mail->Port = 587;
+      $mail->setFrom('contacto@bloque9.net','Mailer');
+			if ($configuracion['Correo1']!='') {
+				$emaila=$configuracion['Correo1'];
 				$mail->addAddress($emaila);
 			}
-			if ($email['Correo2']!='') {
-				$emailb=$email['Correo2'];
+			if ($configuracion['Correo2']!='') {
+				$emailb=$configuracion['Correo2'];
 				$mail->addAddress($emailb);
 			}
-			if ($email['Correo3']!='') {
-				$emailc=$email['Correo3'];
+			if ($configuracion['Correo3']!='') {
+				$emailc=$configuracion['Correo3'];
 				$mail->addAddress($emailc);
 			}
-			if ($email['Correo4']!='') {
-				$emaild=$email['Correo4'];
+			if ($configuracion['Correo4']!='') {
+				$emaild=$configuracion['Correo4'];
 				$mail->addAddress($emaild);
 			}
-			if ($email['Correo5']!='') {
-				$emaile=$email['Correo5'];
+			if ($configuracion['Correo5']!='') {
+				$emaile=$configuracion['Correo5'];
 				$mail->addAddress($emaile);
 			}
 			if ($correo!='') {
 				$mail->addAddress($correo, 'Custom');
 			}
 			$mail->isHTML(true);
-
 			$mail->Subject = $subject;
 			$mail->Body    = $mensaje;
 			$mail->AltBody = '';
-
-			if(!$mail->send()) {
-			    echo 'Ocurrio un error al enviar el mensaje (Por favor intentelo nuevamente).';
-			} else {
-				$dataPersona = array(
-					'NombreCliente' => $nombre,
-					'Correo'        => $correo,
-					'Telefono'      => $telefono,
-					'Empresa'       => $empresa,
-					'Descripcion'   => $observaciones,
-					'Tipo'          => 'producto'
-					);
-				;
-				$idCotizacion=$this->saveCotizacionProducto($dataPersona);
-				if ($idCotizacion!=false) {
-					echo $idCotizacion;
-				}
+			if($mail->send()){
+        $dataPersona = array(
+          'NombreCliente' => $nombre,
+          'Correo'        => $correo,
+          'Telefono'      => $telefono,
+          'Empresa'       => $empresa,
+          'Descripcion'   => $observaciones,
+          'Tipo'          => 'producto'
+        );
+        if ($this->saveCotizacionProducto($dataPersona)) {
+          echo "Success";
+        }else{
+          echo "error al guardar en DB";
+        }
+			}else{
+          print_r('Ocurrio un error al enviar el mensaje.');
+          die();
 			}
 	}
 
@@ -1778,14 +1762,11 @@ class Cart_c extends CI_Controller {
 					'Qty'          => $item['qty']
 					);
 				if ($this->Cotizacion_m->saveCotizacionProducto($dataCotizacionProducto)) {
-					$estatus=true;
+					$this->cart->destroy();
+          return true;
 				}else{
-					$estatus=false;
+					return false;
 				}
-			}
-			if ($estatus) {
-				$this->cart->destroy();
-				return $IdCotizacion;
 			}
 		}
 	}

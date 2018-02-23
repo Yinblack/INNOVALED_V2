@@ -122,3 +122,84 @@ function refreshTotal(){
   $('td#subtotal').html(subtotalFormateado);
   $('td#total').html(totalFormateado);
 }
+
+$('a#btnCotizar').click(function(e){
+  e.preventDefault();
+  var form=$("form#formCotizar");
+  if ($(form).valid()) {
+    console.log('valido');
+    sendCotizacion(form);
+  }else{
+    console.log('no es valido :D');
+  }
+});
+
+$( document ).ready(function() {
+  $("form#formCotizar").validate({
+    rules: {
+      "nombre":     {
+      required :true
+      },
+      "correo":     {
+      require_from_group: [1, ".group"],
+      email: true
+      },
+      "telefono":     {
+      require_from_group: [1, ".group"],
+      number: true,
+      maxlength: 16,
+      minlength: 8
+      }
+    },
+    messages: {
+      "nombre":     {
+      required :"Este campo es obligatorio."
+      },
+      "correo":     {
+      require_from_group :"Complete uno de estos campos.",
+      email :"El Email no es valido."
+      },
+      "telefono":     {
+      require_from_group :"Complete uno de estos campos.",
+      number:"Numero de telefono no valido",
+      maxlength:"Numero demasiado largo",
+      minlength:"Numero demasiado corto"
+      }
+    }
+  });
+});
+
+function sendCotizacion(form){
+    var formData = new FormData($(form)[0]);
+    $.ajax({
+        url: window.base_url+'Cart_c/sendCotizacion',
+        type: 'POST',
+        data: formData,
+        cache: false,
+        contentType: false,
+        processData: false,
+        beforeSend: function(){
+            $('a#btnCotizar').css('pointer-events','none');
+            $('a#btnCotizar').css('opacity','.5');
+            console.log('Procesando');
+        },
+        success: function(data){
+          if (data=='Success') {
+            notification('La cotización ha sido enviada', '', 'success');
+            $('#carritoModal').modal('hide');
+            $('section#Productos div.tabsGeneral div.item div.subItem>a').removeClass('active');
+            $('#containerProductos').empty();
+            $('form#formCotizar')[0].reset();
+            $('a#btnCotizar').css('pointer-events','auto');
+            $('a#btnCotizar').css('opacity','1');
+          }
+          console.log(data);
+        },
+        error: function(data){
+            $('a#btnCotizar').css('pointer-events','auto');
+            $('a#btnCotizar').css('opacity','1');
+            console.log('Error Ajax Peticion');
+            console.log(data);
+        }
+    });
+}

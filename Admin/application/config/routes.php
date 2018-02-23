@@ -4,8 +4,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 //WEBPAGE
 $route['test'] = 'WebPage_c/test';
 
-$route['Home'] = 'WebPage_c/Home';
-$route['index'] = 'WebPage_c/index';
+//$route['Home'] = 'WebPage_c/Home';
+//$route['index'] = 'WebPage_c/index';
 $route['Carrito'] = 'WebPage_c/Carrito';
 $route['Productos'] = 'WebPage_c/Productos';
 $route['DetalleProducto'] = 'WebPage_c/DetalleProducto';
@@ -17,7 +17,8 @@ $route['DetalleProductoTwo'] = 'WebPage_c/DetalleProductoTwo';
 
 
 
-
+$route['Home'] = 'Admin_index_c/index';
+$route['index'] = 'Admin_index_c/index';
 $route['Admin'] = 'Admin_index_c/index';
 //Productos
 $route['ListProductos'] = 'Admin_c/ListProductos';
@@ -76,6 +77,6 @@ $route['Pago'] = 'Cpanel/Pago';
 $route['LogOut'] = 'Persona_c/LogOut';/*RUTA NO ACCESIBLE*/
 //Default
 
-$route['default_controller'] = 'WebPage_c';
+$route['default_controller'] = 'Admin_index_c';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

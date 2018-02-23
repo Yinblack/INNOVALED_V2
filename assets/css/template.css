@@ -97,7 +97,15 @@ footer>section
     -ms-flex-pack: flex-start;
     justify-content: flex-start;
 }
-
+label.error{
+    display: inline-block;
+    position: relative;
+    float: left;
+    color: #ff2c2c;
+    font-size: 14px;
+    font-weight: 100;
+    margin: 0;
+}
 .fullHeight{
     min-height: 100vh;
 }

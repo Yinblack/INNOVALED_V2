@@ -1,5 +1,5 @@
 var base_url;
-window.base_url = "http://localhost/INNOVALED_V2/Productos/";
+window.base_url = "http://localhost/INNOVALED_V2/Admin/";
 $( document ).ready(function() {
     $('#principal').parallax();
     window.sr = ScrollReveal({ duration: 1000 }).reveal('.reveal');

@@ -63,7 +63,7 @@
                             </li>
                             -->
                             <li><a href="Configuracion"><span class="nav-icon-hexa text-bloody-100">Cf</span> Configuración</a></li>
-                            <li><a href="Home" target="_blank"><span class="nav-icon-hexa text-bloody-100">Ws</span> WebSite</a></li>
+                            <li><a href="../" target="_blank"><span class="nav-icon-hexa text-bloody-100">Ws</span> WebSite</a></li>
                         </ul>
                     </nav>
                 </div>
