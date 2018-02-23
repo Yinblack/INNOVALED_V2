@@ -2,7 +2,23 @@ var base_url;
 window.base_url = "http://localhost/INNOVALED_V2/Admin/";
 $( document ).ready(function() {
     $('#principal').parallax();
-    window.sr = ScrollReveal({ duration: 1000 }).reveal('.reveal');
+
+window.sr = ScrollReveal();
+sr.reveal('.revealBack', { 
+      duration: 1000,
+      origin: 'bottom',
+      distance: '20px',
+      delay: 500,
+      scale: 5
+    });
+sr.reveal('.revealBottom', { 
+      duration: 1250,
+      origin: 'bottom',
+      distance: '20px',
+      delay: 1000,
+      scale: 0.5 
+    });
+
 });
 
 

@@ -245,7 +245,7 @@ div#menu>div>div>ul>li>a{
     padding: 5px 0px;
     color: #FFFFFF;
     font-size: 17px;
-    text-shadow: 1px 1px #f00;
+    text-shadow: 1px 1px #000;
     font-weight: 500;
     pointer-events: auto;
 }

@@ -483,7 +483,7 @@ class Producto_m extends CI_Model {
                             <div class="sect col-xs-12 col-sm-8 col-md-9 nopadding">
                                 <div class="col-xs-12 col-sm-3 height">
                                     '.$html1.'
-                                    <img src="Productos/assets/img/Productos/'.$IdProducto.'/img_1.jpg" alt="" class="product">
+                                    <img src="Admin/assets/img/Productos/'.$IdProducto.'/img_1.jpg" alt="" class="product">
                                 </div>
                                 <div class="col-xs-12 col-sm-6 height text-left">
                                     <h5 class="col-xs-12 noHorizontalPadding vpadding nopaddingBottom nomargin bold textWhite">'.$NombreProducto.'</h5>

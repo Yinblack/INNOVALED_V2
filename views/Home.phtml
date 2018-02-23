@@ -1,11 +1,11 @@
 <section id="Home" style="background-image: url('assets/img/img_1.jpg');">
-	<div class="vertical backImage" style="background-image: url('assets/img/img_2.svg');"></div>
+	<div class="vertical backImage revealBack" style="background-image: url('assets/img/img_2.svg');"></div>
 	<div class="vertical contentV">
 		<div class="container">
 			<div class="row text-center">
 				<div class="col-xs-12 nopadding">
 					<div class="col-xs-12 nopadding text-left">
-						<h1 class="extra-bold vpadding textWhite lined">Especialistas en Calidad,
+						<h1 class="extra-bold vpadding textWhite lined revealBottom">Especialistas en Calidad,
 						<br>Eficiencia y ahorro.</h1>
 					</div>
 				</div>
@@ -70,7 +70,7 @@ $sublineas = mysql_query($querySublineas) or die('Consulta fallida: ' . mysql_er
 								<div class="col-xs-12 nopadding subItem text-center">
 									<a href="<?=$arraySublineas[$keyTwo]['IdSubLinea'];?>" class="col-xs-12 nopadding centered">
 										<div class="col-xs-12 nopadding img">
-											<img src="Productos/assets/img/Sublineas/<?=$arraySublineas[$keyTwo]['IdSubLinea'];?>/img.png" alt="">
+											<img src="Admin/assets/img/Sublineas/<?=$arraySublineas[$keyTwo]['IdSubLinea'];?>/img.png" alt="">
 										</div>
 										<div class="col-xs-12 nopadding text-center">
 											<span><?=$arraySublineas[$keyTwo]['Etiqueta'];?></span>
