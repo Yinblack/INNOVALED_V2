@@ -3,6 +3,7 @@ body{
     width: 100%;
     position: relative;
     display: block;
+    overflow-x: hidden;
 }
 
 body>section,
@@ -173,13 +174,56 @@ div#hamburgerMenu>div>a{
     display: inline-block;
     position: relative;
     float: right;
-    padding: 25px 5px;
+    padding: 18px 5px;
     -webkit-transition: all .25s ease;
-       -moz-transition: all .25s ease;
-        -ms-transition: all .25s ease;
-         -o-transition: all .25s ease;
-            transition: all .25s ease;
+    -moz-transition: all .25s ease;
+    -ms-transition: all .25s ease;
+    -o-transition: all .25s ease;
+    transition: all .25s ease;
 }
+div#hamburgerMenu>div>a.search{
+    pointer-events: none;
+}
+div#hamburgerMenu>div>a.search>input{
+    display: inline-block;
+    position: relative;
+    float: left;
+    width: 0px;
+    opacity: 0;
+    pointer-events: none;
+    height: 40px;
+    border-radius: 5px;
+    padding: 0px 10px;
+    color: #FFFFFF;
+    font-weight: 100;
+    z-index: 1;
+    background-color: rgba(39, 39, 39, 0.75);
+    outline: none;
+    border: none;
+    -webkit-transition: all .45s ease;
+    -moz-transition: all .45s ease;
+    -ms-transition: all .45s ease;
+    -o-transition: all .45s ease;
+    transition: all .45s ease;
+}
+div#hamburgerMenu>div>a.search>input.active{
+    width: 200px;
+    opacity: 1;
+    pointer-events: auto;
+}
+div#hamburgerMenu>div>a.search>svg{
+    cursor: pointer;
+    pointer-events: auto;
+    position: absolute;
+    right: 12px;
+    top: 0px;
+    bottom: 0px;
+    margin: auto 0px;
+    z-index: 2;
+    width: 20px;
+}
+
+
 div#hamburgerMenu>div>a:hover{
     opacity: .7;
 }
@@ -197,6 +241,7 @@ div#hamburgerMenu>div>button{
     position: relative;
     float: right;
     padding: 25px 20px;
+    outline: none;
 }
 div#hamburgerMenu>div>button .hamburger-inner, div#hamburgerMenu>div>button .hamburger-inner:after, div#hamburgerMenu>div>button .hamburger-inner:before{
     background-color: #FFFFFF;
@@ -242,7 +287,7 @@ div#menu>div>div>ul>li>a{
     position: relative;
     float: left;
     width: 100%;
-    padding: 5px 0px;
+    padding: 3vh 0px;
     color: #FFFFFF;
     font-size: 17px;
     text-shadow: 1px 1px #000;
@@ -254,10 +299,10 @@ div#menu>div>div>ul>li>a:before{
     display: inline-block;
     position: absolute;
     right: -20px;
-    top: 2px;
-    bottom: 0;
+    top: 0px;
+    bottom: 0px;
+    height: 15vh;
     width: 2px;
-    height: 50px;
     background-color: #FFFFFF;
     margin: auto 0px;
 }
@@ -297,9 +342,11 @@ div#menu>div>div>ul>li.carrito>a>svg circle{
     fill: #ff0000;
 }
 div#menu>div>div>ul>li.carrito>a:before {
-    height: 60px;
+    content: none;
 }
-
+div#menu>div>div>ul>li.carrito>a:after{
+    content: none;
+}
 
 
 @media (max-width : 1200px) {

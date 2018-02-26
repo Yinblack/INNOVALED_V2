@@ -7,21 +7,30 @@ window.sr = ScrollReveal();
 sr.reveal('.revealBack', { 
       duration: 1000,
       origin: 'bottom',
-      distance: '20px',
-      delay: 500,
-      scale: 5
+      distance: '50px',
+      delay: 250,
+      scale: 1.2
     });
 sr.reveal('.revealBottom', { 
       duration: 1250,
       origin: 'bottom',
       distance: '20px',
-      delay: 1000,
+      delay: 750,
       scale: 0.5 
     });
-
 });
 
-
+/*MENU AUTO*/
+/*
+$(window).scroll(function (event) {
+    var scroll = $(window).scrollTop();
+    var position = $('section#Home').position();
+    var bottomPos=position.top;
+    var height=$('section#Home').height();
+    console.log(bottomPos);
+    console.log(height);
+});
+*/
 $('.scrollTo').click(function(e){
   if ($(window).width() < 768) {
 	  if ($('div#menu').is(":visible")) {
@@ -57,9 +66,9 @@ window.addEventListener("load", function () {
 $(".hamburger").click(function(){
     $(this).toggleClass("is-active");
     if ($( this ).hasClass( "is-active" )) {
-    	$("div#menu").slideDown(500);
+    	$("div#menu").slideDown(750);
     }else{
-    	$("div#menu").slideUp(500);
+    	$("div#menu").slideUp(750);
     }
 });
 
@@ -77,6 +86,15 @@ $( document ).ready(function() {
     draggable: false
   });
   $('div#slideProjects').slick({
+    arrows: false,
+    dots: false,
+    infinite: false,
+    speed: 300,
+    slidesToShow: 1,
+    autoplay: false,
+    draggable: false
+  });
+  $('#slideMarcas').slick({
     arrows: false,
     dots: false,
     infinite: false,
@@ -103,6 +121,15 @@ $("section#proyectos ul.projectList>li>a").click(function(e){
       $(this).addClass('active');
       var index=$(this).attr('href');
       $('div#slideProjects').slick('slickGoTo', index);
+    }
+});
+$("section#Empresas div.tabBrand>div a").click(function(e){
+  e.preventDefault();
+    if (!$( this ).hasClass( "active" )) {
+      $("section#Empresas div.tabBrand>div a").removeClass('active');
+      $(this).addClass('active');
+      var index=$(this).attr('slideTo');
+      $('#slideMarcas').slick('slickGoTo', index);
     }
 });
 $("div#menu>div>div>ul>li>a.scroll").click(function(e){
@@ -134,3 +161,14 @@ function notification(tittle, text, type){
     type: type
   });
 }
+
+
+$("div#hamburgerMenu>div>a.search>svg").click(function(e){
+  e.preventDefault();
+  var element=$(this).prev('input');
+  if (element.hasClass('active')) {
+    element.removeClass('active');
+  }else{
+    element.addClass('active');
+  }
+});

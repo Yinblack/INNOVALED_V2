@@ -446,73 +446,6 @@ section#Experiencia div.vertical.backImage{
     background-size: cover;
 }
 
-section#ClientesMarcasPartners{
-    height: 100vh;
-    background-color: #b94e85;
-}
-section#ClientesMarcasPartners div.ulContent{
-
-}
-section#ClientesMarcasPartners div.ulContent>div{
-    display: inline-block;
-    position: relative;
-    width: auto;
-}
-section#ClientesMarcasPartners div.ulContent>div>ul{
-    display: inline-block;
-    position: relative;
-    float: left;
-    list-style-type: none;
-    -webkit-margin-before: 0;
-    -webkit-margin-after: 0;
-    -webkit-margin-start: 0;
-    -webkit-margin-end: 0;
-    -webkit-padding-start: 0;
-}
-section#ClientesMarcasPartners div.ulContent>div>ul>li{
-    display: inline-block;
-    position: relative;
-    float: left;
-    width: 185px;
-    height: 120px;
-}
-section#ClientesMarcasPartners div.ulContent>div>ul>li:after{
-    content: '';
-    display: inline-block;
-    position: absolute;
-    height: 100%;
-    width: 2px;
-    background-color: #FFFFFF;
-    right: 0;
-    top: 0;
-    bottom: 0;
-}
-section#ClientesMarcasPartners div.ulContent>div>ul>li>div>a{
-    display: inline-block;
-    position: relative;
-    float: left;
-    width: 100%;
-    padding: 15px 0px;
-    margin: 0px 0px;
-    font-size: 30px;
-    text-align: center;
-    -webkit-transition: all .25s ease;
-       -moz-transition: all .25s ease;
-        -ms-transition: all .25s ease;
-         -o-transition: all .25s ease;
-            transition: all .25s ease;
-}
-section#ClientesMarcasPartners div.ulContent>div>ul>li>div>a:hover{
-    opacity: .7;
-    color: #FFFFFF;
-}
-section#ClientesMarcasPartners div.vertical.backImage{
-    height: 100%;
-    background-position: 50% 50%;
-    background-size: 100%;
-    background-size: cover;
-}
-
 section#Servicios_1{
     height: 100vh;
     background-color: #272727;
@@ -649,23 +582,57 @@ section#anios img.img20{
     width: 500px;
 }
 
-section#nuestrosClientes{
+section#Empresas{
     height: 100vh;
     background-color: #FFFFFF;
 }
-section#nuestrosClientes div.vertical.backDark{
+section#Empresas div.vertical.backDark{
     background-color: rgba(0, 0, 0, 0.14);
 }
-section#nuestrosClientes div.vertical.backImage{
+section#Empresas div.vertical.backImage{
     height: 100%;
     background-position: 50% 50%;
     background-size: 100%;
     background-size: cover;
 }
-section#nuestrosClientes div.item{
+
+section#Empresas div.tabBrand:after{
+    content: '';
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto 0px;
+    width: 2px;
+    height: 75px;
+    background-color: #b8b8b8;
+}
+section#Empresas div.tabBrand>div{
+    width: 200px;
+    height: 65px;
+}
+section#Empresas div.tabBrand>div a{
+    font-size: 25px;
+    font-weight: 900;
+    line-height: 1.2;
+    -webkit-transition: all .25s ease;
+    -moz-transition: all .25s ease;
+    -ms-transition: all .25s ease;
+    -o-transition: all .25s ease;
+    transition: all .25s ease;
+}
+section#Empresas div.tabBrand>div a.active{
+    color: #d7258f;
+}
+
+section#Empresas div.itemContentTab{
+    outline: none;
+}
+section#Empresas div.itemContentTab.nuestrosClientes>div.item{
     height: 100px;
 }
-section#nuestrosClientes div.item>img{
+section#Empresas div.itemContentTab.nuestrosClientes>div.item>img{
     display: inline-block;
     position: absolute;
     top: 0;
@@ -677,7 +644,7 @@ section#nuestrosClientes div.item>img{
     height: auto;
     margin: auto;
 }
-section#nuestrosClientes div.item:before{
+section#Empresas div.itemContentTab.nuestrosClientes>div.item:before{
     content: '';
     display: inline-block;
     position: absolute;
@@ -688,7 +655,7 @@ section#nuestrosClientes div.item:before{
     bottom: 0;
     background-color: #d9d9d9;
 }
-section#nuestrosClientes div.item:after{
+section#Empresas div.itemContentTab.nuestrosClientes>div.item:after{
     content: '';
     display: inline-block;
     position: absolute;
@@ -700,7 +667,7 @@ section#nuestrosClientes div.item:after{
     background-color: #d9d9d9;
     margin: auto 0px;
 }
-section#nuestrosClientes div.item>div{
+section#Empresas div.itemContentTab.nuestrosClientes>div.item>div{
     display: inline-block;
     position: absolute;
     width: 18px;
@@ -710,7 +677,7 @@ section#nuestrosClientes div.item>div{
     bottom: -9px;
     border-radius: 50%;
 }
-section#nuestrosClientes div.item>div:after{
+section#Empresas div.itemContentTab.nuestrosClientes>div.item>div:after{
     content: '';
     display: inline-block;
     position: absolute;
@@ -724,6 +691,140 @@ section#nuestrosClientes div.item>div:after{
     background-color: #FFFFFF;
     border-radius: 50%;
 }
+section#Empresas div.itemContentTab.marcas>div.item{
+    height: 125px;
+}
+section#Empresas div.itemContentTab.marcas>div.item>img{
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    max-width: 50%;
+    max-height: 50%;
+    height: auto;
+    margin: auto;
+}
+section#Empresas div.itemContentTab.marcas>div.item:before{
+    content: '';
+    display: inline-block;
+    position: absolute;
+    width: auto;
+    height: 2px;
+    left: 50px;
+    right: 50px;
+    bottom: 0;
+    background-color: #d9d9d9;
+}
+section#Empresas div.itemContentTab.marcas>div.item:after{
+    content: '';
+    display: inline-block;
+    position: absolute;
+    width: 2px;
+    height: 60%;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: #d9d9d9;
+    margin: auto 0px;
+}
+section#Empresas div.itemContentTab.marcas>div.item:nth-child(2):after, section#Empresas div.itemContentTab.marcas>div.item:nth-child(2):after{
+    display: none;
+}
+section#Empresas div.itemContentTab.marcas>div.item>div{
+    display: inline-block;
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    background-color: #d9d9d9;
+    right: -9px;
+    bottom: -9px;
+    border-radius: 50%;
+}
+section#Empresas div.itemContentTab.marcas>div.item>div:after{
+    content: '';
+    display: inline-block;
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background-color: #FFFFFF;
+    border-radius: 50%;
+}
+section#Empresas div.itemContentTab.partners>div.item{
+    height: 125px;
+}
+section#Empresas div.itemContentTab.partners>div.item>img{
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    max-width: 50%;
+    max-height: 50%;
+    height: auto;
+    margin: auto;
+}
+section#Empresas div.itemContentTab.partners>div.item:before{
+    content: '';
+    display: inline-block;
+    position: absolute;
+    width: auto;
+    height: 2px;
+    left: 50px;
+    right: 50px;
+    bottom: 0;
+    background-color: #d9d9d9;
+}
+section#Empresas div.itemContentTab.partners>div.item:after{
+    content: '';
+    display: inline-block;
+    position: absolute;
+    width: 2px;
+    height: 60%;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: #d9d9d9;
+    margin: auto 0px;
+}
+section#Empresas div.itemContentTab.partners>div.item:nth-child(3):after, section#Empresas div.itemContentTab.partners>div.item:nth-child(3):after{
+    display: none;
+}
+section#Empresas div.itemContentTab.partners>div.item:nth-child(5):after, section#Empresas div.itemContentTab.partners>div.item:nth-child(5):after{
+    display: none;
+}
+section#Empresas div.itemContentTab.partners>div.item>div{
+    display: inline-block;
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    background-color: #d9d9d9;
+    right: -9px;
+    bottom: -9px;
+    border-radius: 50%;
+}
+section#Empresas div.itemContentTab.partners>div.item>div:after{
+    content: '';
+    display: inline-block;
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background-color: #FFFFFF;
+    border-radius: 50%;
+}
+
 
 section#proyectos{
     height: 100vh;
@@ -895,166 +996,6 @@ section#proyectos1Anio div.vertical.backImage{
     background-size: cover;
 }
 
-section#Marcas{
-    height: 100vh;
-    background-color: #FFFFFF;
-}
-section#Marcas div.vertical.backDark{
-    background-color: rgba(0, 0, 0, 0.14);
-}
-section#Marcas div.vertical.backImage{
-    height: 100%;
-    background-position: 50% 50%;
-    background-size: 100%;
-    background-size: cover;
-}
-section#Marcas div.item{
-    height: 125px;
-}
-section#Marcas div.item>img{
-    display: inline-block;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    max-width: 50%;
-    max-height: 50%;
-    height: auto;
-    margin: auto;
-}
-section#Marcas div.item:before{
-    content: '';
-    display: inline-block;
-    position: absolute;
-    width: auto;
-    height: 2px;
-    left: 50px;
-    right: 50px;
-    bottom: 0;
-    background-color: #d9d9d9;
-}
-section#Marcas div.item:after{
-    content: '';
-    display: inline-block;
-    position: absolute;
-    width: 2px;
-    height: 60%;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    background-color: #d9d9d9;
-    margin: auto 0px;
-}
-section#Marcas div.item:nth-child(2):after, section#Marcas div.item:nth-child(2):after{
-    display: none;
-}
-section#Marcas div.item>div{
-    display: inline-block;
-    position: absolute;
-    width: 18px;
-    height: 18px;
-    background-color: #d9d9d9;
-    right: -9px;
-    bottom: -9px;
-    border-radius: 50%;
-}
-section#Marcas div.item>div:after{
-    content: '';
-    display: inline-block;
-    position: absolute;
-    width: 12px;
-    height: 12px;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
-    background-color: #FFFFFF;
-    border-radius: 50%;
-}
-
-section#Partners{
-    height: 100vh;
-    background-color: #FFFFFF;
-}
-section#Partners div.vertical.backDark{
-    background-color: rgba(0, 0, 0, 0.14);
-}
-section#Partners div.vertical.backImage{
-    height: 100%;
-    background-position: 50% 50%;
-    background-size: 100%;
-    background-size: cover;
-}
-section#Partners div.item{
-    height: 125px;
-}
-section#Partners div.item>img{
-    display: inline-block;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    max-width: 50%;
-    max-height: 50%;
-    height: auto;
-    margin: auto;
-}
-section#Partners div.item:before{
-    content: '';
-    display: inline-block;
-    position: absolute;
-    width: auto;
-    height: 2px;
-    left: 50px;
-    right: 50px;
-    bottom: 0;
-    background-color: #d9d9d9;
-}
-section#Partners div.item:after{
-    content: '';
-    display: inline-block;
-    position: absolute;
-    width: 2px;
-    height: 60%;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    background-color: #d9d9d9;
-    margin: auto 0px;
-}
-section#Partners div.item:nth-child(3):after, section#Partners div.item:nth-child(3):after{
-    display: none;
-}
-section#Partners div.item:nth-child(5):after, section#Partners div.item:nth-child(5):after{
-    display: none;
-}
-section#Partners div.item>div{
-    display: inline-block;
-    position: absolute;
-    width: 18px;
-    height: 18px;
-    background-color: #d9d9d9;
-    right: -9px;
-    bottom: -9px;
-    border-radius: 50%;
-}
-section#Partners div.item>div:after{
-    content: '';
-    display: inline-block;
-    position: absolute;
-    width: 12px;
-    height: 12px;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
-    background-color: #FFFFFF;
-    border-radius: 50%;
-}
 
 section#Innovaled{
     height: 100vh;
@@ -1213,6 +1154,33 @@ section#footer img.logoFooter{
     width: 200px;
 }
 
+section#formasPago{
+    background-color: #464951;
+}
+section#formasPago div.centered{
+    display: inline-flex;
+}
+section#formasPago a.icon{
+    display: inline-block;
+    position: relative;
+    float: left;
+    padding: 10px 25px;
+}
+section#formasPago a.icon>i{
+    display: inline-block;
+    position: relative;
+    float: left;
+    color: #FFFFFF;
+    font-size: 25px;
+    -webkit-transition: color .25s ease;
+       -moz-transition: color .25s ease;
+        -ms-transition: color .25s ease;
+         -o-transition: color .25s ease;
+            transition: color .25s ease;
+}
+section#formasPago a.icon:hover>i{
+    color: #e81319;
+}
 
 section#copyright{
     background-color: #343942;
