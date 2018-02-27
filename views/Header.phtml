@@ -28,7 +28,7 @@
 </div>
 
 <div id="hamburgerMenu">
-	<a href="#" class="scrollTo">
+	<a href="index">
 		<img src="assets/img/logo.png" class="logoMovile" alt="">
 	</a>
 	<div>
@@ -61,11 +61,19 @@
 						</svg>
 					</a>
 				</li>
-				<li class=""><a class="scroll active" href="#Home">Home</a></li>
-				<li class=""><a class="scroll" href="#Productos">Productos</a></li>
-				<li class=""><a class="scroll" href="#Servicios_1">Servicios</a></li>
-				<li class=""><a class="scroll" href="#Empresas">Nosotros</a></li>
-				<li class=""><a class="scroll" href="#proyectos">Proyectos</a></li>
+				<?php if (isset($this->productos)): ?>
+					<li class=""><a href="index#Home">Home</a></li>
+					<li class=""><a href="productos" class="active">Productos</a></li>
+					<li class=""><a href="index#Servicios_1">Servicios</a></li>
+					<li class=""><a href="index#Empresas">Nosotros</a></li>
+					<li class=""><a href="index#proyectos">Proyectos</a></li>
+				<?php else: ?>
+					<li class=""><a class="scroll home" href="#Home">Home</a></li>
+					<li class=""><a href="productos">Productos</a></li>
+					<li class=""><a class="scroll servicios" href="#Servicios_1">Servicios</a></li>
+					<li class=""><a class="scroll nosotros" href="#Empresas">Nosotros</a></li>
+					<li class=""><a class="scroll proyectos" href="#proyectos">Proyectos</a></li>
+				<?php endif ?>
 			</ul>
 		</div>
 	</div>

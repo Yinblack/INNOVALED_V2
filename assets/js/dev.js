@@ -8,29 +8,18 @@ sr.reveal('.revealBack', {
       duration: 1000,
       origin: 'bottom',
       distance: '50px',
-      delay: 250,
+      delay: 150,
       scale: 1.2
     });
 sr.reveal('.revealBottom', { 
       duration: 1250,
       origin: 'bottom',
       distance: '20px',
-      delay: 750,
+      delay: 500,
       scale: 0.5 
     });
 });
 
-/*MENU AUTO*/
-/*
-$(window).scroll(function (event) {
-    var scroll = $(window).scrollTop();
-    var position = $('section#Home').position();
-    var bottomPos=position.top;
-    var height=$('section#Home').height();
-    console.log(bottomPos);
-    console.log(height);
-});
-*/
 $('.scrollTo').click(function(e){
   if ($(window).width() < 768) {
 	  if ($('div#menu').is(":visible")) {
@@ -58,6 +47,8 @@ window.addEventListener("load", function () {
 (function listen () {
     if (window.loaded) {
       $('div.loaderPage').hide();
+      $("section#Productos div.tabsGeneral div.item div.subItem>a.firstElement").trigger('click');
+      $("section#Productos div.tabsGeneral div.item div.subItem>a.firstElement").addClass('active');
     } else {
       window.setTimeout(listen, 50);
     }
@@ -102,6 +93,15 @@ $( document ).ready(function() {
     slidesToShow: 1,
     autoplay: false,
     draggable: false
+  });
+  $(' section#Home').slick({
+    arrows: true,
+    dots: false,
+    infinite: true,
+    autoplaySpeed: 2500,
+    speed: 750,
+    slidesToShow: 1,
+    autoplay: true
   });
 });
 

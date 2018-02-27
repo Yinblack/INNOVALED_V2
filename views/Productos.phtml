@@ -1,0 +1,93 @@
+<?php
+$link = mysql_connect('localhost', 'root', '') or die('No se pudo conectar: ' . mysql_error());
+mysql_select_db('innovaled_v2') or die('No se pudo seleccionar la base de datos');
+$queryLineas = "SELECT * FROM linea ORDER BY IdLinea ASC";
+$lineas = mysql_query($queryLineas) or die('Consulta fallida: ' . mysql_error());
+$querySublineas = "SELECT * FROM sublinea ORDER BY IdLinea ASC";
+$sublineas = mysql_query($querySublineas) or die('Consulta fallida: ' . mysql_error());
+?>
+<section id="Productos">
+	<div class="vertical backImage revealBack" style="background-image: url('assets/img/img_7.svg');"></div>
+		<div class="container">
+			<div class="row text-center">
+				<div class="col-xs-12 nopadding">
+					<ul class="linea">
+					<?php
+						$counter=0;
+						while($result = mysql_fetch_assoc($lineas)) {
+							$active = ($counter==0) ? 'active' : '';
+							$IdLinea=$result['IdLinea'];
+							$Linea=utf8_encode ($result['Etiqueta']);
+ 					?>
+					<li>
+						<a href="<?=$counter;?>" class="<?=$active;?>"><?=$Linea;?></a>
+					</li>
+ 					<?php
+ 							$counter++;
+ 						}
+ 					?>
+					</ul>
+				</div>
+				<div class="col-xs-12 nopadding">
+					<div class="col-xs-12 vxpadding nopadding tabsGeneral">
+					<?php
+						$IdLinea='';
+						$arrayLineas = array();
+						$arraySublineas = array();
+						$counter=0;
+						$counter2=0;
+						while($result = mysql_fetch_assoc($sublineas)) {
+							$arraySublineas[$counter]['IdSubLinea']=$result['IdSubLinea'];
+							$arraySublineas[$counter]['IdLinea']=$result['IdLinea'];
+							$arraySublineas[$counter]['Etiqueta']=$result['Etiqueta'];
+							if ($IdLinea!=$result['IdLinea']) {
+								$arrayLineas[$counter2]=$result['IdLinea'];
+								$counter2++;
+							}
+							$IdLinea=$result['IdLinea'];
+							$counter++;
+						}
+ 					?>
+					<?php 
+					$firstActive=0;
+					foreach ($arrayLineas as $key => $value): ?>
+						<div class="col-xs-12 nopadding item">
+						<?php foreach ($arraySublineas as $keyTwo => $valueTwo): ?>
+							<?php if ($arrayLineas[$key]==$arraySublineas[$keyTwo]['IdLinea']): 
+								$firstElement = ($firstActive==0) ? "firstElement":"";
+							?>
+								<div class="col-xs-12 nopadding subItem text-center">
+									<a href="<?=$arraySublineas[$keyTwo]['IdSubLinea'];?>" class="col-xs-12 nopadding centered <?=$firstElement;?>">
+										<div class="col-xs-12 nopadding img">
+											<img src="Admin/assets/img/Sublineas/<?=$arraySublineas[$keyTwo]['IdSubLinea'];?>/img.png" alt="">
+										</div>
+										<div class="col-xs-12 nopadding text-center">
+											<span><?=$arraySublineas[$keyTwo]['Etiqueta'];?></span>
+										</div>
+									</a>
+								</div>
+							<?php 
+							$firstActive++;
+							endif ?>
+						<?php endforeach ?>
+						</div>
+					<?php endforeach ?>
+
+					</div>
+					<div class="vertical arrows">
+						<div class="col-xs-12 nopadding">
+							<a href="#" class="next">
+								<img src="assets/img/next.svg" alt="">
+							</a>
+							<a href="#" class="prev">
+								<img src="assets/img/prev.svg" alt="">
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-12 nopadding productos" id="containerProductos">
+					
+				</div>
+			</div>
+		</div>
+</section>

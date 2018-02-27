@@ -242,19 +242,75 @@ div#carritoModal a.delete>img{
 }
 
 
-
 section#Home{
+    height: auto;
+    display: inline-block;
+}
+section#Home div.slideEspecialistas{
     height: 100vh;
     background-position: 50% 50%;
     background-size: 100%;
     background-size: cover;
 }
-section#Home div.vertical.backImage{
+section#Home div.slideEspecialistas div.vertical.backImage{
     height: 100%;
     background-position: 50% 50%;
     background-size: 100%;
     background-size: cover;
 }
+
+section#Home div.slide{
+    outline: none;
+}
+section#Home div.slideExperiencia{
+    height: 100vh;
+    background-position: 50% 50%;
+    background-size: 100%;
+    background-size: cover;
+}
+section#Home div.slideExperiencia div.vertical.backDark{
+    background-color: rgba(0, 0, 0, 0.14);
+}
+section#Home div.slideExperiencia div.vertical.backImage{
+    height: 100%;
+    background-position: 50% 50%;
+    background-size: 100%;
+    background-size: cover;
+}
+
+section#Home div.slideAniosRealizando{
+    height: 100vh;
+    background-position: 50% 50%;
+    background-size: 100%;
+    background-size: cover;
+}
+section#Home div.slideAniosRealizando div.vertical.backImage{
+    height: 100%;
+    background-position: 50% 50%;
+    background-size: 100%;
+    background-size: cover;
+}
+section#Home div.slideAniosRealizando img.img20{
+    width: 500px;
+}
+
+section#Home div.slideProyectos1Anio{
+    height: 100vh;
+    background-position: 50% 50%;
+    background-size: 100%;
+    background-size: cover;
+}
+section#Home div.slideProyectos1Anio div.vertical.backDark{
+    background-color: rgba(0, 0, 0, 0.14);
+}
+section#Home div.slideProyectos1Anio div.vertical.backImage{
+    height: 100%;
+    background-position: 50% 50%;
+    background-size: 100%;
+    background-size: cover;
+}
+
+
 
 section#Productos{
     height: auto;
@@ -430,21 +486,7 @@ section#Productos div.arrows a.prev{
 
 
 
-section#Experiencia{
-    height: 100vh;
-    background-position: 50% 50%;
-    background-size: 100%;
-    background-size: cover;
-}
-section#Experiencia div.vertical.backDark{
-    background-color: rgba(0, 0, 0, 0.14);
-}
-section#Experiencia div.vertical.backImage{
-    height: 100%;
-    background-position: 50% 50%;
-    background-size: 100%;
-    background-size: cover;
-}
+
 
 section#Servicios_1{
     height: 100vh;
@@ -563,23 +605,6 @@ section#Servicios_2 div.item>div>p{
     text-align: center;
     height: 75px;
     margin: 0;
-}
-
-
-section#anios{
-    height: 100vh;
-    background-position: 50% 50%;
-    background-size: 100%;
-    background-size: cover;
-}
-section#anios div.vertical.backImage{
-    height: 100%;
-    background-position: 50% 50%;
-    background-size: 100%;
-    background-size: cover;
-}
-section#anios img.img20{
-    width: 500px;
 }
 
 section#Empresas{
@@ -980,36 +1005,42 @@ section#proyectos div.content div.second>div:nth-child(2){
 
 
 
-section#proyectos1Anio{
+
+
+section#Home .slick-prev, section#Home .slick-next{
+    z-index: 1;
+    height: 40px;
+    width: 34px;
+}
+section#Home .slick-prev:before, section#Home .slick-next:before{
+    
+}
+section#Home .slick-prev{
+    left: 25px;
+}
+section#Home .slick-next{
+    right: 200px;
+}
+section#Home .slick-prev:before{
+    content: url('../img/slide_prev.svg');
+}
+section#Home .slick-next:before{
+    content: url('../img/slide_next.svg');
+}
+
+section#Home div.slideInnovaled{
     height: 100vh;
     background-position: 50% 50%;
     background-size: 100%;
     background-size: cover;
 }
-section#proyectos1Anio div.vertical.backDark{
-    background-color: rgba(0, 0, 0, 0.14);
-}
-section#proyectos1Anio div.vertical.backImage{
-    height: 100%;
-    background-position: 50% 50%;
-    background-size: 100%;
-    background-size: cover;
-}
-
-
-section#Innovaled{
-    height: 100vh;
-    background-position: 50% 50%;
-    background-size: 100%;
-    background-size: cover;
-}
-section#Innovaled div.vertical.bottom{
+section#Home div.slideInnovaled div.vertical.bottom{
     -webkit-justify-content: flex-end;
     -ms-flex-pack: flex-end;
     justify-content: flex-end;
     pointer-events: none;
 }
-section#Innovaled div.vertical.bottom ul{
+section#Home div.slideInnovaled div.vertical.bottom ul{
     display: inline-block;
     position: relative;
     float: left;
@@ -1020,13 +1051,13 @@ section#Innovaled div.vertical.bottom ul{
     -webkit-margin-end: 0;
     -webkit-padding-start: 0;
 }
-section#Innovaled div.vertical.bottom ul>li{
+section#Home div.slideInnovaled div.vertical.bottom ul>li{
     display: inline-block;
     position: relative;
     float: left;
     padding: 0px 15px;
 }
-section#Innovaled div.vertical.bottom ul>li>img{
+section#Home div.slideInnovaled div.vertical.bottom ul>li>img{
     display: inline-block;
     position: absolute;
     left: 10px;
@@ -1035,7 +1066,7 @@ section#Innovaled div.vertical.bottom ul>li>img{
     width: 50px;
     margin: auto 0px;
 }
-section#Innovaled div.vertical.bottom ul>li>a{
+section#Home div.slideInnovaled div.vertical.bottom ul>li>a{
     display: inline-block;
     position: relative;
     float: left;
@@ -1051,10 +1082,10 @@ section#Innovaled div.vertical.bottom ul>li>a{
          -o-transition: color .25s ease;
             transition: color .25s ease;
 }
-section#Innovaled div.vertical.bottom ul>li>a:hover{
+section#Home div.slideInnovaled div.vertical.bottom ul>li>a:hover{
     color: #000000;
 }
-section#Innovaled .backRed{
+section#Home div.slideInnovaled .backRed{
     background-color: #e81319;
     padding-top: 20px;
     padding-bottom: 15px;
@@ -1246,7 +1277,7 @@ form#formCotizar .form-control{
     section#footer img.logoFooter{
         width: 100%;
     }
-    section#anios img.img20 {
+    section#Home div.slideAniosRealizando img.img20 {
         width: 350px;
     }
 }
@@ -1255,10 +1286,10 @@ form#formCotizar .form-control{
     section#footer div.item {
         height: 220px;
     }
-    section#Innovaled div.vertical.bottom ul>li {
+    section#Home div.slideInnovaled div.vertical.bottom ul>li {
         padding: 20px 15px;
     }
-    section#Innovaled div.vertical.bottom ul {
+    section#Home div.slideInnovaled div.vertical.bottom ul {
         width: 340px;
     }
     section{
@@ -1311,7 +1342,7 @@ form#formCotizar .form-control{
     section#footer div.item>div {
         width: 100%;
     }
-    section#anios img.img20 {
+    section#Home div.slideAniosRealizando img.img20 {
         width: 250px;
     }
     section#Productos div.productos>div.item>div{
@@ -1333,7 +1364,7 @@ form#formCotizar .form-control{
         height: auto;
         padding: 75px 0px;
     }
-    section#Home div.contentV {
+    section#Home div.slideEspecialistas div.contentV {
         padding: 35vh 0px;
     }
 }

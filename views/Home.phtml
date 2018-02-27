@@ -1,124 +1,116 @@
-<section id="Home" style="background-image: url('assets/img/img_1.jpg');">
-	<div class="vertical backImage revealBack" style="background-image: url('assets/img/img_2.svg');"></div>
-	<div class="vertical contentV">
-		<div class="container">
-			<div class="row text-center">
-				<div class="col-xs-12 nopadding">
-					<div class="col-xs-12 nopadding text-left">
-						<h1 class="extra-bold vpadding textWhite lined revealBottom">Especialistas en Calidad,
-						<br>Eficiencia y ahorro.</h1>
+<section id="Home">
+	<div class="col-xs-12 nopadding slide slideEspecialistas" style="background-image: url('assets/img/img_1.jpg');">
+		<div class="vertical backImage" style="background-image: url('assets/img/img_2.svg');"></div>
+		<div class="vertical contentV">
+			<div class="container">
+				<div class="row text-center">
+					<div class="col-xs-12 nopadding">
+						<div class="col-xs-12 nopadding text-left">
+							<h1 class="extra-bold vpadding textWhite lined">Especialistas en Calidad,
+							<br>Eficiencia y ahorro.</h1>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-</section>
-<?php
-$link = mysql_connect('localhost', 'root', '') or die('No se pudo conectar: ' . mysql_error());
-mysql_select_db('innovaled_v2') or die('No se pudo seleccionar la base de datos');
-$queryLineas = "SELECT * FROM linea ORDER BY IdLinea ASC";
-$lineas = mysql_query($queryLineas) or die('Consulta fallida: ' . mysql_error());
-$querySublineas = "SELECT * FROM sublinea ORDER BY IdLinea ASC";
-$sublineas = mysql_query($querySublineas) or die('Consulta fallida: ' . mysql_error());
-?>
-<section id="Productos">
-	<div class="vertical backImage revealBack" style="background-image: url('assets/img/img_7.svg');"></div>
-		<div class="container">
-			<div class="row text-center">
-				<div class="col-xs-12 nopadding">
-					<ul class="linea">
-					<?php
-						$counter=0;
-						while($result = mysql_fetch_assoc($lineas)) {
-							$active = ($counter==0) ? 'active' : '';
-							$IdLinea=$result['IdLinea'];
-							$Linea=utf8_encode ($result['Etiqueta']);
- 					?>
+	<div class="col-xs-12 nopadding slide slideExperiencia" style="background-image: url('assets/img/img_3.jpg');">
+		<div class="vertical backDark"></div>
+		<div class="vertical backImage" style="background-image: url('assets/img/img_4.svg');"></div>
+		<div class="vertical contentV">
+			<div class="container">
+				<div class="row text-center">
+					<div class="col-xs-12 nopadding">
+						<div class="col-xs-12 col-sm-5 nopadding text-left">
+							<div class="col-xs-12 noHorizontalPadding vxpadding text-center">
+								<img src="assets/img/img_5.png" alt="" class="col-xs-12 centered" style="width: 100px;">
+							</div>
+							<h2 class="extra-bold vpadding textWhite lined">5 años de experiencia brindando soluciones en tecnología LED</h2>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-xs-12 nopadding slide slideAniosRealizando" style="background-image: url('assets/img/img_18.jpg');">
+		<div class="vertical backDark"></div>
+		<div class="vertical backImage" style="background-image: url('assets/img/img_17.svg');"></div>
+		<div class="vertical contentV">
+			<div class="container">
+				<div class="row text-center">
+					<div class="col-xs-12 nopadding">
+						<div class="col-xs-12 col-sm-5 nopadding text-left">
+							<div class="col-xs-12 noHorizontalPadding vxpadding text-center">
+								<img src="assets/img/img_19.svg" alt="" class="col-xs-12 centered" style="width: 140px;">
+							</div>
+							<h2 class="extra-bold vpadding textWhite lined">2 años realizando proyectos de digital signage</h2>
+						</div>
+						<div class="col-xs-12 col-sm-7 nopadding text-center">
+							<img src="assets/img/img_20.png" alt="" class="col-xs-12 centered img20">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-xs-12 nopadding slide slideProyectos1Anio" style="background-image: url('assets/img/img_32.jpg');">
+		<div class="vertical backDark"></div>
+		<div class="vertical backImage" style="background-image: url('assets/img/img_31.svg');"></div>
+		<div class="vertical contentV">
+			<div class="container">
+				<div class="row text-center">
+					<div class="col-xs-12 nopadding">
+						<div class="col-xs-12 col-sm-5 nopadding text-left">
+							<div class="col-xs-12 noHorizontalPadding vxpadding text-center">
+								<img src="assets/img/img_33.svg" alt="" class="col-xs-12 centered" style="width: 150px;">
+							</div>
+							<h2 class="extra-bold vpadding textWhite lined">1 año en proyectos eficiencia energética residencial</h2>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-xs-12 nopadding slide slideInnovaled" style="background-image: url('assets/img/img_34.jpg');">
+		<div class="vertical contentV">
+			<div class="container">
+				<div class="row text-center">
+					<div class="col-xs-12 nopadding text-center">
+						<div class="col-xs-12 nopadding text-center">
+							<img src="assets/img/logo.png" alt="" class="col-xs-12 nopadding centered" style="width: 350px;">
+						</div>
+						<div class="col-xs-12 nopadding text-center">
+							<h3 class="textWhite semi-bold">CALIDAD QUE ILUMINA</h3>
+						</div>
+						<div class="col-xs-12 nopadding text-center">
+							<h4 class="textWhite regular">tu estilo de vida</h4>
+						</div>
+						<div class="col-xs-12 nopadding text-center">
+							<a href="productos" class="btn1 centered">COTIZAR</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="vertical bottom">
+			<div class="col-xs-12 text-center backRed">
+				<ul class="centered">
 					<li>
-						<a href="<?=$counter;?>" class="<?=$active;?>"><?=$Linea;?></a>
+						<img src="assets/img/icon_email.svg" alt="">
+						<a href="#">Llámenos: (01) 393-4964</a>
 					</li>
- 					<?php
- 							$counter++;
- 						}
- 					?>
-					</ul>
-				</div>
-				<div class="col-xs-12 nopadding">
-					<div class="col-xs-12 vxpadding nopadding tabsGeneral">
-					<?php
-						$IdLinea='';
-						$arrayLineas = array();
-						$arraySublineas = array();
-						$counter=0;
-						$counter2=0;
-						while($result = mysql_fetch_assoc($sublineas)) {
-							$arraySublineas[$counter]['IdSubLinea']=$result['IdSubLinea'];
-							$arraySublineas[$counter]['IdLinea']=$result['IdLinea'];
-							$arraySublineas[$counter]['Etiqueta']=$result['Etiqueta'];
-							if ($IdLinea!=$result['IdLinea']) {
-								$arrayLineas[$counter2]=$result['IdLinea'];
-								$counter2++;
-							}
-							$IdLinea=$result['IdLinea'];
-							$counter++;
-						}
- 					?>
-					<?php foreach ($arrayLineas as $key => $value): ?>
-						<div class="col-xs-12 nopadding item">
-						<?php foreach ($arraySublineas as $keyTwo => $valueTwo): ?>
-							<?php if ($arrayLineas[$key]==$arraySublineas[$keyTwo]['IdLinea']): ?>
-								<div class="col-xs-12 nopadding subItem text-center">
-									<a href="<?=$arraySublineas[$keyTwo]['IdSubLinea'];?>" class="col-xs-12 nopadding centered">
-										<div class="col-xs-12 nopadding img">
-											<img src="Admin/assets/img/Sublineas/<?=$arraySublineas[$keyTwo]['IdSubLinea'];?>/img.png" alt="">
-										</div>
-										<div class="col-xs-12 nopadding text-center">
-											<span><?=$arraySublineas[$keyTwo]['Etiqueta'];?></span>
-										</div>
-									</a>
-								</div>
-							<?php endif ?>
-						<?php endforeach ?>
-						</div>
-					<?php endforeach ?>
-
-					</div>
-					<div class="vertical arrows">
-						<div class="col-xs-12 nopadding">
-							<a href="#" class="next">
-								<img src="assets/img/next.svg" alt="">
-							</a>
-							<a href="#" class="prev">
-								<img src="assets/img/prev.svg" alt="">
-							</a>
-						</div>
-					</div>
-				</div>
-				<div class="col-xs-12 nopadding productos" id="containerProductos">
-					
-				</div>
-			</div>
-		</div>
-</section>
-
-<section id="Experiencia" style="background-image: url('assets/img/img_3.jpg');">
-	<div class="vertical backDark"></div>
-	<div class="vertical backImage revealBack" style="background-image: url('assets/img/img_4.svg');"></div>
-	<div class="vertical contentV">
-		<div class="container">
-			<div class="row text-center">
-				<div class="col-xs-12 nopadding">
-					<div class="col-xs-12 col-sm-5 nopadding text-left">
-						<div class="col-xs-12 noHorizontalPadding vxpadding text-center">
-							<img src="assets/img/img_5.png" alt="" class="col-xs-12 centered revealBottom" style="width: 100px;">
-						</div>
-						<h2 class="extra-bold vpadding textWhite lined revealBottom">5 años de experiencia brindando soluciones en tecnología LED</h2>
-					</div>
-				</div>
+					<li>
+						<img src="assets/img/icon_telephone.svg" alt="">
+						<a href="#">Escríbenos: ventas@innovaled.pe</a>
+					</li>
+				</ul>
 			</div>
 		</div>
 	</div>
 </section>
+
+
+
 
 <section id="Servicios_1">
 	<div class="vertical backImage revealBack" style="background-image: url('assets/img/img_7.svg');"></div>
@@ -274,28 +266,6 @@ $sublineas = mysql_query($querySublineas) or die('Consulta fallida: ' . mysql_er
 	</div>
 </section>
 
-<section id="anios" style="background-image: url('assets/img/img_18.jpg');">
-	<div class="vertical backDark"></div>
-	<div class="vertical backImage revealBack" style="background-image: url('assets/img/img_17.svg');"></div>
-	<div class="vertical contentV">
-		<div class="container">
-			<div class="row text-center">
-				<div class="col-xs-12 nopadding">
-					<div class="col-xs-12 col-sm-5 nopadding text-left">
-						<div class="col-xs-12 noHorizontalPadding vxpadding text-center">
-							<img src="assets/img/img_19.svg" alt="" class="col-xs-12 centered revealBottom" style="width: 140px;">
-						</div>
-						<h2 class="extra-bold vpadding textWhite lined revealBottom">2 años realizando proyectos de digital signage</h2>
-					</div>
-					<div class="col-xs-12 col-sm-7 nopadding text-center">
-						<img src="assets/img/img_20.png" alt="" class="col-xs-12 centered img20 revealBottom">
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
-
 <section id="Empresas">
 	<div class="vertical backImage revealBack" style="background-image: url('assets/img/img_21.svg');"></div>
 	<div class="vertical contentV">
@@ -390,22 +360,22 @@ $sublineas = mysql_query($querySublineas) or die('Consulta fallida: ' . mysql_er
 									</div>
 									<div class="col-xs-12 nopadding itemContentTab partners">
 										<div class="col-xs-12 col-sm-4 item text-center">
-											<img src="assets/img/marcas/logo1.png" alt="">
+											<img src="assets/img/partners/1.png" alt="">
 											<div></div>
 										</div>
 										<div class="col-xs-12 col-sm-4 item text-center">
-											<img src="assets/img/marcas/logo2.png" alt="">
+											<img src="assets/img/partners/2.png" alt="">
 											<div></div>
 										</div>
 										<div class="col-xs-12 col-sm-4 item text-center">
-											<img src="assets/img/marcas/logo2.png" alt="">
+											<img src="assets/img/partners/3.png" alt="">
 										</div>
 										<div class="col-xs-12 col-sm-6 item text-center">
-											<img src="assets/img/marcas/logo2.png" alt="">
+											<img src="assets/img/partners/4.png" alt="">
 											<div></div>
 										</div>
 										<div class="col-xs-12 col-sm-6 item text-center">
-											<img src="assets/img/marcas/logo2.png" alt="">
+											<img src="assets/img/partners/5.png" alt="">
 										</div>
 									</div>
 								</div>
@@ -432,19 +402,19 @@ $sublineas = mysql_query($querySublineas) or die('Consulta fallida: ' . mysql_er
 								<li>
 									<a href="0" class="active">
 										<img src="assets/img/img_23.svg" alt="">
-										<span>Iluminación LED</span>
+										<span style="color: #ffbd3d;">Iluminación LED</span>
 									</a>
 								</li>
 								<li>
 									<a href="1">
 										<img src="assets/img/img_24.svg" alt="">
-										<span>Digital Signage</span>
+										<span style="color: #17e8ff;">Digital Signage</span>
 									</a>
 								</li>
 								<li>
 									<a href="2">
 										<img src="assets/img/img_25.svg" alt="">
-										<span>Pantallas LED</span>
+										<span style="color: #b600e7;">Pantallas LED</span>
 									</a>
 								</li>
 							</ul>
@@ -505,62 +475,6 @@ $sublineas = mysql_query($querySublineas) or die('Consulta fallida: ' . mysql_er
 
 				</div>
 			</div>
-		</div>
-	</div>
-</section>
-
-<section id="proyectos1Anio" style="background-image: url('assets/img/img_32.jpg');">
-	<div class="vertical backDark"></div>
-	<div class="vertical backImage revealBack" style="background-image: url('assets/img/img_31.svg');"></div>
-	<div class="vertical contentV">
-		<div class="container">
-			<div class="row text-center">
-				<div class="col-xs-12 nopadding">
-					<div class="col-xs-12 col-sm-5 nopadding text-left">
-						<div class="col-xs-12 noHorizontalPadding vxpadding text-center">
-							<img src="assets/img/img_33.svg" alt="" class="col-xs-12 centered revealBottom" style="width: 150px;">
-						</div>
-						<h2 class="extra-bold vpadding textWhite lined revealBottom">1 año en proyectos eficiencia energética residencial</h2>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
-
-<section id="Innovaled" style="background-image: url('assets/img/img_34.jpg');">
-	<div class="vertical contentV">
-		<div class="container">
-			<div class="row text-center">
-				<div class="col-xs-12 nopadding text-center">
-					<div class="col-xs-12 nopadding text-center">
-						<img src="assets/img/logo.png" alt="" class="col-xs-12 nopadding centered revealBottom" style="width: 350px;">
-					</div>
-					<div class="col-xs-12 nopadding text-center">
-						<h3 class="textWhite semi-bold revealBottom">CALIDAD QUE ILUMINA</h3>
-					</div>
-					<div class="col-xs-12 nopadding text-center">
-						<h4 class="textWhite regular revealBottom">tu estilo de vida</h4>
-					</div>
-					<div class="col-xs-12 nopadding text-center">
-						<a href="#" class="btn1 centered revealBottom">COTIZAR</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="vertical bottom">
-		<div class="col-xs-12 text-center backRed">
-			<ul class="centered revealBottom">
-				<li>
-					<img src="assets/img/icon_email.svg" alt="">
-					<a href="#">Llámenos: (01) 393-4964</a>
-				</li>
-				<li>
-					<img src="assets/img/icon_telephone.svg" alt="">
-					<a href="#">Escríbenos: ventas@innovaled.pe</a>
-				</li>
-			</ul>
 		</div>
 	</div>
 </section>
