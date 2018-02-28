@@ -922,21 +922,6 @@ section#proyectos a.backImg>span{
     display: inline-block;
     position: relative;
 }
-section#proyectos div.content div.slideItem{
-    outline: none;
-}
-section#proyectos div.content div.first>div:nth-child(1)>a:nth-child(1){
-    height: 55vh;
-}
-section#proyectos div.content div.first>div:nth-child(1)>a:nth-child(2){
-    height: 55vh;
-}
-section#proyectos div.content div.first>div:nth-child(2)>a:nth-child(1){
-    height: 45vh;
-}
-section#proyectos div.content div.first>div:nth-child(2)>a:nth-child(2){
-    height: 45vh;
-}
 section#proyectos div.content a.backImg>div.dark{
     background-color: rgba(0, 0, 0, 0.5);
     -webkit-transition: all .45s ease;
@@ -969,32 +954,27 @@ section#proyectos div.content a.backImg:hover>img.view{
 section#proyectos div.content a.backImg:hover>div.dark{
     background-color: rgba(0, 0, 0, 0);
 }
-
-
-section#proyectos div.content div.second>div:nth-child(1)>div,
-section#proyectos div.content div.second>div:nth-child(2)>div{
-    display: inline-block;
-    position: relative;
-    float: left;
-    background-color: rgba(0, 0, 0, 0.77);
-    padding: 15px;
-    height: 50vh;
-    width: 275px;
-}
-section#proyectos div.content div.second>div:nth-child(1)>div{
-    float: left;
-}
-section#proyectos div.content div.second>div:nth-child(2)>div{
-    float: right;
+section#proyectos div.content div.slideItem{
+    outline: none;
 }
 
-section#proyectos div.content div.second>div:nth-child(1),
-section#proyectos div.content div.second>div:nth-child(2){
-    background-size: 100%;
-    background-size: cover;
-    background-position: 50% 50%;
+
+section#proyectos div.content div.first>div:nth-child(1)>a:nth-child(1){
+    height: 55vh;
+}
+section#proyectos div.content div.first>div:nth-child(1)>a:nth-child(2){
+    height: 55vh;
+}
+section#proyectos div.content div.first>div:nth-child(2)>a:nth-child(1){
+    height: 45vh;
+}
+section#proyectos div.content div.first>div:nth-child(2)>a:nth-child(2){
+    height: 45vh;
 }
 
+section#proyectos div.content div.video_wall>div{
+    height: 45vh;
+}
 
 
 
