@@ -9,9 +9,9 @@ function statusMenu(){
     var part1 = position1.top;
     var part2 = part1+$('section#Home').height();
 
-    var x=$('section#Servicios_2').position();
+    var x=$('section#Servicios_1').position();
     var y=x.top;
-    var part3=y+$('section#Servicios_2').height();
+    var part3=y+$('section#Servicios_1').height();
     
     var a=$('section#Empresas').position();
     var b=a.top;

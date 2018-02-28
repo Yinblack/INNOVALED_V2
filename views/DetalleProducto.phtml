@@ -1,0 +1,44 @@
+<?php
+$link = mysql_connect('localhost', 'root', '') or die('No se pudo conectar: ' . mysql_error());
+mysql_select_db('innovaled_v2') or die('No se pudo seleccionar la base de datos');
+$IdProductoGet=$_GET['IdProducto'];
+$queryProducto = "SELECT * FROM producto WHERE IdProducto=".$IdProductoGet."";
+$producto = mysql_query($queryProducto) or die('Consulta fallida: ' . mysql_error());
+$dir="Admin/assets/img/Productos/".$IdProductoGet."/";
+$images = glob($dir . "*.{jpg,jpeg,png,gif}",GLOB_BRACE);
+?>
+<section id="detalle">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12 nopadding">
+				<div class="col-xs-12 col-sm-6">
+					<div class="col-xs-12 nopadding slideDetalleZoom">
+						<?php foreach ($images as $key => $value): ?>
+						<div class="col-xs-12 nopadding item">
+								<img src="<?=$value;?>" alt="">
+						</div>
+						<?php endforeach ?>
+					</div>
+					<div class="col-xs-12 nopadding slideDetalleThumbs">
+						<?php foreach ($images as $key => $value): ?>
+						<div class="col-xs-12 nopadding item">
+								<img src="<?=$value;?>" alt="">
+						</div>
+						<?php endforeach ?>
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-6">
+					
+				</div>
+			</div>
+			<?php
+				while($result = mysql_fetch_assoc($producto)):
+					$IdProducto=$result['IdProducto'];
+ 			?>
+			<?=$IdProducto;?>
+ 			<?php
+ 				endwhile;
+ 			?>
+		</div>
+	</div>
+</section>

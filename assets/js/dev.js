@@ -94,9 +94,9 @@ $( document ).ready(function() {
     autoplay: false,
     draggable: false
   });
-  $(' section#Home').slick({
-    arrows: true,
-    dots: false,
+  $('section#Home').slick({
+    arrows: false,
+    dots: true,
     infinite: true,
     autoplaySpeed: 2500,
     speed: 750,
@@ -104,6 +104,32 @@ $( document ).ready(function() {
     autoplay: true
   });
 });
+$(document).ready(function() {
+    $('section#Home').on('init', function(e, slick) {
+        var $firstAnimatingElements = $('div.slide:first-child').find('[data-animation]');
+        doAnimations($firstAnimatingElements);    
+    });
+    $('section#Home').on('beforeChange', function(e, slick, currentSlide, nextSlide) {
+              var $animatingElements = $('div.slide[data-slick-index="' + nextSlide + '"]').find('[data-animation]');
+              doAnimations($animatingElements);    
+    });
+    function doAnimations(elements) {
+        var animationEndEvents = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
+        elements.each(function() {
+            var $this = $(this);
+            var $animationDelay = $this.data('delay');
+            var $animationType = 'animated ' + $this.data('animation');
+            $this.css({
+                'animation-delay': $animationDelay,
+                '-webkit-animation-delay': $animationDelay
+            });
+            $this.addClass($animationType).one(animationEndEvents, function() {
+                $this.removeClass($animationType);
+            });
+        });
+    }
+});
+
 
 $("section#Servicios_1 div.tabs>div>a").click(function(e){
   e.preventDefault();

@@ -25,5 +25,17 @@ class ControllerRoutes extends Controller
         $this->_view->renderizar('Footer');
     }
 
+    public function DetalleProducto()
+    {
+        $this->_view->titulo = 'INNOVALED | Detalle de producto';
+        $this->_view->productos = 'active';
+        $this->_view->js = '
+            <script src="assets/js/DetalleProducto.js"></script>
+        ';
+        $this->_view->renderizar('Header');
+        $this->_view->renderizar('DetalleProducto');
+        $this->_view->renderizar('Footer');
+    }
+
 }
 ?>
