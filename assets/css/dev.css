@@ -822,7 +822,7 @@ section#proyectos{
 }
 section#proyectos div.vertical.backImage{
     height: 100%;
-    background-position: 50% 50%;
+    background-position: 50%;
     background-size: 100%;
     background-size: cover;
 }
@@ -913,9 +913,14 @@ section#proyectos div.containerFullHeight>div{
 section#proyectos a.backImg{
     background-size: 100%;
     background-size: cover;
-    background-position: 50% 50%;
+    background-position: 50%;
     padding: 15px;
     text-align: left;
+    -webkit-transition: all .35s ease;
+       -moz-transition: all .35s ease;
+        -ms-transition: all .35s ease;
+         -o-transition: all .35s ease;
+            transition: all .35s ease;
 }
 section#proyectos a.backImg>span{
     text-shadow: 1px 1px #000;
@@ -959,21 +964,28 @@ section#proyectos div.content div.slideItem{
 }
 
 
-section#proyectos div.content div.first>div:nth-child(1)>a:nth-child(1){
+section#proyectos div.content div.iluminacion_led>div:nth-child(1)>a:nth-child(1){
     height: 55vh;
 }
-section#proyectos div.content div.first>div:nth-child(1)>a:nth-child(2){
+section#proyectos div.content div.iluminacion_led>div:nth-child(1)>a:nth-child(2){
     height: 55vh;
 }
-section#proyectos div.content div.first>div:nth-child(2)>a:nth-child(1){
+section#proyectos div.content div.iluminacion_led>div:nth-child(2)>a:nth-child(1){
     height: 45vh;
 }
-section#proyectos div.content div.first>div:nth-child(2)>a:nth-child(2){
+section#proyectos div.content div.iluminacion_led>div:nth-child(2)>a:nth-child(2){
     height: 45vh;
 }
 
-section#proyectos div.content div.video_wall>div{
-    height: 45vh;
+section#proyectos div.content div.video_wall>a:nth-child(1){
+    height: 100vh;
+}
+
+section#proyectos div.content div.pantallas_led>a:nth-child(1){
+    height: 100vh;
+}
+section#proyectos div.content div.pantallas_led>a:nth-child(2){
+    height: 100vh;
 }
 
 
