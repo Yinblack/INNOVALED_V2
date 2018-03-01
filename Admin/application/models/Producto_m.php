@@ -486,13 +486,13 @@ class Producto_m extends CI_Model {
                                     <img src="Admin/assets/img/Productos/'.$IdProducto.'/img_1.jpg" alt="" class="product">
                                 </div>
                                 <div class="col-xs-12 col-sm-6 height text-left">
-                                    <h5 class="col-xs-12 noHorizontalPadding vpadding nopaddingBottom nomargin bold textWhite">'.$NombreProducto.'</h5>
-                                    <p class="col-xs-12 noHorizontalPadding vpadding nopaddingBottom nomargin light textWhite">'.$Descripcion.'</p>
+                                    <h5 class="col-xs-12 noHorizontalPadding vpadding nopaddingBottom nomargin bold">'.$NombreProducto.'</h5>
+                                    <p class="col-xs-12 noHorizontalPadding vpadding nopaddingBottom nomargin light">'.$Descripcion.'</p>
                                 </div>
                                 <div class="col-xs-12 col-sm-3 height">
-                                    <h5 class="col-xs-12 noHorizontalPadding vpadding nomargin regular textWhite">'.$Moneda.' '.$Precio.'</h5>
+                                    <h5 class="col-xs-12 noHorizontalPadding vpadding nomargin regular">'.$Moneda.' '.$Precio.'</h5>
                                     <div class="vertical end" style="pointer-events: none;">
-                                        <a href="DetalleProducto?IdProducto='.$IdProducto.'" class="col-xs-12 noHorizontalPadding vpadding nopaddingTop text-center textWhite regular" style="pointer-events: auto;">VER MAS</a>
+                                        <a href="DetalleProducto?IdProducto='.$IdProducto.'" class="col-xs-12 noHorizontalPadding vpadding nopaddingTop text-center regular" style="pointer-events: auto;">VER MAS</a>
                                     </div>
                                 </div>
                             </div>
@@ -504,10 +504,10 @@ class Producto_m extends CI_Model {
                                                 <input type="text" value="'.$enCarrito.'" id="Cantidad'.$IdProducto.'">
                                             </div>
                                             <a href="#" class="minus">
-                                                <img src="assets/img/minus.svg" alt="">
+                                                <img src="assets/img/minusGrey.svg" alt="">
                                             </a>
                                             <a href="#" class="plus">
-                                                <img src="assets/img/plus.svg" alt="">
+                                                <img src="assets/img/plusGrey.svg" alt="">
                                             </a>
                                         </div>
                                     </div>

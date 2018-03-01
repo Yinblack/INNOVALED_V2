@@ -21,6 +21,10 @@ h1,h2,h3,h4,h5{
     margin-top: 15px;
     margin-bottom: 15px;
 }
+p.thin,label.thin,a.thin,span.thin,h1.thin,h2.thin,h3.thin,h4.thin,h5.thin,a.thin,button.thin
+{
+    font-weight: 100;
+}
 p.light,label.light,a.light,span.light,h1.light,h2.light,h3.light,h4.light,h5.light,a.light,button.light
 {
     font-weight: 300;

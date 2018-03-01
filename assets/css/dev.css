@@ -79,14 +79,14 @@ div.checkbox.active>div>svg#checked{
 }
 div.checkbox>div>svg#nochecked>.unchecked{
     fill:none;
-    stroke:#FFFFFF;
+    stroke:#2a2a2a;
     stroke-miterlimit:10;
 }
 div.checkbox>div>svg#checked>.cheked_1{
-    fill:#FFFFFF;
+    fill:#2a2a2a;
 }
 div.checkbox>div>svg#checked>.checked_2{
-    fill:none;stroke:#FFFFFF;stroke-miterlimit:10;
+    fill:none;stroke:#2a2a2a;stroke-miterlimit:10;
 }
 
 div.dicrease{
@@ -314,7 +314,7 @@ section#Home div.slideProyectos1Anio div.vertical.backImage{
 
 section#Productos{
     height: auto;
-    background-color: #272727;
+    background-color: #FFFFFF;
     padding: 75px 0px;
 }
 section#Productos div.vertical.backImage{
@@ -352,7 +352,7 @@ section#Productos ul.linea>li>a{
     width: 100%;
     padding: 15px 0px;
     text-align: center;
-    border: 1px solid #ddd;
+    border: 1px solid #222;
     -webkit-transition: all .25s ease;
        -moz-transition: all .25s ease;
         -ms-transition: all .25s ease;
@@ -376,7 +376,7 @@ section#Productos div.tabsGeneral div.item div.subItem{
     outline: none;
 }
 section#Productos div.tabsGeneral div.item div.subItem>a{
-    border: 1px solid #DDD;
+    border: 1px solid #222222;
     width: 200px;
     outline: none;
     -webkit-transition: border .25s ease;
@@ -390,7 +390,7 @@ section#Productos div.tabsGeneral div.item div.subItem>a.active{
 }
 section#Productos div.tabsGeneral div.item div.subItem>a>div.img{
     height: 150px;
-    border-bottom: 1px solid #DDDDDD;
+    border-bottom: 1px solid #222222;
 }
 section#Productos div.tabsGeneral div.item div.subItem>a>div.img>img{
     display: inline-block;
@@ -409,7 +409,7 @@ section#Productos div.tabsGeneral div.item div.subItem>a span{
     float: left;
     width: 100%;
     padding: 3px 0px;
-    color: #FFFFFF;
+    color: #161616;
 }
 
 section#Productos div.productos{
@@ -419,7 +419,7 @@ section#Productos div.productos>div.item{
     padding: 10px 0px 0px 0px;
 }
 section#Productos div.productos>div.item>div{
-    border: 1px solid #DDDDDD;
+    border: 1px solid #222222;
 }
 section#Productos div.productos>div.item>div div.height{
     height: 150px;
@@ -427,7 +427,7 @@ section#Productos div.productos>div.item>div div.height{
 
 section#Productos div.productos>div.item>div>div.sect:nth-child(1),
 section#Productos div.productos>div.item>div>div.sect:nth-child(2){
-    border-right: 1px solid #DDDDDD;
+    border-right: 1px solid #222222;
 }
 section#Productos div.productos>div.item img.product{
     display: inline-block;
@@ -916,13 +916,18 @@ section#proyectos a.backImg{
     background-position: 50%;
     padding: 15px;
     text-align: left;
+    outline: none;
     -webkit-transition: all .35s ease;
        -moz-transition: all .35s ease;
         -ms-transition: all .35s ease;
          -o-transition: all .35s ease;
             transition: all .35s ease;
 }
-section#proyectos a.backImg>span{
+section#proyectos a.backImg div.contentDark{
+    padding: 20px 25px;
+    background-color: rgba(0, 0, 0, 0.58);
+}
+section#proyectos a.backImg span{
     text-shadow: 1px 1px #000;
     display: inline-block;
     position: relative;
@@ -963,6 +968,46 @@ section#proyectos div.content div.slideItem{
     outline: none;
 }
 
+section#proyectos div.content div.slideItem span.tittle{
+    display: inline-block;
+    position: absolute;
+    width: 100%;
+    left: 15px;
+    right: 15px;
+    z-index: 1;
+    background-color: #000000;
+    padding: 5px 0px;
+    text-align: center;
+    color: #FFFFFF;
+}
+section#proyectos div.content div.slideItem div.next{
+    display: inline-block;
+    position: absolute;
+    width: 100%;
+    left: 15px;
+    right: 15px;
+    bottom: 0px;
+    z-index: 1;
+    background-color: #000000;
+    padding: 2px 0px;
+    text-align: center;
+}
+section#proyectos div.content div.slideItem div.next>img{
+    display: inline-block;
+    position: relative;
+    float: none;
+    width: 25px;
+    margin: 0px auto;
+    cursor: pointer;
+    -webkit-transition: all .25s ease;
+       -moz-transition: all .25s ease;
+        -ms-transition: all .25s ease;
+         -o-transition: all .25s ease;
+            transition: all .25s ease;
+}
+section#proyectos div.content div.slideItem div.next>img:hover{
+    opacity: .75;
+}
 
 section#proyectos div.content div.iluminacion_led>div:nth-child(1)>a:nth-child(1){
     height: 55vh;
@@ -986,6 +1031,98 @@ section#proyectos div.content div.pantallas_led>a:nth-child(1){
 }
 section#proyectos div.content div.pantallas_led>a:nth-child(2){
     height: 100vh;
+}
+
+section#proyectos div.content div.paneles_led>a:nth-child(1){
+    height: 100vh;
+}
+
+section#proyectos div.content div.reflectores_led>a:nth-child(1){
+    height: 50vh;
+}
+section#proyectos div.content div.reflectores_led>a:nth-child(2){
+    height: 50vh;
+}
+
+section#proyectos div.content div.cintas_led>a:nth-child(1){
+    height: 100vh;
+}
+section#proyectos div.content div.cintas_led>a:nth-child(2){
+    height: 100vh;
+}
+
+section#proyectos div.content div.modulos_led>a:nth-child(1){
+    height: 100vh;
+}
+
+section#proyectos div.content div.video_wall_proyectos>div:nth-child(1)>a:nth-child(1){
+    height: 55vh;
+}
+section#proyectos div.content div.video_wall_proyectos>div:nth-child(1)>a:nth-child(2){
+    height: 55vh;
+}
+section#proyectos div.content div.video_wall_proyectos>div:nth-child(2)>a:nth-child(1){
+    height: 45vh;
+}
+section#proyectos div.content div.video_wall_proyectos>div:nth-child(2)>a:nth-child(2){
+    height: 45vh;
+}
+
+section#proyectos div.content div.indoor_1>div:nth-child(1)>a:nth-child(1){
+    height: 50vh;
+}
+section#proyectos div.content div.indoor_1>div:nth-child(1)>a:nth-child(2){
+    height: 50vh;
+}
+section#proyectos div.content div.indoor_1>div:nth-child(1)>a:nth-child(3){
+    height: 50vh;
+}
+section#proyectos div.content div.indoor_1>div:nth-child(2)>a:nth-child(1){
+    height: 50vh;
+}
+section#proyectos div.content div.indoor_1>div:nth-child(2)>a:nth-child(2){
+    height: 50vh;
+}
+section#proyectos div.content div.indoor_1>div:nth-child(2)>a:nth-child(3){
+    height: 50vh;
+}
+
+section#proyectos div.content div.outdoor_1>div:nth-child(1)>a:nth-child(1){
+    height: 50vh;
+}
+section#proyectos div.content div.outdoor_1>div:nth-child(1)>a:nth-child(2){
+    height: 50vh;
+}
+section#proyectos div.content div.outdoor_1>div:nth-child(1)>a:nth-child(3){
+    height: 50vh;
+}
+section#proyectos div.content div.outdoor_1>div:nth-child(2)>a:nth-child(1){
+    height: 50vh;
+}
+section#proyectos div.content div.outdoor_1>div:nth-child(2)>a:nth-child(2){
+    height: 50vh;
+}
+section#proyectos div.content div.outdoor_1>div:nth-child(2)>a:nth-child(3){
+    height: 50vh;
+}
+
+section#proyectos div.content div.outdoor_2>div:nth-child(1)>a:nth-child(1){
+    height: 50vh;
+}
+section#proyectos div.content div.outdoor_2>div:nth-child(1)>a:nth-child(2){
+    height: 50vh;
+}
+section#proyectos div.content div.outdoor_2>div:nth-child(1)>a:nth-child(3){
+    height: 50vh;
+}
+section#proyectos div.content div.outdoor_2>div:nth-child(2)>a:nth-child(1){
+    height: 50vh;
+}
+section#proyectos div.content div.outdoor_2>div:nth-child(2)>a:nth-child(2){
+    height: 50vh;
+}
+section#proyectos div.content div.outdoor_2>div:nth-child(2)>a:nth-child(3){
+    height: 50vh;
 }
 
 
