@@ -97,7 +97,9 @@ h1.borderBottom:after,h2.borderBottom:after,h3.borderBottom:after,h4.borderBotto
 }
 
 @media (max-width : 768px) {
-
+    .text-center-xs{
+        text-align: center !important;
+    }
 }
 
 @media (max-width : 480px) {
