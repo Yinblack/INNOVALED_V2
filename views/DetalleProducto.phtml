@@ -2,12 +2,20 @@
 $link = mysql_connect('localhost', 'root', '') or die('No se pudo conectar: ' . mysql_error());
 mysql_select_db('innovaled_v2') or die('No se pudo seleccionar la base de datos');
 $IdProductoGet=$_GET['IdProducto'];
-$queryProducto = "SELECT * FROM producto WHERE IdProducto=".$IdProductoGet."";
+$queryProducto = "
+SELECT producto.IdProducto AS IdProducto, producto.Nombre AS NombreProducto, producto.Marca AS Marca, producto.Precio AS Precio, producto.MostrarPrecio AS MostrarPrecio, producto.Descripcion AS Descripcion, sublinea.Etiqueta AS Sublinea, sublinea.IdSubLinea AS IdSublinea, linea.Etiqueta AS Linea, moneda.Etiqueta AS Moneda FROM producto
+INNER JOIN sublinea ON producto.IdSubLinea = sublinea.IdSubLinea
+INNER JOIN linea ON sublinea.IdLinea = linea.IdLinea
+INNER JOIN moneda ON producto.IdMoneda = moneda.IdMoneda
+WHERE producto.IdProducto=".$IdProductoGet."
+GROUP BY producto.IdProducto
+";
 $producto = mysql_query($queryProducto) or die('Consulta fallida: ' . mysql_error());
 $dir="Admin/assets/img/Productos/".$IdProductoGet."/";
 $images = glob($dir . "*.{jpg,jpeg,png,gif}",GLOB_BRACE);
 ?>
 <section id="detalle">
+<div class="vertical backImage revealBack" style="background-image: url('assets/img/img_21.svg');"></div>
 	<div class="container">
 		<div class="row">
 			<div class="col-xs-12 nopadding">
@@ -21,24 +29,73 @@ $images = glob($dir . "*.{jpg,jpeg,png,gif}",GLOB_BRACE);
 					</div>
 					<div class="col-xs-12 nopadding slideDetalleThumbs">
 						<?php foreach ($images as $key => $value): ?>
-						<div class="col-xs-12 nopadding item">
+						<div class="col-xs-4 item">
+							<div class="col-xs-12 nopadding centered">
 								<img src="<?=$value;?>" alt="">
+							</div>
 						</div>
 						<?php endforeach ?>
 					</div>
 				</div>
+				<?php
+					while($result = mysql_fetch_assoc($producto)):
+						$IdProducto=$result['IdProducto'];
+						$NombreProducto=$result['NombreProducto'];
+						$Marca=$result['Marca'];
+						$Precio=$result['Precio'];
+						$PrecioFormat=number_format($result['Precio'], 2, '.', ',');
+						$MostrarPrecio=$result['MostrarPrecio'];
+						$Descripcion=$result['Descripcion'];
+						$Sublinea=$result['Sublinea'];
+						$IdSublinea=$result['IdSublinea'];
+						$Linea=$result['Linea'];
+						$Moneda=$result['Moneda'];
+ 				?>
 				<div class="col-xs-12 col-sm-6">
-					
+					<h4 class="col-xs-12 noHorizontalPadding vxpadding nopaddingTop nomargin thin text-center text-uppercase">
+						CATEGORÍA: <?=$Sublinea;?>
+					</h4>
+					<div class="col-xs-12 nopadding text-left">
+						<p class="col-xs-12 nopadding nomargin thin"><small>MARCA</small></p>
+						<h3 class="col-xs-12 nopadding nomargin bold">
+							<?=$Marca;?>
+						</h3>
+						<p class="col-xs-12 nopadding nomargin thin"><small>NOMBRE</small></p>
+						<h3 class="col-xs-12 noHorizontalPadding vpadding nopaddingTop nomargin bold">
+							<?=$NombreProducto;?>
+						</h3>
+					</div>
+					<div class="col-xs-12 nopadding">
+						<h3 class="col-xs-12 nopadding text-left textRed bold price"><?=$Moneda;?> <?=$PrecioFormat;?><span>EN STOCK</span></h3>
+					</div>
+					<p class="col-xs-12 noHorizontalPadding vpadding nomargin text-left thin description">
+						<?=$Descripcion;?>
+					</p>
+					<div class="col-xs-12 noHorizontalPadding vpadding">
+						<button class="st1 pull-left">
+							<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 180.4 165" style="enable-background:new 0 0 180.4 165;" xml:space="preserve">
+								<path d="M100,0C79.1,0,61.8,15.1,58.2,35H35.4l-10-30H0v15h14.6l35.8,107.5c-6.2,3.4-10.4,10-10.4,17.5c0,11,9,20,20,20s20-9,20-20c0-1.7-0.2-3.4-0.7-5h46.3c-0.4,1.6-0.7,3.3-0.7,5c0,11,9,20,20,20s20-9,20-20s-9-20-20-20H65.4l-5-15h95l25-75h-38.6C138.2,15.1,120.9,0,100,0z M145,135c5.5,0,10,4.5,10,10s-4.5,10-10,10s-10-4.5-10-10S139.5,135,145,135z M100,10c17.9,0,32.5,14.6,32.5,32.5S117.9,75,100,75S67.5,60.4,67.5,42.5S82.1,10,100,10z M70,145c0,5.5-4.5,10-10,10s-10-4.5-10-10s4.5-10,10-10S70,139.5,70,145z M144.6,95H55.4l-15-45h17.8c3.6,19.9,20.9,35,41.8,35s38.2-15.1,41.8-35h17.8L144.6,95z"/>
+								<polygon points="92.5,65 107.5,65 107.5,50 122.5,50 122.5,35 107.5,35 107.5,20 92.5,20 92.5,35 77.5,35 77.5,50 92.5,50 "/>
+							</svg>
+							COTIZAR
+						</button>
+						<button class="st2 pull-right">
+							<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 52 52" style="enable-background:new 0 0 52 52;" xml:space="preserve">
+								<g>
+									<g>
+										<path d="M50,36h-8c-0.4,0-0.8,0.1-1.1,0.3L35.4,40H16.6l-5.5-3.7C10.8,36.1,10.4,36,10,36H2c-1.1,0-2,0.9-2,2v12c0,1.1,0.9,2,2,2h48c1.1,0,2-0.9,2-2V38C52,36.9,51.1,36,50,36z"/>
+										<path d="M24.6,35.4C25,35.8,25.5,36,26,36c0.5,0,1-0.2,1.4-0.6l12-12c0.6-0.6,0.7-1.4,0.4-2.2c-0.3-0.7-1-1.2-1.8-1.2h-4V2c0-1.1-0.9-2-2-2H20c-1.1,0-2,0.9-2,2v18h-4c-0.8,0-1.5,0.5-1.8,1.2c-0.3,0.7-0.1,1.6,0.4,2.2L24.6,35.4z"/>
+									</g>
+								</g>
+							</svg>
+							FICHA TECNICA
+						</button>
+					</div>
 				</div>
+ 				<?php
+ 					endwhile;
+ 				?>
 			</div>
-			<?php
-				while($result = mysql_fetch_assoc($producto)):
-					$IdProducto=$result['IdProducto'];
- 			?>
-			<?=$IdProducto;?>
- 			<?php
- 				endwhile;
- 			?>
 		</div>
 	</div>
 </section>

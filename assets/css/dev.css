@@ -1230,10 +1230,17 @@ section#Home div.slideInnovaled .backRed{
 
 /*DETALLE PRODUCTO*/
 section#detalle{
-
+    padding: 75px 0px;
+}
+section#detalle div.vertical.backImage{
+    height: 100%;
+    background-position: 50% 50%;
+    background-size: 100%;
+    background-size: cover;
 }
 section#detalle div.slideDetalleZoom{
-    border: 1px solid #DDD;
+    border: 1px solid #3c414c;
+    background-color: rgba(255, 255, 255, 0.7);
 }
 section#detalle div.slideDetalleZoom div.item{
   height: 400px;
@@ -1244,6 +1251,7 @@ section#detalle div.slideDetalleZoom div.item>img{
     position: absolute;
     max-width: 85%;
     max-height: 85%;
+    min-height: 200px;
     margin: auto;
     top: 0;
     bottom: 0;
@@ -1251,14 +1259,24 @@ section#detalle div.slideDetalleZoom div.item>img{
     right: 0;
 }
 section#detalle div.slideDetalleThumbs div.item{
-    height: 152px;
     outline: none;
+    padding: 5px 0px;
 }
-section#detalle div.slideDetalleThumbs div.item>img{
+section#detalle div.slideDetalleThumbs div.item>div{
+    width: 150px;
+    height: 150px;
+    border: 1px solid #3c414c;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+section#detalle div.slideDetalleThumbs div.item.slick-active.slick-current>div{
+    border-color: #ff0000;
+}
+section#detalle div.slideDetalleThumbs div.item>div>img{
     display: inline-block;
     position: absolute;
-    max-width: 90%;
-    max-height: 75%;
+    max-width: 85%;
+    max-height: 85%;
+    width: 100%;
     margin: auto;
     top: 0;
     bottom: 0;
@@ -1267,12 +1285,12 @@ section#detalle div.slideDetalleThumbs div.item>img{
     cursor: pointer;
     opacity: 1;
     -webkit-transition: all .25s ease;
-       -moz-transition: all .25s ease;
-        -ms-transition: all .25s ease;
-         -o-transition: all .25s ease;
-            transition: all .25s ease;
+    -moz-transition: all .25s ease;
+    -ms-transition: all .25s ease;
+    -o-transition: all .25s ease;
+    transition: all .25s ease;
 }
-section#detalle div.slideDetalleThumbs div.item>img:hover{
+section#detalle div.slideDetalleThumbs div.item>div>img:hover{
     opacity: .75;
 }
 section#detalle div.slideDetalleZoom .slick-prev, 
@@ -1291,6 +1309,30 @@ section#detalle div.slideDetalleThumbs .slick-prev:before{
   content: url('../img/arrow_purple_prev.svg');
 }
 
+section#detalle h3.price>span{
+    display: inline-block;
+    position: relative;
+    left: 15px;
+    font-size: 14px;
+    top: -2px;
+}
+section#detalle h3.price>span:before{
+    content: '';
+    display: inline-block;
+    position: absolute;
+    left: -8px;
+    top: 0;
+    bottom: 0;
+    margin: auto 0px;
+    height: 20px;
+    width: 1px;
+    background-color: #f00;
+}
+section#detalle p.description{
+    border-width: 2px 0px 2px 0px;
+    border-color: #e2e3e4;
+    border-style: solid;
+}
 
 section#botSection{
     background-color: #009bdc;
