@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.0
+-- version 4.7.4
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 14-02-2018 a las 10:09:40
--- Versión del servidor: 10.1.25-MariaDB
--- Versión de PHP: 5.6.31
+-- Tiempo de generación: 02-03-2018 a las 22:05:50
+-- Versión del servidor: 10.1.30-MariaDB
+-- Versión de PHP: 5.6.33
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -46,12 +46,6 @@ INSERT INTO `caracteristica` (`IdCarecterisctica`, `IdProducto`, `Titulo`, `Valo
 (27, 16, 'COLOR', 'NEGRO/BLANCO'),
 (28, 39, 'TAMAÑO', 'GRANDE'),
 (29, 39, 'COLOR', 'AZUL'),
-(30, 40, 'Color', 'Ambar'),
-(31, 40, 'Amargor', 'Suave'),
-(32, 40, 'Grados', '6.1'),
-(33, 40, 'IBU', '18'),
-(34, 40, 'Pais', 'Peru'),
-(35, 40, 'Botella', '345ml'),
 (36, 23, 'GARANTIA', '1 AÑO'),
 (37, 109, 'GARANTIA', '3 AÑOS'),
 (38, 110, 'GARANTIA', '3 AÑOS'),
@@ -88,7 +82,7 @@ CREATE TABLE `configuracion` (
 --
 
 INSERT INTO `configuracion` (`IdConfiguracion`, `ImpuestoPorcentaje`, `Correo1`, `Correo2`, `Correo3`, `Correo4`, `Correo5`) VALUES
-(1, 18, 'imoran@innovaled.pe', 'ventas@innovaled.pe', '', '', '');
+(1, 18, 'daniel.m.arvizu@gmail.com', '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -173,7 +167,24 @@ INSERT INTO `cotizacion` (`IdCotizacion`, `NombreCliente`, `Correo`, `Telefono`,
 (69, 'Giuliano Vasquez Espinoza', 'vasquezespinoza9@gmail.com', '942398967', 'Salón las vegas', '', 'producto', '2018-02-07 14:49:52'),
 (70, 'Erik Chy', 'erik.m.corp@hotmail.com', '986999979', 'Dastan', 'Quiero obtener mas info de este producto', 'producto', '2018-02-08 21:27:18'),
 (71, 'Manuel Choque ', 'aftermacf@gmail.com', '', '', '', 'servicio', '2018-02-09 17:25:57'),
-(72, '', '', '', '', '', 'producto', '2018-02-11 15:39:01');
+(72, '', '', '', '', '', 'producto', '2018-02-11 15:39:01'),
+(73, 'Marvin Lopez ', 'marvin.lopez1105@gmail.com', '985684504', '', '', 'producto', '2018-02-12 18:46:35'),
+(74, 'Jorge Luis Flores', 'jflores@crearco.com.pe', '960621568', 'CREAR', 'Hola quisiera que me cotices 210 ml de iluminación de led con regleta de aluminio adosada a panel, en la cotización que incluya suministros e instalación, ha y cuanto esta el rollo de cinta led', 'producto', '2018-02-12 21:51:45'),
+(75, '', '', '', '', '', 'producto', '2018-02-14 17:16:53'),
+(76, 'isla rojas carolina', 'libra369963@gmail.com', '955544190', 'es un negocio personal', '', 'servicio', '2018-02-15 01:50:58'),
+(77, 'EDWIN CHUCUYA FUENTES', 'edwinf0783@gmail.com', '952967236', 'GOBIERNO REGIONAL TACNA', '', 'producto', '2018-02-16 16:27:39'),
+(78, 'Filomeno Gonzales Damazo', 'fgonzalesdamazo@outlook.com', '937737795', 'Greenex', 'Buenas tardes si me podria cotizar reflectores led de 150 w.\r\nComo tambien necesitamos un reflector que alumbra 1km a mas \r\nEnviarme la cotizacion a fgonzalesdamazo@outlook.com', 'producto', '2018-02-16 17:04:16'),
+(79, 'Máximo Castañeda Jiménez', 'mcj_5_5@hotmail.com', '949959519', '', '', 'producto', '2018-02-16 19:53:36'),
+(80, '', '', '', '', '', 'producto', '2018-02-19 09:34:40'),
+(81, 'MERLY DIANA NOA CALCINA', 'diana-.-89@hotmail.com', '', 'pilcotec', 'espero una pronta respuesta', 'producto', '2018-02-21 16:06:26'),
+(82, 'Daniel', 'da@da.com', '', '', '', 'producto', '2018-02-23 01:31:42'),
+(83, 'Daniel Martin', 'da@da.com', '44265421521', '', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'producto', '2018-02-23 01:35:15'),
+(84, 'Daniel Martin', 'da@da.com', '44265421521', '', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'producto', '2018-02-23 01:39:05'),
+(85, 'Martin', 'mar@gmail.com', '', '', '', 'producto', '2018-02-23 01:40:37'),
+(86, 'rec', 're@da.com', '', '', '', 'producto', '2018-02-23 01:43:08'),
+(87, 'Windy', 'win@di.com', '', '', '', 'producto', '2018-02-23 01:45:15'),
+(88, 'Windy', 'win@di.com', '', '', '', 'producto', '2018-02-23 01:45:18'),
+(89, 'Rene', 'rane@e.com', '', '', '', 'producto', '2018-02-23 01:47:10');
 
 -- --------------------------------------------------------
 
@@ -260,7 +271,36 @@ INSERT INTO `cotizacionproducto` (`IdCotizacionProducto`, `IdCotizacion`, `IdPro
 (92, 64, 124, 1),
 (93, 68, 124, 1),
 (94, 69, 120, 6),
-(95, 70, 22, 2);
+(95, 70, 22, 2),
+(96, 73, 102, 1),
+(97, 73, 36, 1),
+(98, 73, 35, 1),
+(99, 73, 30, 1),
+(100, 73, 17, 1),
+(101, 73, 99, 1),
+(102, 73, 100, 1),
+(103, 73, 68, 1),
+(104, 73, 67, 1),
+(105, 73, 55, 1),
+(106, 73, 54, 1),
+(107, 73, 105, 1),
+(108, 77, 76, 1),
+(109, 77, 55, 1),
+(110, 77, 54, 1),
+(111, 77, 53, 1),
+(112, 77, 52, 1),
+(113, 77, 51, 1),
+(114, 77, 50, 1),
+(115, 79, 126, 1),
+(116, 81, 124, 1),
+(117, 81, 123, 1),
+(118, 82, 19, 1),
+(119, 83, 16, 4),
+(120, 84, 16, 1),
+(121, 85, 16, 1),
+(122, 86, 16, 1),
+(123, 87, 16, 2),
+(124, 89, 16, 8);
 
 -- --------------------------------------------------------
 
@@ -283,7 +323,8 @@ CREATE TABLE `cotizacionservicio` (
 --
 
 INSERT INTO `cotizacionservicio` (`IdCotizacionServicio`, `IdCotizacion`, `Proyecto`, `Tipo`, `Ambiente`, `Dimensiones`, `Calidad`) VALUES
-(1, 71, 'Pantallas', 'Fijo', 'Interior', '1.5x2', 'HD');
+(1, 71, 'Pantallas', 'Fijo', 'Interior', '1.5x2', 'HD'),
+(2, 76, 'Pantallas', 'Fijo', 'Interior', '0.5x0.5', 'HD');
 
 -- --------------------------------------------------------
 
@@ -303,10 +344,7 @@ CREATE TABLE `linea` (
 INSERT INTO `linea` (`IdLinea`, `Etiqueta`) VALUES
 (4, 'Luminarias Led'),
 (5, 'Paneles Solares'),
-(6, 'Digital Signage'),
-(8, 'Automatizacion '),
-(9, 'Climatizacion '),
-(10, 'Camaras de seguridad');
+(6, 'Digital Signage');
 
 -- --------------------------------------------------------
 
@@ -345,12 +383,7 @@ CREATE TABLE `precioescala` (
 
 INSERT INTO `precioescala` (`IdPrecioEscala`, `IdProducto`, `Desde`, `Descuento`) VALUES
 (1, 13, 10, '1'),
-(2, 16, 2000, '1.5'),
-(3, 41, 10, '10'),
-(4, 41, 20, '15'),
-(6, 40, 50, '15'),
-(7, 40, 100, '18'),
-(8, 40, 500, '25');
+(2, 16, 2000, '1.5');
 
 -- --------------------------------------------------------
 
@@ -402,8 +435,6 @@ INSERT INTO `producto` (`IdProducto`, `IdSubLinea`, `IdMoneda`, `Nombre`, `Slug`
 (37, 6, 1, 'DICROICO 5W GU10 ', '', 'INNOVALED', '6.5', 'Si', '', '1', 1),
 (38, 6, 1, 'DICROICO 7W GU5.3/MRU16', '', 'INNOVALED', '10', 'Si', '', '1', 1),
 (39, 19, 1, 'PRODUCTO PRUEBA', '', 'INNOVALED', '89', 'Si', '', '0', 1),
-(40, 26, 1, 'De Peso Pumpkin Ale', '', 'Barbarian ', '13.2', 'Si', 'Cerveza de edición temporal de Cervecería Barbarian. Esta cerveza está inspirada en las cervezas de calabaza (pumpkin ale) muy extendidas en Estados Unidos. En nariz se percibe canela y clavo de olor. En boca es una cerveza ligeramente dulce y de amargor bajo que armonizan maravillosamente con notas especiadas que nos transportan a postres navideños. Una chela de Peso.', '0', 1),
-(41, 26, 1, 'Cusqueña de trigo', '', 'Cusqueña', '13.6', 'Si', 'Cerveza dorada y refrescante con toques de miel de Oxapampa. Cuerpo liviano malta Pale Ale y dos variedades de lúpulo.', '0', 2),
 (42, 3, 1, 'Cable UTP Cat 6', '', 'AMP', '480', 'Si', '', '0', 1),
 (43, 10, 1, 'REFLECTOR 30 W 6500k ( BLANCO NEUTRO) CHIP SM', '', 'DAXSO', '71.37', 'Si', 'REFLECTOR 30 W  6500k ( BLANCO NEUTRO) CHIP SMD', '0', 1),
 (44, 10, 1, 'REFLECTOR 30 W LUXSO 6500k', '', 'DAXSO', '71.37', 'Si', 'REFLECTOR 30 W LUXSO 6500k CHIP SMD', '0', 1),
@@ -435,32 +466,18 @@ INSERT INTO `producto` (`IdProducto`, `IdSubLinea`, `IdMoneda`, `Nombre`, `Slug`
 (70, 10, 1, 'REFLECTOR 50W', '', 'DAXSO', '110', 'Si', 'El reflector LED de 50W SMD DAXSO ofrece una amplia e intensa iluminación debido a su alta eficacia luminica de 120Lm/w. Diseñado bajo estrictos parámetros de calidad asegurando la óptima dispersión del calor y maximización de su vida útil.\r\n', '0', 3),
 (71, 10, 1, 'REFLECTOR 100W SMD', '', 'DAXSO', '234', 'Si', 'El reflector LED de 100W SMD DAXSO ofrece una amplia e intensa iluminación debido a su alta eficacia lumínica de 120Lm/w. Diseñado bajo estrictos parámetros de calidad asegurando la óptima dispersión del calor y maximización de su vida útil.\r\n', '1', 4),
 (72, 13, 1, 'LUMINARIA DE EMERGENCIA', '', 'DAXSO', '52.26', 'Si', '- Eficiencia energética optimizada  \r\n- Máxima potencia lumínica \r\n- Arranque instantáneo \r\n- No emite Radiación UV \r\n- Larga vida útil\r\n', '1', 1),
-(73, 31, 1, 'DVR TRIBRIDO 4 canales', '', 'HIKVISION', '193.50', 'Si', 'Soporta cámaras Analogas, analogas HD-TVI y AHD. Tiene conexión vía coaxitron a cámaras y\r\ndomos PTZ HD-TVI. Ademas de ello cuenta con salidas HDMI y VGA con resolución de\r\nhasta 1920x1080P.', '1', 1),
-(74, 31, 1, 'DVR TRIBRIDO 4 canales', '', 'HIKVISION', '00000', 'Si', '', '0', 1),
-(75, 31, 1, 'DVR TRIBRIDO 8 canales', '', 'HIKVISION', '268.90', 'Si', 'Soporta cámaras Análogas análogas HD-TVI y AHD. Tiene conexión via coaxitron a cámaras y domos PTZ HD-TVI. Además tiene salidas HDMI y VGA con resolución de hasta 1920x1080P.', '1', 2),
 (76, 11, 1, 'PANEL CUADRADO ADOSABLE 40w', '', 'DAXSO', '158', 'Si', 'El panel LED posee un diseño extraplano que ofrece una iluminación general de máxima calidad. Incluye un disipador de aluminio de alta calidad para una mínima emisión de calor y mayor eficiencia energética', '1', 1),
 (77, 11, 1, 'PANEL 40W 60*60 EMPOTRABLE', '', 'DAXSO', '126.1', 'Si', 'El panel LED posee un diseño extraplano que ofrece una iluminación general de máxima calidad. Incluye un disipador de aluminio de alta calidad para una mínima emisión de calor y mayor eficiencia energética', '1', 2),
-(78, 31, 1, 'DVR TRIBRIDO 16 canales', '', 'HIKVISION', '441.50', 'Si', 'Soporta cámaras análogas HD-TVI y AHD. Tiene conexión via coaxitron a cámaras y domos PTZ HD-TVI. También tiene salidas HDMI y VGA con resolución de hasta 1920x1080P.', '1', 3),
 (79, 11, 1, 'PANEL LED 48 30*60 ADOSABLE', '', 'DAXSO', '158.5', 'Si', 'El panel LED posee un diseño extra plano que ofrece una iluminación general de máxima calidad. Incluye un disipador de aluminio de alta calidad para una mínima emisión de calor y tmayor eficiencia energética.\r\n', '1', 3),
-(80, 31, 1, 'TURBO HD DVR 4 canales', '', 'HIKVISION', '260.00', 'Si', 'Soporta tecnologías: AHD HD-TVI ANÁLOGO e IP. Tiene resolución 1080P (1920 X 1080) y salida VGA/HDMI 1080P.', '1', 4),
 (81, 11, 1, 'PANEL 48W 60*30 EMPOTRABLE', '', 'DAXSO', '127.4', 'Si', 'El panel LED posee un diseño extra plano que ofrece una iluminación general de máxima calidad. Incluye un disipador de aluminio de alta calidad para una mínima emisión de calor y tmayor eficiencia energética.\r\n', '1', 4),
-(82, 31, 1, 'TURBO HD DVR 8 canales', '', 'HIKVISION', '380.00', 'Si', 'Soporta tecnologías: AHD HD-TVI ANÁLOGO e IP. Tiene resolución 1080P (1920 X 1080) y salida VGA/HDMI 1080P.', '1', 5),
-(83, 31, 1, 'NVR 4 canales', '', 'HIKVISION', '255.00', 'Si', 'Soporta cámaras de otras marcas. Resolución de grabación de hasta 2Mp Y salidas HDMI/VGA con resolución de hasta 1920 x 1080P.', '1', 6),
-(84, 31, 1, 'NVR 4 canales  (POE)', '', 'HIKCVISION', '411.30', 'Si', 'Soporte de visualización en vivo el almacenamiento y la reproducción de la cámara conectada con un máximo de la resolución de 2 megapíxeles. Salidas simultáneas HDMI y VGA a hasta 1920 × 1080 de resolución.', '1', 7),
-(85, 14, 1, 'FOCO LED PARA AUTO H4 V8 (PAR)', '', '-', '170', 'Si', 'Las luces vehiculares se conectan directamente no requieres de transformadores u otros dispositivos de regulación además posee un sistema de enfriamiento dual que garantiza su larga vida útil\r\n', '1', 1),
-(86, 14, 1, 'FOCO LED VEHICULAR  V6  H4  (PAR)', '', '-', '150', 'Si', 'Las luces vehiculares se conectan directamente no requieres de transformadores u otros dispositivos de regulación además posee un sistema de enfriamiento dual que garantiza su larga vida útil\r\n', '1', 2),
+(86, 14, 1, 'FOCO LED VEHICULAR  V6  H4  (PAR)', '', '-', '150', 'Si', 'Las luces vehiculares se conectan directamente no requieres de transformadores u otros dispositivos de regulación además posee un sistema de enfriamiento dual que garantiza su larga vida util\r\n', '1', 2),
 (87, 14, 1, 'FOCO LED VEHICULAR H1 (PAR)', '', '-', '136', 'Si', 'Las luces vehiculares se conectan directamente no requieres de transformadores u otros dispositivos de regulación además posee un sistema de enfriamiento dual que garantiza su larga vida útil\r\n', '1', 3),
 (88, 14, 1, 'FOCO LED VEHICULAR H3  (PAR)', '', '-', '123', 'Si', 'Las luces vehiculares se conectan directamente no requieres de transformadores u otros dispositivos de regulación además posee un sistema de enfriamiento dual que garantiza su larga vida útil\r\n', '1', 5),
 (89, 14, 1, 'FOCO LED VEHICULAR H7 ( PAR)', '', '-', '136', 'Si', 'Las luces vehiculares se conectan directamente no requieres de transformadores u otros dispositivos de regulación además posee un sistema de enfriamiento dual que garantiza su larga vida útil\r\n', '1', 5),
-(90, 31, 1, 'NVR 8 canales', '', 'HIKVISION', '323.80', 'Si', 'Soporta cámaras de otras marcas. resolución de grabación de hasta 6Mp. Salidas HDMI/VGA con resolución de hasta 1920 x 1080P.', '1', 8),
 (91, 14, 1, 'FOCO LED H1 (PAR)', '', '-', '136', 'Si', 'Las luces vehiculares se conectan directamente no requieres de transformadores u otros dispositivos de regulación además posee un sistema de enfriamiento dual que garantiza su larga vida útil\r\n', '0', 6),
 (92, 14, 1, 'FOCO LED H11 (PAR)', '', '-', '136', 'Si', 'Las luces vehiculares se conectan directamente no requieres de transformadores u otros dispositivos de regulación además posee un sistema de enfriamiento dual que garantiza su larga vida útil\r\n', '1', 6),
 (93, 14, 1, 'FOCO LED H1 (PAR)', '', '-', '136', 'Si', 'Las luces vehiculares se conectan directamente no requieres de transformadores u otros dispositivos de regulación además posee un sistema de enfriamiento dual que garantiza su larga vida útil\r\n', '0', 6),
-(94, 31, 1, 'NVR 16 canales', '', 'HIKVISION', '440.80', 'Si', 'Soporta cámaras de otras marcas. resolución de grabación de hasta 6Mp. Salidas HDMI/VGA con resolución de hasta 1920 x 1080P.', '1', 9),
 (95, 14, 1, 'FOCO LED H13 (PAR)', '', '-', '136', 'Si', 'Las luces vehiculares se conectan directamente no requieres de transformadores u otros dispositivos de regulación además posee un sistema de enfriamiento dual que garantiza su larga vida útil\r\n', '1', 7),
-(96, 30, 1, 'CÁMARA ANALÓGICA EXTERIOR TIPO TUBO (METAL) ', '', 'HIKVISION', '85.80', 'Si', '1Mp de resolución CMOS de alto rendimiento y tecnología HD-TVI. Material de metal.', '1', 10),
-(97, 30, 1, 'CÁMARA ANALÓGICA EXTERIOR TIPO TUBO (PLÁSTICO', '', 'HIKVISION', '61.20', 'Si', '1Mp de resolución CMOS de alto rendimiento y tecnología HD-TVI. Material de plástico.', '1', 10),
-(98, 30, 1, 'CÁMARA ANALÓGICA EXTERIOR TIPO DOMO (METAL)', '', 'HIKVISION', '74.20', 'Si', '1Mp de resolución CMOS de alto rendimiento y Tecnología HD-TVI.', '1', 11),
 (99, 9, 1, 'EQUIPO LINEAL 16W 0.60 cm', '', 'LITEHOME', '19.50', 'Si', 'EQUIPO LINEAL 16W 0.60 cm', '1', 1),
 (100, 9, 1, 'EQUIPO LINEAL 32W 120 cm', '', 'LITEHOME', '29.77', 'Si', 'EQUIPO LINEAL 32W 120 cm', '1', 2),
 (101, 33, 1, 'BATERIA SOLAR 12V 100A/H ', '', 'ETNA', '824', 'Si', '', '1', 1),
@@ -475,9 +492,6 @@ INSERT INTO `producto` (`IdProducto`, `IdSubLinea`, `IdMoneda`, `Nombre`, `Slug`
 (110, 34, 1, 'TRANSFORMADOR MEANWELL LPV 100-12V', '', 'MEANWELL', '360', 'Si', '', '1', 2),
 (111, 34, 1, 'TRANSFORMADOR MEANWELL HLG 240', '', 'MEANWELL', '400', 'Si', '', '1', 3),
 (112, 34, 1, 'TRANSFORMADOR MEANWELL HLG 360H-12V', '', 'MEANWELL', '470', 'Si', '', '1', 1),
-(113, 26, 1, 'CONTROL ACESSO ZK-X7 ', '', 'ZKTECO', '211.016', 'Si', 'Uno de los innovadores lectores de huellas biométricas para aplicaciones de control de acceso. Ofreciendo un incomparable rendimiento utilizando un algoritmo avanzado para la fiabilidad precisión y excelente velocidad de coincidencia. Puede operar en modo independiente con la interfaz para cerradura eléctrica de terceros alarma sensor de puerta botón de salida y timbre. ', '1', 1),
-(114, 26, 1, 'CONTROL ACCESO & ASISTENCIA  MA300', '', 'ZKTECO', '535.30', 'Si', 'MA300-BT ofrece la flexibilidad de ser instalado de manera independiente o con cualquier tercero\r\npaneles de fiesta que admiten wiegand de 26 bits. El usuario puede ser inscrito por\r\ntarjeta de administrador cuando el dispositivo funciona en modo independiente.TCP / IP\r\ny RS485 están disponibles por lo que el dispositivo se puede conectar fácilmente y\r\nconvenientemente', '1', 3),
-(115, 26, 1, 'CONTROL DE ASISTENCIA  LX14', '', 'ZKTECO', '206.53', 'Si', 'es una terminal biométrica para la gestión de tiempo y asistencia de empleados con\r\nfunción SSR integrada lo que lo hace ideal para pequeñas empresas. La información de los\r\nempleados puede redactarse en formato de Excel.', '1', 2),
 (116, 20, 1, 'Videowall 55 inch Samsung', '', 'SAMSUNG', '13140', 'Si', 'Con un marco de sólo 3.5mm de grosor (distancia Marco-Marco) el modelo UD46E-B permite ofrecer una experiencia de visionado perfecta permitiendo que la audiencia se concentre en el mensaje.', '1', 1),
 (117, 20, 1, 'Videowall 46 inch Samsung', '', 'SAMSUNG', '8216', 'Si', 'Con un marco de sólo 3.5mm de grosor (distancia Marco-Marco) el modelo UD46E-B permite ofrecer una experiencia de visionado perfecta permitiendo que la audiencia se concentre en el mensaje.', '1', 2),
 (118, 18, 1, 'Pantalla de Interior Servicio Delantero SMD  ', '', 'HUAHAI', '0000', 'Si', 'Las pantallas LED HUAHAI poseen una gran calidad de imagen ideal para mostrar contenidos audiovisuales en alta definición. Las pantallas LED se han convertido en la actualidad en una potente herramienta de marketing para las marcas.\r\n', '1', 1),
@@ -488,14 +502,7 @@ INSERT INTO `producto` (`IdProducto`, `IdSubLinea`, `IdMoneda`, `Nombre`, `Slug`
 (123, 18, 1, 'Pantalla de Exterior AA - 16mm', '', 'HUAHAI', '000', 'Si', 'Las pantallas LED HUAHAI poseen una gran calidad de imagen ideal para mostrar contenidos audiovisuales en alta definición. Las pantallas LED se han convertido en la actualidad en una potente herramienta de marketing para las marcas.', '1', 7),
 (124, 18, 1, 'Pantalla de Exterior AA - 16mm Clase B', '', 'HUAHAI', '0000', 'Si', 'Las pantallas LED HUAHAI poseen una gran calidad de imagen ideal para mostrar contenidos audiovisuales en alta definición. Las pantallas LED se han convertido en la actualidad en una potente herramienta de marketing para las marcas.', '1', 8),
 (125, 18, 1, 'Pantalla de Interior AID - 03', '', 'HUAHAI', '0000', 'Si', '', '1', 9),
-(126, 18, 1, 'Pantalla de Interior AID - 0 4', '', 'HUAHAI', '000', 'Si', '', '1', 10),
-(127, 30, 1, 'CAMARA ANALOGICA EXTERIOR TIPO DOMO (PLASTICO', '', 'HIKVISION', '59.60', 'Si', 'CAMARA TIPO DOMO SOP PLASTICO ICR. RESOLUCION HD720P (1280 X 720). GRADO DE PROTECCION IP66.', '1', 12),
-(128, 30, 1, 'CAMARA ANALOGICA EXTERIOR TIPO DOMO (PLASTICO', '', 'HIKVISION', '128.20', 'Si', 'Resolución: HD720P. Lente: 3.6mm. NTSC: 1280 (H) x 720 (V).', '1', 13),
-(129, 29, 1, 'CAMARA IP EXTERIOR TIPO TUBO 2MP HD 1080P 30f', '', 'HIKVISION', '293.60', 'Si', 'Hasta 2Mp de resolución 1920 x 1080. Soporta Dual Stream y sub-stream para vigilancia móvil. Alto rendimiento y LEDs IR de larga duración rango de cobertura 10 a 30m.  ', '1', 15),
-(130, 29, 1, 'CAMARA IP EXTERIOR TIPO DOMO  PTZ IP 1.3Mp', '', 'HIKVISION', '479.90', 'Si', 'Chip CMOS 1/3” de escaneo progresivo. Resolución 1280 x 960. Zoom optico de 20x zoom digital x16.', '1', 16),
-(131, 29, 1, 'CAMARA IP INTERIOR TIPO ESFERA ', '', 'HIKVISION', '424.40', 'Si', 'Chip CMOS 1/4” Escaneo Progresivo. 1Mp de resolución. Video 1280×720 en Tiempo Real.', '1', 16),
-(132, 29, 1, 'CAMARA IP INTERIOR TIPO MINI BULLET ', '', 'HIKVISION', '246.00', 'Si', 'Hasta 1Mp de resolución (1280 x 720). Audio 2-vias micro y parlante. PIR de Detección.', '1', 17),
-(133, 29, 1, 'CAMARA IP INTERIOR TIPO DOMO', '', 'HIKVISION', '280.90', 'Si', 'Compresión de Video Estándar con Alto Nivel de compresión codificación ROI. Hasta 2Mp de resolución 1920 x 1080. Chip CMOS de Escaneo Progresivo. ', '1', 18);
+(126, 18, 1, 'Pantalla de Interior AID - 0 4', '', 'HUAHAI', '000', 'Si', '', '1', 10);
 
 -- --------------------------------------------------------
 
@@ -531,14 +538,8 @@ INSERT INTO `sublinea` (`IdSubLinea`, `IdLinea`, `Etiqueta`) VALUES
 (18, 6, 'Pantallas Led'),
 (19, 6, 'Totem'),
 (20, 6, 'VideoWall'),
-(26, 8, 'Control de asistencia'),
-(29, 10, 'Camaras IP'),
-(30, 10, 'Camaras analogas '),
-(31, 10, 'DVRs'),
 (33, 5, 'BATERIAS SOLARES'),
-(34, 4, 'Accesorios LED'),
-(42, 8, 'Centrales telefonicas'),
-(43, 9, 'Aire acondicionado');
+(34, 4, 'Accesorios LED');
 
 -- --------------------------------------------------------
 
@@ -649,56 +650,67 @@ ALTER TABLE `usuario`
 --
 ALTER TABLE `caracteristica`
   MODIFY `IdCarecterisctica` smallint(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
+
 --
 -- AUTO_INCREMENT de la tabla `configuracion`
 --
 ALTER TABLE `configuracion`
   MODIFY `IdConfiguracion` smallint(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
 --
 -- AUTO_INCREMENT de la tabla `cotizacion`
 --
 ALTER TABLE `cotizacion`
-  MODIFY `IdCotizacion` smallint(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=73;
+  MODIFY `IdCotizacion` smallint(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=90;
+
 --
 -- AUTO_INCREMENT de la tabla `cotizacionproducto`
 --
 ALTER TABLE `cotizacionproducto`
-  MODIFY `IdCotizacionProducto` smallint(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=96;
+  MODIFY `IdCotizacionProducto` smallint(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=125;
+
 --
 -- AUTO_INCREMENT de la tabla `cotizacionservicio`
 --
 ALTER TABLE `cotizacionservicio`
-  MODIFY `IdCotizacionServicio` smallint(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `IdCotizacionServicio` smallint(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
 --
 -- AUTO_INCREMENT de la tabla `linea`
 --
 ALTER TABLE `linea`
-  MODIFY `IdLinea` smallint(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `IdLinea` smallint(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
 --
 -- AUTO_INCREMENT de la tabla `moneda`
 --
 ALTER TABLE `moneda`
   MODIFY `IdMoneda` smallint(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
 --
 -- AUTO_INCREMENT de la tabla `precioescala`
 --
 ALTER TABLE `precioescala`
-  MODIFY `IdPrecioEscala` smallint(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `IdPrecioEscala` smallint(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
 --
 -- AUTO_INCREMENT de la tabla `producto`
 --
 ALTER TABLE `producto`
-  MODIFY `IdProducto` smallint(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=134;
+  MODIFY `IdProducto` smallint(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=127;
+
 --
 -- AUTO_INCREMENT de la tabla `sublinea`
 --
 ALTER TABLE `sublinea`
-  MODIFY `IdSubLinea` smallint(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+  MODIFY `IdSubLinea` smallint(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+
 --
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
   MODIFY `IdUsuario` smallint(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
 --
 -- Restricciones para tablas volcadas
 --
