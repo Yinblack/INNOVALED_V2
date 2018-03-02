@@ -49,6 +49,7 @@ window.addEventListener("load", function () {
       $('div.loaderPage').hide();
       $("section#Productos div.tabsGeneral div.item div.subItem>a.firstElement").trigger('click');
       $("section#Productos div.tabsGeneral div.item div.subItem>a.firstElement").addClass('active');
+      initMap();
     } else {
       window.setTimeout(listen, 50);
     }
@@ -62,9 +63,6 @@ $(".hamburger").click(function(){
     	$("div#menu").slideUp(750);
     }
 });
-
-
-
 
 $( document ).ready(function() {
   $('div.containerTabs').slick({

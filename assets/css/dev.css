@@ -1167,63 +1167,31 @@ section#Home div.slideInnovaled{
     background-size: 100%;
     background-size: cover;
 }
-section#Home div.slideInnovaled div.vertical.bottom{
-    -webkit-justify-content: flex-end;
-    -ms-flex-pack: flex-end;
-    justify-content: flex-end;
-    pointer-events: none;
-}
-section#Home div.slideInnovaled div.vertical.bottom ul{
-    display: inline-block;
-    position: relative;
-    float: left;
-    list-style-type: none;
-    -webkit-margin-before: 0;
-    -webkit-margin-after: 0;
-    -webkit-margin-start: 0;
-    -webkit-margin-end: 0;
-    -webkit-padding-start: 0;
-}
-section#Home div.slideInnovaled div.vertical.bottom ul>li{
-    display: inline-block;
-    position: relative;
-    float: left;
-    padding: 0px 15px;
-}
-section#Home div.slideInnovaled div.vertical.bottom ul>li>img{
-    display: inline-block;
-    position: absolute;
-    left: 10px;
-    top: 0;
-    bottom: 0;
-    width: 50px;
-    margin: auto 0px;
-}
-section#Home div.slideInnovaled div.vertical.bottom ul>li>a{
-    display: inline-block;
-    position: relative;
-    float: left;
-    width: 100%;
-    padding-left: 60px;
-    color: #FFFFFF;
-    font-size: 16px;
-    font-weight: 500;
-    pointer-events: auto;
-    -webkit-transition: color .25s ease;
-       -moz-transition: color .25s ease;
-        -ms-transition: color .25s ease;
-         -o-transition: color .25s ease;
-            transition: color .25s ease;
-}
-section#Home div.slideInnovaled div.vertical.bottom ul>li>a:hover{
-    color: #000000;
-}
 section#Home div.slideInnovaled .backRed{
     background-color: #e81319;
     padding-top: 20px;
     padding-bottom: 15px;
     padding-left: 0;
     padding-right: 0;
+}
+
+
+
+section#contacto{
+
+}
+section#contacto div.vheight{
+    height: 100vh;
+}
+section#contacto div#map{
+    background-color: transparent;
+}
+section#contacto div.transparent{
+    background-color: rgba(255, 255, 255, 0.2);
+}
+section#contacto div.vheight .content{
+    background-color: rgba(255, 255, 255, 0.85);
+    padding: 30px 15px;
 }
 
 
@@ -1525,12 +1493,6 @@ form#formCotizar .form-control{
 @media (max-width : 768px) {
     section#footer div.item {
         height: 220px;
-    }
-    section#Home div.slideInnovaled div.vertical.bottom ul>li {
-        padding: 20px 15px;
-    }
-    section#Home div.slideInnovaled div.vertical.bottom ul {
-        width: 340px;
     }
     section{
         height: auto;

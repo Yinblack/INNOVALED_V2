@@ -111,7 +111,9 @@ function initMap() {
                 stylers: [{color: '#92998d'}]
               }
           ];
-  var image = window.base_url+'assets/img/location_map.png';
+  var image = {
+      url: window.base_url+'../assets/img/location.png',
+  };
   var map = new google.maps.Map(document.getElementById("map"), {
     center: myLatLng,
     scrollwheel: false,
@@ -121,7 +123,7 @@ function initMap() {
   var marker = new google.maps.Marker({
     map: map,
     position: myLatLng,
-    title: 'Capilla de la Ex- Hacienda de Mayorazgo, Apaseo el Grande en Guanajuato.',
+    title: 'INNOVALED PERÚ',
     icon: image
   });
   console.log('map created');
