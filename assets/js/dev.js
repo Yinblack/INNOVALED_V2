@@ -1,7 +1,25 @@
 var base_url;
 window.base_url = "http://localhost/INNOVALED_V2/Admin/";
 $( document ).ready(function() {
-    $('#principal').parallax();
+  
+$(".col-3 input").val("");
+$(".col-3 textarea").val("");
+$(".input-effect input").focusout(function(){
+  if($(this).val() != ""){
+    $(this).addClass("has-content");
+  }else{
+    $(this).removeClass("has-content");
+  }
+})
+$(".input-effect textarea").focusout(function(){
+  if($(this).val() != ""){
+    $(this).addClass("has-content");
+  }else{
+    $(this).removeClass("has-content");
+  }
+})
+
+$('#principal').parallax();
 
 window.sr = ScrollReveal();
 sr.reveal('.revealBack', { 
@@ -47,6 +65,7 @@ window.addEventListener("load", function () {
 (function listen () {
     if (window.loaded) {
       $('div.loaderPage').hide();
+      $('button.hamburger').click();
       $("section#Productos div.tabsGeneral div.item div.subItem>a.firstElement").trigger('click');
       $("section#Productos div.tabsGeneral div.item div.subItem>a.firstElement").addClass('active');
       initMap();
@@ -55,14 +74,6 @@ window.addEventListener("load", function () {
     }
 })();
 
-$(".hamburger").click(function(){
-    $(this).toggleClass("is-active");
-    if ($( this ).hasClass( "is-active" )) {
-    	$("div#menu").slideDown(750);
-    }else{
-    	$("div#menu").slideUp(750);
-    }
-});
 
 $( document ).ready(function() {
   $('div.containerTabs').slick({
@@ -157,26 +168,6 @@ $("section#Empresas div.tabBrand>div a").click(function(e){
       var index=$(this).attr('slideTo');
       $('#slideMarcas').slick('slickGoTo', index);
     }
-});
-$("div#menu>div>div>ul>li>a.scroll").click(function(e){
-  if (!$(this).hasClass('directLink')) {
-  e.preventDefault();
-    if (!$( this ).hasClass( "active" )) {
-      $("div#menu>div>div>ul>li>a").removeClass('active');
-      e.preventDefault();
-      if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-          var target = $(this.hash);
-          target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-          if (target.length) {
-              $('html, body').animate({
-                scrollTop: target.offset().top
-              }, 800);
-              $(this).addClass('active');
-              return false;
-          }
-      }
-    }
-  }
 });
 
 function notification(tittle, text, type){

@@ -1,6 +1,7 @@
 function initMap() {
   console.log('run function');
   var myLatLng = {lat: 20.5348174, lng: -100.6822196};
+  var myLatCenter = {lat: 20.5348174, lng: -100.692};
   var styleArray = [
               {elementType: 'geometry', stylers: [{color: '#ebe3cd'}]},
               {elementType: 'labels.text.fill', stylers: [{color: '#523735'}]},
@@ -115,7 +116,7 @@ function initMap() {
       url: window.base_url+'../assets/img/location.png',
   };
   var map = new google.maps.Map(document.getElementById("map"), {
-    center: myLatLng,
+    center: myLatCenter,
     scrollwheel: false,
     styles: styleArray,
     zoom: 15
@@ -127,4 +128,85 @@ function initMap() {
     icon: image
   });
   console.log('map created');
+}
+
+$("a#btnEnviar").click(function(e){
+  e.preventDefault();
+  var form = $('form#contacto');
+  if ($(form).valid()) {
+    console.log('valido');
+    send(form);
+  }else{
+    console.log('no es valido');
+  }
+});
+$( document ).ready(function() {
+  $("form#contacto").validate({
+    errorElement : 'span',
+    rules: {
+      "nombre":     {
+      required :true
+      },
+      "correo":     {
+      required :true,
+      email: true
+      },
+      "telefono":     {
+      required :true
+      }
+    },
+    messages: {
+      "nombre":     {
+      required :"Este campo es requerido."
+      },
+      "correo":     {
+      required :"Este campo es requerido.",
+      email :"El correo electronico no es valido."
+      },
+      "telefono":     {
+      required :"Este campo es requerido."
+      }
+    }
+  });
+});
+
+function send(form){
+  var formData = new FormData($(form)[0]);
+    $.ajax({
+        url: window.base_url+'../assets/library/EnviarCorreo.php',
+        type: 'POST',
+        data: formData,
+        cache: false,
+        contentType: false,
+        processData: false,
+        beforeSend: function(){
+          console.log('Procesando');
+          $('div#status').removeClass('loading success error');
+          $('div#status').addClass('loading');
+          $('div#status').slideDown(500);
+          $("a#sendContacto").prop('disabled', true);
+        },
+        success: function(data){
+          $(form)[0].reset();
+          if (data=='success') {
+            $('div#status').removeClass('loading success error');
+            $('div#status').addClass('success');
+            $("a#sendContacto").prop('disabled', false);
+            setTimeout(function()
+            {
+              $('div#status').slideUp(500);
+            }, 2500);
+          }
+          console.log(data);
+        },
+        error: function(data){
+          $('div#status').removeClass('loading success error');
+          $('div#status').addClass('error');
+          $("a#sendContacto").prop('disabled', false);
+          setTimeout(function()
+          {
+            $('div#status').slideUp(500);
+          }, 2500);
+        }
+    });
 }

@@ -645,19 +645,65 @@
 		<div class="col-xs-12 col-sm-6 vheight">
 			<div class="vertical" id="map"></div>
 			<div class="vertical transparent">
-				<div class="col-xs-12 nopadding text-center">
-					<div class="col-xs-8 content centered text-left">
+				<div class="col-xs-12">
+					<div class="col-xs-8 content text-left">
 						<h3 class="col-xs-12 noHorizontalPadding nomargin vxpadding nopaddingTop extra-bold">CONTACTANOS</h3>
-						<h4 class="col-xs-12 noHorizontalPadding nomargin vpadding bold">INNOVALED PERÚ S.A.C</h4>
-						<p class="col-xs-12 noHorizontalPadding light">Av. Marginal 603 Urb. Javier Prado Este Salamanca de Monterrico, Lima – Perú</p>
+						<h4 class="col-xs-12 noHorizontalPadding nopaddingBottom nomargin vpadding bold">INNOVALED PERÚ S.A.C</h4>
+						<p class="col-xs-12 noHorizontalPadding nomargin nopadding light">Av. Marginal 603 Urb. Javier Prado Este Salamanca de Monterrico, Lima – Perú</p>
+						<h4 class="col-xs-12 noHorizontalPadding nopaddingBottom nomargin vpadding bold">CORREO</h4>
+						<a href="mailto:contacto@innovaled.pe" class="col-xs-12 noHorizontalPadding nomargin nopadding light">contacto@innovaled.pe</a>
+						<h4 class="col-xs-12 noHorizontalPadding nopaddingBottom nomargin vpadding bold">TÉLEFONO</h4>
+						<a href="tel:0000000000" class="col-xs-12 noHorizontalPadding nomargin nopadding light">+51 1 393 4964</a>
 					</div>
 				</div>
 			</div>
 		</div>
 		<div class="col-xs-12 col-sm-6 vheight">
 			<div class="vertical backWhite">
-				<div class="col-xs-12">
-					
+				<div class="col-xs-12 text-center">
+					<form class="col-xs-12 col-sm-10 col-md-8 nopadding text-left" id="contacto">
+						<div id="status">
+							<div class="col-xs-12 nopadding vertical">
+								<div class="col-xs-12 text-center">
+									<img src="assets/img/loader.svg" class="col-xs-12 centered" style="width: 100px;">
+									<h3 class="col-xs-12 text-center loading">Enviando</h3>
+									<h3 class="col-xs-12 text-center success">Mensaje enviado <small>en breve nos pondremos contacto contigo.</small></h3>
+									<h3 class="col-xs-12 text-center error">Ha ocurrido un error <small>intentelo mas tarde.</small></h3>
+								</div>
+							</div>
+						</div>
+						<div class="col-3 input-effect">
+        					<input class="effect-21" type="text" placeholder="nombre" name="nombre" id="">
+        				    <label>Nombre y apellidos *</label>
+        				    <span class="focus-border">
+        				    	<i></i>
+        				    </span>
+        				</div>
+						<div class="col-3 input-effect">
+        					<input class="effect-21" type="text" placeholder="correo" name="correo" id="">
+        				    <label>Correo *</label>
+        				    <span class="focus-border">
+        				    	<i></i>
+        				    </span>
+        				</div>
+						<div class="col-3 input-effect">
+        					<input class="effect-21" type="text" placeholder="telefono" name="telefono" id="">
+        				    <label>Telefono *</label>
+        				    <span class="focus-border">
+        				    	<i></i>
+        				    </span>
+        				</div>
+						<div class="col-3 input-effect">
+							<textarea name="mensaje" id="mensaje" rows="5" class="effect-21"></textarea>
+        				    <label>Mensaje</label>
+        				    <span class="focus-border">
+        				    	<i></i>
+        				    </span>
+        				</div>
+        				<div class="col-xs-12 nopadding">
+							<a href="#" class="btn1 centered" data-animation="fadeInRight" data-delay="1s" id="btnEnviar">ENVIAR</a>
+        				</div>
+					</form>
 				</div>
 			</div>
 		</div>

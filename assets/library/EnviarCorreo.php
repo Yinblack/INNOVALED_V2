@@ -1,16 +1,16 @@
 <?php
 date_default_timezone_set('America/Mexico_City');
 if ($_POST) {
-    if(isset($_POST['Nombre'])
-    && isset($_POST['Email'])
-    && isset($_POST['Interes'])
-    && isset($_POST['Mensaje'])
+    if(isset($_POST['nombre'])
+    && isset($_POST['correo'])
+    && isset($_POST['telefono'])
+    && isset($_POST['mensaje'])
     ){
-              $Nombre  = $_POST['Nombre'];
-              $Email   = $_POST['Email'];
-              $Interes = $_POST['Interes'];
-              $Mensaje = $_POST['Mensaje'];
-              $mensaje = '
+              $Nombre  = $_POST['nombre'];
+              $Email   = $_POST['correo'];
+              $Telefono = $_POST['telefono'];
+              $Mensaje = $_POST['mensaje'];
+              $html = '
                   <!DOCTYPE html>
                   <html lang="en">
                   <head>
@@ -31,7 +31,7 @@ if ($_POST) {
                           Contacto Rhinoactive
                             <p style ="margin:5px 0;"><strong>Nombre:</strong> '.$Nombre.'</p>
                             <p style ="margin:5px 0;"><strong>Email:</strong> '.$Email.'</p>
-                            <p style ="margin:5px 0;"><strong>Interes:</strong> '.$Interes.'</p>
+                            <p style ="margin:5px 0;"><strong>Telefono:</strong> '.$Telefono.'</p>
                             <p style ="margin:5px 0;"><strong>Mensaje:</strong> '.$Mensaje.'</p>
                             </td>
                           <td width="14"></td>
@@ -56,11 +56,10 @@ $mail->Password = '8635a8949fc61b3d7ee706033e9f2e82';
 $mail->SMTPSecure = 'TLS';
 $mail->Port = 587;
 $mail->setFrom('contacto@rhinoactive.mx','Mailer');
-$mail->addAddress('daniel.arvizu@bloque9.com', 'Daniel');
-$mail->addAddress('rhinoactive2018@gmail.com', 'Rhinoactive');
+$mail->addAddress('daniel.m.arvizu@gmail.com', 'Daniel');
 $mail->isHTML(true);
-$mail->Subject = 'Contacto Rhinoactive[ '.$Interes.' ]';
-$mail->Body=$mensaje;
+$mail->Subject = 'Contacto INNOVALED WEB';
+$mail->Body=$html;
 $mail->AltBody = '';
 if(!$mail->send()) {
   echo 'Message could not be sent.<br>'; echo 'Mailer Error: ' . $mail->ErrorInfo;

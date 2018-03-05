@@ -247,6 +247,7 @@ section#Home{
     display: inline-block;
     margin: 0px;
     bottom: -6px;
+    margin-top: -6px;
 }
 section#Home div.slideEspecialistas{
     height: 100vh;
@@ -1188,12 +1189,67 @@ section#contacto div#map{
 }
 section#contacto div.transparent{
     background-color: rgba(255, 255, 255, 0.2);
+    pointer-events: none;
 }
 section#contacto div.vheight .content{
     background-color: rgba(255, 255, 255, 0.85);
     padding: 30px 15px;
 }
-
+span.error{
+    display: inline-block;
+    position: absolute;
+    left: 14px;
+    bottom: -3px;
+    font-size: 12px;
+    font-weight: 400;
+    color: #e81319;
+    pointer-events: none;
+}
+div#status{
+  background-color: #1c1c1c;
+  z-index: 3;
+  display: none;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+div#status h3{
+  font-size: 20px;
+  color: #FFF;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: .5px;
+}
+div#status h3>small{
+  display: block;
+  font-size: 60%;
+  color: #FFFFFF;
+  margin-top: 15px;
+}
+div#status.loading img{
+  display: inline-block;
+}
+div#status.loading h3.success,
+div#status.loading h3.error
+{
+  display: none;
+}
+div#status.success h3.loading,
+div#status.success h3.error
+{
+  display: none;
+}
+div#status.error h3.success,
+div#status.error h3.loading
+{
+  display: none;
+}
+div#status.success img,
+div#status.error img{
+  display: none;
+}
 
 
 /*DETALLE PRODUCTO*/
@@ -1302,133 +1358,6 @@ section#detalle p.description{
     border-style: solid;
 }
 
-section#botSection{
-    background-color: #009bdc;
-    padding: 30px 0px;
-}
-section#botSection a.textWhite{
-    font-size: 13px;
-    -webkit-transition: all .25s ease;
-       -moz-transition: all .25s ease;
-        -ms-transition: all .25s ease;
-         -o-transition: all .25s ease;
-            transition: all .25s ease;
-}
-section#botSection a.textWhite:hover{
-    color: #a90a0e;
-}
-section#botSection span.textWhite{
-    font-size: 14px;
-    -webkit-transition: all .25s ease;
-       -moz-transition: all .25s ease;
-        -ms-transition: all .25s ease;
-         -o-transition: all .25s ease;
-            transition: all .25s ease;
-}
-section#botSection div.item{
-
-}
-section#botSection div.item>div{
-    width: 300px;
-}
-
-section#footer{
-    background-color: #3c414c;
-    padding: 30px 0px;
-}
-section#footer div.item{
-
-}
-section#footer div.item>div{
-    width: 250px;
-}
-section#footer div.item span,
-section#footer div.item a
-{
-    color: #797e87;
-}
-section#footer ul{
-    display: inline-block;
-    position: relative;
-    float: left;
-    width: 100%;
-    list-style-type: none;
-    -webkit-margin-before: 0;
-    -webkit-margin-after: 0;
-    -webkit-margin-start: 0;
-    -webkit-margin-end: 0;
-    -webkit-padding-start: 0;
-}
-section#footer ul>li{
-    display: inline-block;
-    position: relative;
-    float: left;
-    width: 100%;
-}
-section#footer ul>li>a{
-    display: inline-block;
-    position: relative;
-    float: left;
-    width: 100%;
-}
-section#footer ul>li>a>img{
-    display: inline-block;
-    position: absolute;
-    width: 40px;
-    left: 10px;
-    top: 0;
-    bottom: 0;
-    margin: auto 0px;
-}
-section#footer ul>li>a>span{
-    display: inline-block;
-    position: relative;
-    float: left;
-    width: 100%;
-    padding: 20px;
-    padding-left: 60px;
-    padding-right: 0px;
-}
-section#footer img.logoFooter{
-    width: 200px;
-}
-
-section#formasPago{
-    background-color: #464951;
-}
-section#formasPago div.centered{
-    display: inline-flex;
-}
-section#formasPago a.icon{
-    display: inline-block;
-    position: relative;
-    float: left;
-    padding: 10px 25px;
-}
-section#formasPago a.icon>i{
-    display: inline-block;
-    position: relative;
-    float: left;
-    color: #FFFFFF;
-    font-size: 25px;
-    -webkit-transition: color .25s ease;
-       -moz-transition: color .25s ease;
-        -ms-transition: color .25s ease;
-         -o-transition: color .25s ease;
-            transition: color .25s ease;
-}
-section#formasPago a.icon:hover>i{
-    color: #e81319;
-}
-
-section#copyright{
-    background-color: #343942;
-    padding: 15px 0px;
-}
-section#copyright span{
-    color: #797e87;
-}
-
 
 form#formCotizar div.input-group-addon{
     background-color: #1f1f1f;
@@ -1466,34 +1395,49 @@ form#formCotizar .form-control{
   font-weight: 100;
 }
 
+
+section.Footer>div{
+    display: inline-block !important;
+    position: relative !important;
+}
+section.Footer div.container1{
+    background-color: #1f1f1f;
+    height: 250px;
+}
+section.Footer div.container2{
+    background-color: #232323;
+    height: 250px;
+}
+section.Footer div.container3{
+    background-color: #1c1c1c;
+    height: 500px;
+}
+section.Footer a.icon{
+    font-size: 30px;
+    padding: 0px 3px;
+}
+section.Footer a.icon2{
+    font-size: 25px;
+    padding: 0px 15px;
+}
+section.Footer div.copyright{
+    background-color: #fff;
+}
+
+
 @media (max-width : 1200px) {
-    section#footer div.item>div {
-        width: 240px;
-    }
     section#Productos div.tabsGeneral div.item div.subItem>a {
         width: 185px;
     }
 }
 
 @media (max-width : 991px) {
-    section#botSection div.item>div {
-        width: 220px;
-    }
-    section#footer div.item>div {
-        width: 180px;
-    }
-    section#footer img.logoFooter{
-        width: 100%;
-    }
     section#Home div.slideAniosRealizando img.img20 {
         width: 350px;
     }
 }
 
 @media (max-width : 768px) {
-    section#footer div.item {
-        height: 220px;
-    }
     section{
         height: auto;
     }
@@ -1554,9 +1498,6 @@ form#formCotizar .form-control{
 }
 
 @media (max-width : 480px) {
-    section#footer div.item>div {
-        width: 100%;
-    }
     section#Home div.slideAniosRealizando img.img20 {
         width: 250px;
     }
