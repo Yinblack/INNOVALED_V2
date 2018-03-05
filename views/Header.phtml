@@ -28,6 +28,8 @@
 	</div>
 </div>
 
+
+<?php if (isset($this->productos)): ?>
 <div id="Menu">
 	<div>
 		<div class="col-xs-12 text-center containerLogo">
@@ -44,12 +46,12 @@
 		</div>
 		<div class="col-xs-12 containerOptions">
 			<ul>
-				<li><a href="Home">HOME</a></li>
-				<li><a href="Empresas">CLIENTES</a></li>
-				<li><a href="proyectos">PROYECTOS</a></li>
-				<li><a href="Servicios_1">SERVICIOS</a></li>
-				<li><a href="productos">PRODUCTOS</a></li>
-				<li><a href="contacto">CONTACTENOS</a></li>
+				<li><a class="directLink" href="index#Home">HOME</a></li>
+				<li><a class="directLink" href="index#Empresas">CLIENTES</a></li>
+				<li><a class="directLink" href="index#proyectos">PROYECTOS</a></li>
+				<li><a class="directLink" href="index#Servicios_1">SERVICIOS</a></li>
+				<li><a class="active">PRODUCTOS</a></li>
+				<li><a class="directLink" href="index#contacto">CONTACTENOS</a></li>
 			</ul>
 		</div>
 		<div class="col-xs-12 containerContact">
@@ -66,3 +68,43 @@
 		</a>
 	</div>
 </div>
+<?php else: ?>
+<div id="Menu">
+	<div>
+		<div class="col-xs-12 text-center containerLogo">
+			<div class="col-xs-3 text-center nopadding">
+				<button class="hamburger hamburger--slider is-active" type="button">
+				  	<span class="hamburger-box">
+				  	  	<span class="hamburger-inner"></span>
+				  	</span>
+				</button>
+			</div>
+			<div class="col-xs-9 text-center logoContent">
+				<img src="assets/img/logo_grey.png" alt="" class="col-xs-12 centered logo">
+			</div>
+		</div>
+		<div class="col-xs-12 containerOptions">
+			<ul>
+				<li><a class="home" href="#Home">HOME</a></li>
+				<li><a href="#Empresas">CLIENTES</a></li>
+				<li><a href="#proyectos">PROYECTOS</a></li>
+				<li><a href="#Servicios_1">SERVICIOS</a></li>
+				<li><a class="directLink" href="productos">PRODUCTOS</a></li>
+				<li><a href="#contacto">CONTACTENOS</a></li>
+			</ul>
+		</div>
+		<div class="col-xs-12 containerContact">
+			<div class="col-xs-7">
+				<a href="#">ventas@innovaled.pe</a>
+			</div>
+			<div class="col-xs-5">
+				<a href="#">01 393 4964</a>
+			</div>
+		</div>
+		<a href="Admin" class="col-xs-12 text-center containerSession">
+			<i class="fa fa-user-circle" aria-hidden="true"></i>
+			<span>INICIAR SESIÓN</span>
+		</a>
+	</div>
+</div>
+<?php endif ?>

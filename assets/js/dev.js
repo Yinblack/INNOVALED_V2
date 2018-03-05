@@ -38,26 +38,6 @@ sr.reveal('.revealBottom', {
     });
 });
 
-$('.scrollTo').click(function(e){
-  if ($(window).width() < 768) {
-	  if ($('div#menu').is(":visible")) {
-	  	$("div#menu").slideUp(500);
-	  	$(".hamburger").removeClass("is-active");
-	  }
-  }
-	e.preventDefault();
-	if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-   	  	var target = $(this.hash);
-   	  	target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-   	  	if (target.length) {
-   	  	  	$('html, body').animate({
-   	  	  	  scrollTop: target.offset().top-91
-   	  	  	}, 800);
-   	  	  	return false;
-   	  	}
-   	}
-});
-
 window.addEventListener("load", function () {
     window.loaded = true;
 });

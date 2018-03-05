@@ -9,7 +9,6 @@ class ControllerRoutes extends Controller
     {
         $this->_view->titulo = 'INNOVALED';
         $this->_view->js = '
-            <script src="assets/js/Menu.js"></script>
         ';
         $this->_view->renderizar('Header');
         $this->_view->renderizar('Home');
