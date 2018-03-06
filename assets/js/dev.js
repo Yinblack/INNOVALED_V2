@@ -89,7 +89,7 @@ $( document ).ready(function() {
     arrows: false,
     dots: true,
     infinite: true,
-    autoplaySpeed: 2500,
+    autoplaySpeed: 5000,
     speed: 750,
     slidesToShow: 1,
     autoplay: true

@@ -249,12 +249,6 @@ section#Home{
     bottom: -6px;
     margin-top: -6px;
 }
-section#Home div.slideEspecialistas{
-    height: 100vh;
-    background-position: 50% 50%;
-    background-size: 100%;
-    background-size: cover;
-}
 section#Home div.slideEspecialistas div.vertical.backImage{
     height: 100%;
     background-position: 50% 50%;
@@ -264,12 +258,6 @@ section#Home div.slideEspecialistas div.vertical.backImage{
 
 section#Home div.slide{
     outline: none;
-}
-section#Home div.slideExperiencia{
-    height: 100vh;
-    background-position: 50% 50%;
-    background-size: 100%;
-    background-size: cover;
 }
 section#Home div.slideExperiencia div.vertical.backDark{
     background-color: rgba(0, 0, 0, 0.14);
@@ -287,22 +275,10 @@ section#Home div.slideAniosRealizando{
     background-size: 100%;
     background-size: cover;
 }
-section#Home div.slideAniosRealizando div.vertical.backImage{
-    height: 100%;
-    background-position: 50% 50%;
-    background-size: 100%;
-    background-size: cover;
-}
 section#Home div.slideAniosRealizando img.img20{
     width: 500px;
 }
 
-section#Home div.slideProyectos1Anio{
-    height: 100vh;
-    background-position: 50% 50%;
-    background-size: 100%;
-    background-size: cover;
-}
 section#Home div.slideProyectos1Anio div.vertical.backDark{
     background-color: rgba(0, 0, 0, 0.14);
 }
@@ -1162,12 +1138,19 @@ section#Home .slick-next:before{
     content: url('../img/slide_next.svg');
 }
 
-section#Home div.slideInnovaled{
+section#Home div.slick-slide{
     height: 100vh;
     background-position: 50% 50%;
     background-size: 100%;
-    background-size: cover;
+    -webkit-transition-duration:3s;
+    -webkit-transition-delay:1.5s;
+    -webkit-transition-timing-function: linear;
+    transition-property: background-size;
 }
+section#Home div.slick-slide.slick-active{
+    background-size: 110%;
+}
+
 section#Home div.slideInnovaled .backRed{
     background-color: #e81319;
     padding-top: 20px;
@@ -1484,6 +1467,9 @@ section.Footer div.copyright{
 }
 
 @media (max-width : 768px) {
+    section#Home div.slick-slide{
+        background-size: cover;
+    }
     section{
         height: auto;
     }
