@@ -1357,6 +1357,52 @@ section#detalle p.description{
     border-color: #e2e3e4;
     border-style: solid;
 }
+section#detalle a.st1{
+    display: inline-block;
+    position: relative;
+    float: left;
+    padding: 5px 25px;
+    padding-left: 55px;
+    text-align: center;
+    background-color: #ce191f;
+    color: #FFFFFF;
+    border: 1px solid #ce191f;
+    -webkit-transition: all .25s ease;
+    -moz-transition: all .25s ease;
+    -ms-transition: all .25s ease;
+    -o-transition: all .25s ease;
+    transition: all .25s ease;
+}
+section#detalle a.st1>svg{
+    display: inline-block;
+    position: absolute;
+    float: left;
+    top: 0;
+    bottom: 0;
+    left: 25px;
+    width: 25px;
+    max-height: 85%;
+    margin: auto 0px;
+}
+section#detalle a.st1>svg path,
+section#detalle a.st1>svg polygon{
+    fill: #FFFFFF;
+    -webkit-transition: all .25s ease;
+       -moz-transition: all .25s ease;
+        -ms-transition: all .25s ease;
+         -o-transition: all .25s ease;
+            transition: all .25s ease;
+}
+section#detalle a.st1:hover{
+    background-color: transparent;
+    color: #ce191f;
+}
+section#detalle a.st1:hover>svg path,
+section#detalle a.st1:hover>svg polygon{
+    fill: #ce191f;
+}
+
+
 
 
 form#formCotizar div.input-group-addon{
