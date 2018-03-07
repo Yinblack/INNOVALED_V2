@@ -39,43 +39,34 @@ function statusMenu(){
     }
 }
 
-
-var resizeTimer;
-
-$(window).on('resize', function(e) {
-  clearTimeout(resizeTimer);
-  resizeTimer = setTimeout(function() {
-      var containerOptions=$("div#Menu>div>div.containerOptions");
-      var containerSession=$('div#Menu>div>a.containerSession');
-      $(".hamburger").addClass('is-active');
-      containerOptions.show();
-      containerSession.show();
-  }, 500);
-});
-
 /*MENU*/
 $(".hamburger").click(function(){
-  var menu=$("div#Menu");
-  var section=$(".onepage-wrapper .section div.flex");
-  var image=$("section.Servicios img.fixed");
-  var sectionNormal=$("section.normalSection");
-    $(this).toggleClass("is-active");
-    if ($( this ).hasClass( "is-active" )){
-      $( this ).addClass('active');
-      menu.removeClass('fixed');
-      section.removeClass('full');
-      image.removeClass('dobleFixed');
-      sectionNormal.removeClass('fixed');
+  if ($(window).width() < 768) {
+      var menu=$("div#Menu>div>div.containerOptions");
+      if ($( this ).hasClass( "is-active" )){
+        $( this ).removeClass('is-active');
+        menu.slideUp(200);
+      }else{
+        $( this ).addClass('is-active');
+        menu.slideDown(200);
+      }
+  }
+});
+
+$(window).resize(function(){
+    if ($(window).width() < 768) {
+      $('div#Menu>div>div.containerOptions').slideUp();
+      $('button.hamburger--slider').removeClass('is-active');
     }else{
-      $( this ).removeClass('active');
-      menu.addClass('fixed');
-      section.addClass('full');
-      image.addClass('dobleFixed');
-      sectionNormal.addClass('fixed');
+      $('div#Menu').addClass('fixed');
+      $('button.hamburger--slider').removeClass('is-active');
+      $('div#Menu>div>div.containerOptions').slideDown();
     }
 });
 
+
 $("div#Menu").mouseenter(function() {
+      if ($(window).width() > 768) {
         var hamburger=$(".hamburger");
         if(!$(hamburger).hasClass('is-active')){
             var menu=$("div#Menu");
@@ -88,7 +79,9 @@ $("div#Menu").mouseenter(function() {
             image.removeClass('dobleFixed');
             sectionNormal.removeClass('fixed');
         }
+      }
 }).mouseleave(function() {
+      if ($(window).width() > 768) {
         var hamburger=$(".hamburger");
         if($(hamburger).hasClass('is-active')){
             var menu=$("div#Menu");
@@ -101,6 +94,7 @@ $("div#Menu").mouseenter(function() {
             image.addClass('dobleFixed');
             sectionNormal.addClass('fixed');
         }
+      }
 });
 
 $('div#Menu>div>div.containerOptions>ul>li>a').click(function(e){

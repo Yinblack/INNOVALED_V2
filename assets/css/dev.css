@@ -296,6 +296,9 @@ section#Productos{
     background-color: #FFFFFF;
     padding: 75px 0px;
 }
+section#Productos>div.container{
+    width: 1050px;
+}
 section#Productos div.vertical.backImage{
     height: 100%;
     background-position: 50% 50%;
@@ -1454,15 +1457,32 @@ section.Footer div.copyright{
 }
 
 
+
+
+@media (max-width : 1300px) {
+    section#Productos>div.container{
+        width: 950px;
+    }
+    section#Productos div.tabsGeneral div.item div.subItem>a {
+        width: 180px;
+    }
+}
+
 @media (max-width : 1200px) {
     section#Productos div.tabsGeneral div.item div.subItem>a {
         width: 185px;
+    }
+    section#Productos>div.container{
+        width: 750px;
     }
 }
 
 @media (max-width : 991px) {
     section#Home div.slideAniosRealizando img.img20 {
         width: 350px;
+    }
+    section#Productos>div.container{
+        width: 70%;
     }
 }
 
@@ -1514,6 +1534,9 @@ section.Footer div.copyright{
     section#Productos div.tabsGeneral div.item div.subItem>a {
         max-width: 95%;
     }
+    section#Productos div.productos>div.item img.product {
+        position: relative;
+    }
     h1.lined:before, h2.lined:before, h3.lined:before, h4.lined:before{
         content: '';
         display: inline-block;
@@ -1526,6 +1549,13 @@ section.Footer div.copyright{
         right: 0;
         margin: auto;
         background-color: #FFFFFF;
+    }
+    section#Productos ul.linea>li {
+        width: 100%;
+    }
+    section#Productos>div.container {
+        width: 100%;
+        padding: 0px 70px;
     }
 }
 

@@ -297,6 +297,15 @@ div#Menu.fixed>div>div.containerContact a{
 div#Menu>div>div.containerContact a:hover{
     color: #ce191f;
 }
+div#Menu div.logoContent{
+    padding: 0px;
+}
+div#Menu div.logoContent>img{
+    width: 190px;
+    top: 4px;
+    padding: 0px;
+    float: right;
+}
 
 
 
@@ -371,7 +380,44 @@ div#Menu.fixed>div>a.containerSession>span{
 }
 
 @media (max-width : 768px) {
-
+    div#Menu {
+        width: 100%;
+        height: auto;
+        bottom: inherit;
+    }
+    div#Menu.fixed{
+        right: 0px;
+        left: 0px;
+    }
+    div#Menu>div>div.containerOptions>ul {
+        -webkit-margin-start: 0px;
+        -webkit-margin-end: 0px;
+        width: 100%;
+    }
+    div#Menu>div>div.containerOptions>ul:after{
+        content: none !important;
+    }
+    div#Menu>div>div.containerOptions>ul>li>a:after{
+        content: none !important;
+    }
+    div#Menu>div>div.containerOptions>ul>li>a {
+        padding: 15px 0px;
+    }
+    div#Menu>div>div.containerContact{
+        display: none;
+    }
+    div#Menu>div{
+        height: auto;
+        display: inline-block;
+        position: relative;
+        float: left;
+    }
+    div#Menu>div>a.containerSession{
+        display: none !important;
+    }
+    div#Menu>div>div.containerOptions{
+        display: none;
+    }
 }
 
 @media (max-width : 480px) {

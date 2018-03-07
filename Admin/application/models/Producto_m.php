@@ -480,7 +480,7 @@ class Producto_m extends CI_Model {
                                     </div>
                                 </div>
                             </div>
-                            <div class="sect col-xs-12 col-sm-8 col-md-9 nopadding">
+                            <div class="sect col-xs-12 col-sm-8 col-lg-9 nopadding">
                                 <div class="col-xs-12 col-sm-3 height">
                                     '.$html1.'
                                     <img src="Admin/assets/img/Productos/'.$IdProducto.'/img_1.jpg" alt="" class="product">
@@ -496,7 +496,7 @@ class Producto_m extends CI_Model {
                                     </div>
                                 </div>
                             </div>
-                            <div class="sect col-xs-12 col-sm-3 col-md-2 height">
+                            <div class="sect col-xs-12 col-sm-3 col-lg-2 height">
                                 <div class="vertical">
                                     <div class="col-xs-12 nopadding text-center">
                                         <div class="col-xs-12 nopadding dicrease">

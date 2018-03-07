@@ -96,19 +96,25 @@ $( document ).ready(function() {
     draggable: true,
     responsive: [
       {
-        breakpoint: 991,
+        breakpoint: 1200,
         settings: {
           slidesToShow: 4
         }
       },
       {
-        breakpoint: 768,
+        breakpoint: 992,
         settings: {
           slidesToShow: 3
         }
       },
       {
-        breakpoint: 480,
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2
+        }
+      },
+      {
+        breakpoint: 600,
         settings: {
           slidesToShow: 1
         }

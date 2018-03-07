@@ -45,7 +45,6 @@ window.addEventListener("load", function () {
 (function listen () {
     if (window.loaded) {
       $('div.loaderPage').hide();
-      $('button.hamburger').click();
       $("section#Productos div.tabsGeneral div.item div.subItem>a.firstElement").trigger('click');
       $("section#Productos div.tabsGeneral div.item div.subItem>a.firstElement").addClass('active');
       initMap();
