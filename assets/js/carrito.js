@@ -1,5 +1,5 @@
 /*MOSTRAR CARRITO SI TIENE PRODUCTOS*/
-$('li.carrito>a').click(function(e){
+$('div#Menu.fixed>div>a.containerSession').click(function(e){
     e.preventDefault();
   	$.ajax({
   	    url: window.base_url+'Cart_c/getProductosFromCarrito',

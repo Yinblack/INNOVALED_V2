@@ -330,17 +330,15 @@ div#Menu>div>a.containerSession>span{
 div#Menu>div>a.containerSession:hover{
     background-color: #adadad;
 }
-div#Menu>div>a.containerSession>i{
+div#Menu>div>a.containerSession>img{
     display: none;
-    color: #fff;
-    font-size: 20px;
-    line-height: 1;
 }
 div#Menu.fixed>div>a.containerSession{
     padding-right: 275px;
 }
-div#Menu.fixed>div>a.containerSession>i{
+div#Menu.fixed>div>a.containerSession>img{
     display: inline-block;
+    width: 30px;
 }
 div#Menu.fixed>div>a.containerSession>span{
     display: none;
