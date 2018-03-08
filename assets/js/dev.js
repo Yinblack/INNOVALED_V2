@@ -1,4 +1,5 @@
 var base_url;
+//window.base_url = "https://www.innovaled.pe/v2/Admin/";
 window.base_url = "http://localhost/INNOVALED_V2/Admin/";
 $( document ).ready(function() {
   
@@ -132,12 +133,10 @@ $("section#Servicios_1 div.tabs>div>a").click(function(e){
 });
 $("section#proyectos ul.projectList>li>a").click(function(e){
   e.preventDefault();
-    if (!$( this ).hasClass( "active" )) {
-      $("section#proyectos ul.projectList>li>a").removeClass('active');
-      $(this).addClass('active');
-      var index=$(this).attr('href');
-      $('div#slideProjects').slick('slickGoTo', index);
-    }
+  $("section#proyectos ul.projectList>li>a").removeClass('active');
+  $(this).addClass('active');
+  var index=$(this).attr('href');
+  $('div#slideProjects').slick('slickGoTo', index);
 });
 $("section#Empresas div.tabBrand>div a").click(function(e){
   e.preventDefault();

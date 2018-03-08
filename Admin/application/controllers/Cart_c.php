@@ -113,7 +113,7 @@ class Cart_c extends CI_Controller {
           <td></td>
           <td></td>
           <td></td>
-          <td>Total(IVA: '.$iva.')</td>
+          <td>Total(IGV: '.$iva.')</td>
           <td id="total" iva="'.$iva.'">'.$SubtotalGeneralConIvaFormateado.'</td>
           <td></td>
         </tr>

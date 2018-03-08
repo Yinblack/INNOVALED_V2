@@ -1,7 +1,7 @@
 function initMap() {
   console.log('run function');
-  var myLatLng = {lat: 20.5348174, lng: -100.6822196};
-  var myLatCenter = {lat: 20.5348174, lng: -100.692};
+  var myLatLng = {lat: -12.079214, lng: -76.977405};
+  var myLatCenter = {lat: -12.079214, lng: -76.981405};
   var styleArray = [
               {elementType: 'geometry', stylers: [{color: '#ebe3cd'}]},
               {elementType: 'labels.text.fill', stylers: [{color: '#523735'}]},
@@ -119,7 +119,7 @@ function initMap() {
     center: myLatCenter,
     scrollwheel: false,
     styles: styleArray,
-    zoom: 15
+    zoom: 16
   });
   var marker = new google.maps.Marker({
     map: map,

@@ -1,4 +1,19 @@
 /*MAQUETACION GRALS*/
+a.logo{
+    display: inline-block;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+}
+a.logo>img{
+    display: inline-block;
+    position: relative;
+    float: left;
+    width: 250px;
+    margin: 20px;
+}
+
 .backWhite{
     background-color: #FFFFFF;
 }
@@ -240,6 +255,23 @@ div#carritoModal a.delete>img{
     float: left;
     width: 100%;
 }
+div#carritoModal .modal-header .close{
+    opacity: .5;
+    -webkit-transition: all .25s ease;
+       -moz-transition: all .25s ease;
+        -ms-transition: all .25s ease;
+         -o-transition: all .25s ease;
+            transition: all .25s ease;
+}
+div#carritoModal .modal-header .close:hover{
+    opacity: 1;
+}
+div#carritoModal .modal-header .close>img{
+    display: inline-block;
+    position: relative;
+    float: left;
+    width: 25px;
+}
 
 
 section#Home{
@@ -406,7 +438,23 @@ section#Productos div.productos>div.item>div{
 section#Productos div.productos>div.item>div div.height{
     height: 150px;
 }
-
+section#Productos div.productos>div.item>div div.height a.verMas{
+    display: inline-block;
+    position: relative;
+    pointer-events: auto;
+    font-size: 13px;
+    color: #ce191f;
+    padding: 15px 0px;
+    text-decoration: underline !important;
+    -webkit-transition: all .25s ease;
+    -moz-transition: all .25s ease;
+    -ms-transition: all .25s ease;
+    -o-transition: all .25s ease;
+    transition: all .25s ease;
+}
+section#Productos div.productos>div.item>div div.height a:hover{
+    color: #161616;
+}
 section#Productos div.productos>div.item>div>div.sect:nth-child(1),
 section#Productos div.productos>div.item>div>div.sect:nth-child(2){
     border-right: 1px solid #222222;
@@ -1484,9 +1532,15 @@ section.Footer div.copyright{
     section#Productos>div.container{
         width: 70%;
     }
+    section#Home div.slick-slide{
+        background-size: cover !important;
+    }
 }
 
 @media (max-width : 768px) {
+    a.logo{
+        display: none;
+    }
     section#Home div.slick-slide{
         background-size: cover;
     }

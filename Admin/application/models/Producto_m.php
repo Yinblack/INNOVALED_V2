@@ -492,7 +492,9 @@ class Producto_m extends CI_Model {
                                 <div class="col-xs-12 col-sm-3 height">
                                     <h5 class="col-xs-12 noHorizontalPadding vpadding nomargin regular">'.$Moneda.' '.$Precio.'</h5>
                                     <div class="vertical end" style="pointer-events: none;">
-                                        <a href="DetalleProducto?IdProducto='.$IdProducto.'" class="col-xs-12 noHorizontalPadding vpadding nopaddingTop text-center regular" style="pointer-events: auto;">VER MAS</a>
+                                        <div class="col-xs-12 nopadding text-center">
+                                            <a href="DetalleProducto?IdProducto='.$IdProducto.'" class="verMas centered">VER MAS</a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

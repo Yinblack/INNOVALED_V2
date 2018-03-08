@@ -23,8 +23,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-//$config['base_url'] = 'http://192.168.0.201:81/Vaeo_advance/Admin/';
-//$config['base_url'] = 'http://vekaconsulting.com/inova/';
+//$config['base_url'] = 'https://www.innovaled.pe/v2/Admin/';
 $config['base_url'] = 'http://localhost/INNOVALED_V2/Admin/';
 /*
 |--------------------------------------------------------------------------
