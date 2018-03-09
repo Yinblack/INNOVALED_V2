@@ -330,19 +330,35 @@ div#Menu>div>a.containerSession>span{
 div#Menu>div>a.containerSession:hover{
     background-color: #adadad;
 }
-div#Menu>div>a.containerSession>img{
+div#Menu>div>a.containerSession>svg{
     display: none;
 }
 div#Menu.fixed>div>a.containerSession{
     padding-right: 275px;
 }
-div#Menu.fixed>div>a.containerSession>img{
+div#Menu.fixed>div>a.containerSession>svg{
     display: inline-block;
     width: 30px;
+}
+div#Menu.fixed>div>a.containerSession>svg path,
+div#Menu.fixed>div>a.containerSession>svg polygon{
+    fill: #FFFFFF;
 }
 div#Menu.fixed>div>a.containerSession>span{
     display: none;
 }
+div#Menu>div>a.containerSession.disabled{
+    background-color: #e3e3e3 !important;
+    pointer-events: none;
+}
+div#Menu.fixed>div>a.containerSession.disabled>span{
+    
+}
+div#Menu.fixed>div>a.containerSession.disabled>svg path,
+div#Menu.fixed>div>a.containerSession.disabled>svg polygon{
+    fill: #c0c0c0;
+}
+
 .hamburger{
     outline: none !important;
     position: relative;

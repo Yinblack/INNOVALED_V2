@@ -281,24 +281,17 @@ section#Home{
     bottom: -6px;
     margin-top: -6px;
 }
-section#Home div.slideEspecialistas div.vertical.backImage{
+section#Home div.vertical.backImage{
     height: 100%;
     background-position: 50% 50%;
     background-size: 100%;
     background-size: cover;
 }
-
-section#Home div.slide{
-    outline: none;
-}
-section#Home div.slideExperiencia div.vertical.backDark{
+section#Home div.vertical.backDark{
     background-color: rgba(0, 0, 0, 0.14);
 }
-section#Home div.slideExperiencia div.vertical.backImage{
-    height: 100%;
-    background-position: 50% 50%;
-    background-size: 100%;
-    background-size: cover;
+section#Home div.slide{
+    outline: none;
 }
 
 section#Home div.slideAniosRealizando{
@@ -310,18 +303,6 @@ section#Home div.slideAniosRealizando{
 section#Home div.slideAniosRealizando img.img20{
     width: 500px;
 }
-
-section#Home div.slideProyectos1Anio div.vertical.backDark{
-    background-color: rgba(0, 0, 0, 0.14);
-}
-section#Home div.slideProyectos1Anio div.vertical.backImage{
-    height: 100%;
-    background-position: 50% 50%;
-    background-size: 100%;
-    background-size: cover;
-}
-
-
 
 section#Productos{
     height: auto;

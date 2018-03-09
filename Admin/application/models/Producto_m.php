@@ -503,7 +503,7 @@ class Producto_m extends CI_Model {
                                     <div class="col-xs-12 nopadding text-center">
                                         <div class="col-xs-12 nopadding dicrease">
                                             <div class="input">
-                                                <input type="text" value="'.$enCarrito.'" id="Cantidad'.$IdProducto.'">
+                                                <input type="text" value="'.$enCarrito.'" class="Cantidad'.$IdProducto.'">
                                             </div>
                                             <a href="#" class="minus">
                                                 <img src="assets/img/minusGrey.svg" alt="">

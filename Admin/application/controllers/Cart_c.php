@@ -10,6 +10,14 @@ class Cart_c extends CI_Controller {
   				$this->load->library('cart');
 	}
 
+  function hasContent(){
+    if ($this->cart->total_items() > 0) {
+      echo "Success";
+    }else{
+      echo "Error";
+    }
+  }
+
 	public function addProductoToCart(){
 		$IdProducto =$_POST['IdProducto'];
 		$Qty        =$_POST['Cantidad'];
@@ -76,7 +84,7 @@ class Cart_c extends CI_Controller {
             <td>
               <div class="col-xs-12 nopadding dicrease">
                   <div class="input">
-                      <input type="text" value="'.$Cantidad.'" id="Cantidad'.$IdProducto.'">
+                      <input type="text" value="'.$Cantidad.'" class="Cantidad'.$IdProducto.'">
                   </div>
                   <a href="#" class="minus">
                       <img src="assets/img/minusGrey.svg" alt="">

@@ -38,7 +38,6 @@ function showProductos(IdSubLinea){
           }else{
           		containerProductos.html("<h3 class='col-xs-12 text-center textWhite'>NO HAY PRODUCTOS EN ESTA SUBLINEA</h3>");
           }
-          console.log(data);
         },
         error: function(data){
           console.log('Error Ajax Peticion');
@@ -68,7 +67,6 @@ function getSubLineas(IdLinea){
           }else{
             notification('Usuario o contraseña incorrectos','error','topRight', 2000);
           }
-          console.log(data);
         },
         error: function(data){
           console.log('Error Ajax Peticion');
@@ -148,15 +146,11 @@ $('div.checkbox').click(function(e){
 $("section#Productos div.productos").on("click", "div.checkbox", function(e){
     e.preventDefault();
     if ($(this).hasClass('active')) {
-        $(this).removeClass('active');
-        $(this).children("input").prop('checked', false);
         var IdProducto=$(this).attr('IdProducto');
         deleteProductoFromCart(IdProducto);
     }else{
-        $(this).addClass('active');
-        $(this).children("input").prop('checked', true);
         var IdProducto=$(this).attr('IdProducto');
-        var Cantidad=$('input#Cantidad'+IdProducto).val();
+        var Cantidad=$('input.Cantidad'+IdProducto).val();
         addProductoToCart(IdProducto, Cantidad);
     }
 });
@@ -181,6 +175,9 @@ function addProductoToCart(IdProducto, Cantidad){
         success: function(data){
           if (data=='Success'){
             notification('Producto agregado', '', 'success');
+            $('div#item'+IdProducto+' div.checkbox ').addClass('active');
+            $('div#item'+IdProducto+' div.checkbox ').children("input").prop('checked', true);
+            cartHasContent();
           }else if (data=='Cantidad'){
             $('div#item'+IdProducto+' div.checkbox ').removeClass('active');
             notification('Seleccione una cantidad', '', 'info');
@@ -210,8 +207,11 @@ function deleteProductoFromCart(IdProducto){
         },
         success: function(data){
           if (data=='Success'){
+            $('div#item'+IdProducto+' div.checkbox ').removeClass('active');
+            $('div#item'+IdProducto+' div.checkbox ').children("input").prop('checked', false);
+            $('input.Cantidad'+IdProducto).val(0);
+            cartHasContent();
             notification('Producto eliminado', '', 'info');
-            $('input#Cantidad'+IdProducto).val(0);
           }else{
             notification('Error al eliminar', '', 'error');
           }
@@ -238,6 +238,14 @@ $("section#Productos div.productos").on("click", "div.dicrease>a", function(e){
     	value++;
     }
     if (value>=1) {
-        input.val(value);
+      input.val(value);
+      var checkboxContainer=input.parent().parent().parent().parent().parent().prev().prev().children().children().children();
+      var IdProducto=checkboxContainer.attr('idproducto');
+      if (!checkboxContainer.hasClass('active')) {
+        addProductoToCart(IdProducto, value);
+        cartHasContent();
+      }else{
+        updateValueProductoCart(value, IdProducto);
+      }
     }
 });

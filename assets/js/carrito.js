@@ -41,10 +41,11 @@ $("div#carrito tbody").on("click", "div.dicrease>a", function(e){
       value++;
     }
     if (value>=1) {
-        input.val(value);
+        $('input.Cantidad'+IdProducto).val(value);
         updateValueProductoCart(value, IdProducto);
     }
 });
+
 function updateValueProductoCart(Value, IdProducto){
     var formData = new FormData();
     formData.append('Value', Value);
@@ -78,6 +79,7 @@ function updateValueProductoCart(Value, IdProducto){
         }
     });
 }
+
 function deleteProductoFromCartModal(IdProducto){
     var formData = new FormData();
     formData.append('IdProducto', IdProducto);
@@ -95,6 +97,10 @@ function deleteProductoFromCartModal(IdProducto){
           if (data=='Success') {
             notification('Producto eliminado', '', 'info');
             $('tr#'+IdProducto).remove();
+            $('div#item'+IdProducto+' div.checkbox ').removeClass('active');
+            $('div#item'+IdProducto+' div.checkbox ').children("input").prop('checked', false);
+            $('input.Cantidad'+IdProducto).val(0);
+            cartHasContent();
             refreshTotal();
           }
           console.log(data);
@@ -105,6 +111,7 @@ function deleteProductoFromCartModal(IdProducto){
         }
     });
 }
+
 function refreshTotal(){
   var subtotal=0;
   var subtotalFormateado=0;
