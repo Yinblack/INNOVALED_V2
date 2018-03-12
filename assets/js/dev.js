@@ -84,16 +84,17 @@ $( document ).ready(function() {
     speed: 300,
     slidesToShow: 1,
     autoplay: false,
-    draggable: false
+    draggable: false,
+    initialSlide: 1
   });
   $('section#Home').slick({
     arrows: false,
     dots: true,
     infinite: true,
-    autoplaySpeed: 5000,
-    speed: 750,
+    autoplaySpeed: 4000,
+    speed: 500,
     slidesToShow: 1,
-    autoplay: false
+    autoplay: true
   });
 });
 $(document).ready(function() {

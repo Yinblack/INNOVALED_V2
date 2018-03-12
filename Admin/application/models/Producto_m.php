@@ -423,10 +423,29 @@ class Producto_m extends CI_Model {
         $this->db->where('producto.IdSubLinea', $IdSubLinea);
         $this->db->where('producto.Estado', '1');
         $items = $this->db->get();
+
+        $this->db->select('linea.Etiqueta as NombreLinea, sublinea.Etiqueta as NombreSublinea');
+        $this->db->from('sublinea');
+        $this->db->join('linea', 'sublinea.IdLinea = linea.IdLinea');
+        $this->db->group_by("sublinea.IdSublinea");
+        $this->db->where('sublinea.IdSublinea', $IdSubLinea);
+        $lineaSublinea = $this->db->get();
+
+        foreach ($lineaSublinea->result() as $row){
+                $NombreLinea=$row->NombreLinea;
+                $NombreSublinea=$row->NombreSublinea;
+        }
+
         if ($items->num_rows() > 0){
             $counter=0;
             $arrayResult=array();
             $html='';
+            $html.='
+                <div class="col-xs-12 noHorizontalPadding text-center tittleProductos">
+                    <h3 class="text-left col-xs-12 nomargin noHorizontalPadding">'.$NombreLinea.'</h3>
+                    <h4 class="text-left col-xs-12 nomargin noHorizontalPadding vpadding nopaddingBottom">'.$NombreSublinea.'</h4>
+                </div>
+            ';
             foreach ($items->result() as $row){
                 $IdProducto=$row->IdProducto;
                 $enCarrito=$this->getExistenciaEnCarrito($IdProducto);
@@ -452,8 +471,8 @@ class Producto_m extends CI_Model {
                 $Precio=number_format($row->Precio, 2, '.', ',');
                 $MostrarPrecio=$row->MostrarPrecio;
                 $Descripcion=$row->Descripcion;
-                if (strlen($Descripcion) > 50){
-                    $Descripcion=substr($Descripcion, 0, 50).'...';
+                if (strlen($Descripcion) > 150){
+                    $Descripcion=substr($Descripcion, 0, 150).'...';
                 }
                 $Moneda=$row->Moneda;
                 $Sublinea=$row->Sublinea;

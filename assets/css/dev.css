@@ -337,28 +337,30 @@ section#Productos ul.linea>li{
     width: 25%;
 }
 section#Productos ul.linea>li>a{
-    color: #FFFFFF;
-    font-weight: 100;
+    font-weight: 500;
     font-size: 14px;
-    background-color: #343434;
     display: inline-block;
     position: relative;
     float: left;
     width: 100%;
     padding: 15px 0px;
     text-align: center;
-    border: 1px solid #222;
+    background-color: #eeeeee;
+    color: #848484;
+    border: 1px solid #ddd;
     -webkit-transition: all .25s ease;
-       -moz-transition: all .25s ease;
-        -ms-transition: all .25s ease;
-         -o-transition: all .25s ease;
-            transition: all .25s ease;
+    -moz-transition: all .25s ease;
+    -ms-transition: all .25s ease;
+    -o-transition: all .25s ease;
+    transition: all .25s ease;
 }
 section#Productos ul.linea>li>a:hover{
-    background-color: #2a2a2a;
+    background-color: #FFFFFF;
 }
 section#Productos ul.linea>li>a.active{
-    background-color: #ff0000 !important;
+    color: #ff2a45;
+    background-color: #fff;
+    border-bottom: 2px solid #ff1b2b;
 }
 
 section#Productos div.tabsGeneral{
@@ -371,7 +373,7 @@ section#Productos div.tabsGeneral div.item div.subItem{
     outline: none;
 }
 section#Productos div.tabsGeneral div.item div.subItem>a{
-    border: 1px solid #222222;
+    border: 1px solid #ddd;
     width: 200px;
     outline: none;
     -webkit-transition: border .25s ease;
@@ -385,7 +387,7 @@ section#Productos div.tabsGeneral div.item div.subItem>a.active{
 }
 section#Productos div.tabsGeneral div.item div.subItem>a>div.img{
     height: 150px;
-    border-bottom: 1px solid #222222;
+    border-bottom: 1px solid #DDDDDD;
 }
 section#Productos div.tabsGeneral div.item div.subItem>a>div.img>img{
     display: inline-block;
@@ -405,6 +407,13 @@ section#Productos div.tabsGeneral div.item div.subItem>a span{
     width: 100%;
     padding: 3px 0px;
     color: #161616;
+}
+
+
+section#Productos div.productos div.tittleProductos{
+    background-color: #eeeeee;
+    border: 1px solid #222222;
+    padding: 15px;
 }
 
 section#Productos div.productos{
@@ -1591,6 +1600,12 @@ section.Footer div.copyright{
     section#Productos>div.container {
         width: 100%;
         padding: 0px 70px;
+    }
+    section#Home a.btn1{
+        display: inline-block;
+        position: relative;
+        margin: 15px auto;
+        float: none;
     }
 }
 
