@@ -930,6 +930,10 @@ section#proyectos ul.projectList>li>a:hover>span:before{
 section#proyectos div.containerFullHeight>div{
     height: 100vh;
 }
+section#proyectos div.containerFullHeight>div#slideProjects{
+    padding-right: 50px !important;
+}
+
 section#proyectos a.backImg{
     background-size: 100%;
     background-size: cover;
@@ -1606,6 +1610,9 @@ section.Footer div.copyright{
         position: relative;
         margin: 15px auto;
         float: none;
+    }
+    section#proyectos div.containerFullHeight>div#slideProjects{
+        padding-right: 0px !important;
     }
 }
 
