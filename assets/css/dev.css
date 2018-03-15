@@ -687,6 +687,17 @@ section#Empresas div.itemContentTab.nuestrosClientes>div.item>div{
     bottom: -9px;
     border-radius: 50%;
 }
+section#Empresas div.itemContentTab.nuestrosClientes>div.item:nth-child(3):after,
+section#Empresas div.itemContentTab.nuestrosClientes>div.item:nth-child(6):after,
+section#Empresas div.itemContentTab.nuestrosClientes>div.item:nth-child(9):after{
+    content: none;
+}
+section#Empresas div.itemContentTab.nuestrosClientes>div.item:nth-child(3)>div,
+section#Empresas div.itemContentTab.nuestrosClientes>div.item:nth-child(6)>div,
+section#Empresas div.itemContentTab.nuestrosClientes>div.item:nth-child(9)>div
+{
+    display: none;
+}
 section#Empresas div.itemContentTab.nuestrosClientes>div.item>div:after{
     content: '';
     display: inline-block;
@@ -1563,6 +1574,30 @@ section.Footer div.copyright{
         bottom: 0;
         margin: 0px auto;
     }
+    section#Empresas{
+        height: auto;
+    }
+    section#Empresas div.itemContentTab.nuestrosClientes>div.item:after{
+        content: none;
+    }
+    section#Empresas div.itemContentTab.nuestrosClientes>div.item>div{
+        display: none;
+    }
+    section#Empresas div.tabBrand:after{
+        content: none;
+    }
+
+    section#proyectos {
+        height: auto;
+    }
+    section#proyectos div.containerFullHeight>div{
+        height: auto;
+    }
+
+    section#Servicios_1{
+        height: auto;
+    }
+
     section#Productos div.productos>div.item>div div.height {
         height: auto;
     }

@@ -64,6 +64,7 @@ $( document ).ready(function() {
     speed: 300,
     slidesToShow: 1,
     autoplay: false,
+    adaptiveHeight: true,
     draggable: false
   });
   $('div#slideProjects').slick({
@@ -75,6 +76,7 @@ $( document ).ready(function() {
     autoplay: false,
     draggable: false,
     cssEase: 'ease',
+    adaptiveHeight: true,
     fade: true
   });
   $('#slideMarcas').slick({
@@ -85,6 +87,7 @@ $( document ).ready(function() {
     slidesToShow: 1,
     autoplay: false,
     draggable: false,
+    adaptiveHeight: true,
     initialSlide: 1
   });
   $('section#Home').slick({

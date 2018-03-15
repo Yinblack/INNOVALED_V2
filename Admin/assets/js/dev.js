@@ -11,8 +11,8 @@ window.addEventListener("load", function () {
 })();
 
 var base_url;
-//window.base_url = "https://www.innovaled.pe/v2/Admin/";
-window.base_url = "http://localhost/INNOVALED_V2/Admin/";
+window.base_url = "https://www.innovaled.pe/v2/Admin/";
+//window.base_url = "http://localhost/INNOVALED_V2/Admin/";
 
 function notification(text, type, layout){
 	$.noty.closeAll();

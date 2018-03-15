@@ -394,6 +394,16 @@ div#Menu.fixed>div>a.containerSession.disabled>svg polygon{
 }
 
 @media (max-width : 768px) {
+/*Gral clases*/
+    .normal-xs{
+        display: inline-block;
+        position: relative;
+        float: left;
+        width: 100%;
+        height: auto;
+    }
+/*Gral clases*/
+
     div#Menu {
         width: 100%;
         height: auto;

@@ -29,7 +29,7 @@ class ControllerRoutes extends Controller
         $this->_view->titulo = 'INNOVALED | Detalle de producto';
         $this->_view->productos = 'active';
         $this->_view->js = '
-            <script src="assets/js/DetalleProducto.js"></script>
+            <script src="assets/js/detalleProducto.js"></script>
         ';
         $this->_view->renderizar('Header');
         $this->_view->renderizar('DetalleProducto');

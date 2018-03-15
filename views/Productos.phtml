@@ -1,4 +1,8 @@
 <?php
+/*
+$link = mysql_connect('localhost', 'innovale_v2', 'cvk@8ojo9v1)') or die('No se pudo conectar: ' . mysql_error());
+mysql_select_db('innovale_innovaled_v2') or die('No se pudo seleccionar la base de datos');
+*/
 $link = mysql_connect('localhost', 'root', '') or die('No se pudo conectar: ' . mysql_error());
 mysql_select_db('innovaled_v2') or die('No se pudo seleccionar la base de datos');
 $queryLineas = "SELECT * FROM linea ORDER BY IdLinea ASC";
