@@ -1,6 +1,8 @@
 /*MENU AUTO*/
 $(window).scroll(function (event) {
-	statusMenu();
+    if ($('section#Home').length) {
+        statusMenu();
+    }
 });
 
 function statusMenu(){

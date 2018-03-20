@@ -18,6 +18,23 @@ class Cart_c extends CI_Controller {
     }
   }
 
+  function isOnCart(){
+    $IdProducto=$_POST['IdProducto'];
+        $flag = FALSE;
+        $cart = $this->cart->contents();
+        foreach ($cart as $item) {
+            if ($item['id'] == $IdProducto) {
+                $flag = TRUE;
+                break;
+            }
+        }
+        if ($flag) {
+          echo "true";
+        }else{
+          echo "false";
+        }
+  }
+
 	public function addProductoToCart(){
 		$IdProducto =$_POST['IdProducto'];
 		$Qty        =$_POST['Cantidad'];

@@ -87,6 +87,9 @@ h1.borderBottom:after,h2.borderBottom:after,h3.borderBottom:after,h4.borderBotto
     margin-top: 10px;
 }
 
+.text-uppercase{
+    text-transform: uppercase;
+}
 
 @media (max-width : 1200px) {
 

@@ -49,7 +49,11 @@ window.addEventListener("load", function () {
       $("section#Productos div.tabsGeneral div.item div.subItem>a.firstElement").trigger('click');
       $("section#Productos div.tabsGeneral div.item div.subItem>a.firstElement").addClass('active');
       cartHasContent();
-      initMap();
+      if ($('#map').length) {
+        initMap();
+      }
+      
+      isOnCart();
     } else {
       window.setTimeout(listen, 50);
     }

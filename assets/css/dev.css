@@ -1424,7 +1424,11 @@ section#detalle a.st1>svg{
     margin: auto 0px;
 }
 section#detalle a.st1>svg path,
-section#detalle a.st1>svg polygon{
+section#detalle a.st1>svg polygon,
+section#detalle a.st1>svg circle,
+section#detalle a.st1>svg line,
+section#detalle a.st1>svg polyline
+{
     fill: #FFFFFF;
     -webkit-transition: all .25s ease;
        -moz-transition: all .25s ease;
@@ -1437,10 +1441,61 @@ section#detalle a.st1:hover{
     color: #ce191f;
 }
 section#detalle a.st1:hover>svg path,
-section#detalle a.st1:hover>svg polygon{
+section#detalle a.st1:hover>svg polygon,
+section#detalle a.st1:hover>svg circle,
+section#detalle a.st1:hover>svg line,
+section#detalle a.st1:hover>svg polyline
+{
     fill: #ce191f;
 }
 
+section#ProductosRelacionados div.item{
+
+}
+section#ProductosRelacionados div.item>div{
+    padding: 0px;
+    width: 300px;
+    border: 1px solid #3c414c26;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+section#ProductosRelacionados div.item>div .nombre{
+    min-height: 70px;
+}
+section#ProductosRelacionados div.item>div div.image{
+    height: 150px;
+}
+section#ProductosRelacionados div.item>div div.image>img{
+display: inline-block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    max-width: 100%;
+    max-height: 100%;
+    margin: auto;
+}
+section#ProductosRelacionados div.item>div a{
+    display: inline-block;
+    position: relative;
+    float: left;
+    width: 100%;
+    padding: 10px 0px;
+    text-align: center;
+    color: #FFFFFF;
+    background-color: #ce191f;
+    margin-top: 15px;
+    border: 1px solid #ce191f;
+    -webkit-transition: all .25s ease;
+       -moz-transition: all .25s ease;
+        -ms-transition: all .25s ease;
+         -o-transition: all .25s ease;
+            transition: all .25s ease;
+}
+section#ProductosRelacionados div.item>div a:hover{
+    background-color: #FFFFFF;
+    color: #ce191f;
+}
 
 
 
