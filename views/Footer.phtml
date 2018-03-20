@@ -115,39 +115,39 @@
   				  	<div role="tabpanel" class="tab-pane" id="quote">
   				  		<form id="formCotizar" class="col-xs-12 noHorizontalPadding vxpadding">
                     <div class="col-xs-12 col-sm-6 form-group"> 
-                        <label class="sr-only" for="exampleInputAmount">Nombre</label> 
-                        <div class="input-group"> 
-                            <div class="input-group-addon">Nombre</div> 
-                            <input class="form-control" id="nombre" name="nombre" placeholder="Nombre"> 
-                        </div> 
+                        <div class="inputContent input-effect">
+                            <input class="effect-16" type="text" id="nombre" name="nombre">
+                            <label>Nombre</label>
+                            <span class="focus-border"></span>
+                        </div>
                     </div>
                     <div class="col-xs-12 col-sm-6 form-group"> 
-                        <label class="sr-only" for="exampleInputAmount">Correo</label> 
-                        <div class="input-group"> 
-                            <div class="input-group-addon">Correo</div> 
-                            <input class="form-control group" id="correo" name="correo" placeholder="Correo"> 
-                        </div> 
+                        <div class="inputContent input-effect">
+                            <input class="effect-16 group" type="text" id="correo" name="correo">
+                            <label>Correo</label>
+                            <span class="focus-border"></span>
+                        </div>
                     </div>
                     <div class="col-xs-12 col-sm-6 form-group"> 
-                        <label class="sr-only" for="exampleInputAmount">Telefono</label> 
-                        <div class="input-group"> 
-                            <div class="input-group-addon">Telefono</div> 
-                            <input class="form-control group" id="telefono" name="telefono" placeholder="Telefono"> 
-                        </div> 
+                        <div class="inputContent input-effect">
+                            <input class="effect-16 group" type="text" id="telefono" name="telefono">
+                            <label>Telefono</label>
+                            <span class="focus-border"></span>
+                        </div>
                     </div>
                     <div class="col-xs-12 col-sm-6 form-group"> 
-                        <label class="sr-only" for="exampleInputAmount">Empresa</label> 
-                        <div class="input-group"> 
-                            <div class="input-group-addon">Empresa</div> 
-                            <input class="form-control" id="empresa" name="empresa" placeholder="Empresa"> 
-                        </div> 
+                        <div class="inputContent input-effect">
+                            <input class="effect-16" type="text" id="empresa" name="empresa">
+                            <label>Empresa</label>
+                            <span class="focus-border"></span>
+                        </div>
                     </div>
                     <div class="col-xs-12 form-group"> 
-                        <label class="sr-only" for="exampleInputAmount">Observaciones</label> 
-                        <div class="input-group"> 
-                            <div class="input-group-addon">Observaciones</div>
-                            <textarea class="form-control" name="observaciones" id="observaciones" rows="5" placeholder="Observaciones"></textarea>
-                        </div> 
+                        <div class="inputContent input-effect">
+                            <textarea class="effect-16" type="text" id="observaciones" name="observaciones"></textarea>
+                            <label>Observaciones</label>
+                            <span class="focus-border"></span>
+                        </div>
                     </div>
                 </form>
                 <div class="col-xs-12">
@@ -156,6 +156,14 @@
   				  	</div>
   				</div>
           	</div>
+        </div>
+        <div class="loaderCotizar">
+          <div class="vertical">
+            <div class="col-xs-12 nopadding centered text-center">
+              <h4 class="col-xs-12 nopadding text-center textWhite">ENVIANDO</h4>
+              <img class="centered" src="assets/img/loader.svg" alt="">
+            </div>
+          </div>
         </div>
       </div>
     </div>

@@ -24,7 +24,7 @@ class ControllerRoutes extends Controller
         $this->_view->renderizar('Footer');
     }
 
-    public function DetalleProducto()
+    public function DetalleProductoTwo()
     {
         $this->_view->titulo = 'INNOVALED | Detalle de producto';
         $this->_view->productos = 'active';

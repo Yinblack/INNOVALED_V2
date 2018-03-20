@@ -1,8 +1,8 @@
 var base_url;
 //window.base_url = "https://www.innovaled.pe/v2/Admin/";
 window.base_url = "http://localhost/INNOVALED_V2/Admin/";
+
 $( document ).ready(function() {
-  
 $(".col-3 input").val("");
 $(".col-3 textarea").val("");
 $(".input-effect input").focusout(function(){
@@ -52,7 +52,14 @@ window.addEventListener("load", function () {
       if ($('#map').length) {
         initMap();
       }
-      
+  $(".inputContent>input").val("");
+  $(".input-effect input").focusout(function(){
+    if($(this).val() != ""){
+      $(this).addClass("has-content");
+    }else{
+      $(this).removeClass("has-content");
+    }
+  })
       isOnCart();
     } else {
       window.setTimeout(listen, 50);

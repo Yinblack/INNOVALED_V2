@@ -29,17 +29,18 @@ GROUP BY producto.IdProducto
 $producto = mysql_query($queryProducto) or die('Consulta fallida: ' . mysql_error());
 while ($result = mysql_fetch_assoc($producto)) {
 	$IdProducto=$result['IdProducto'];
-	$NombreProducto=$result['NombreProducto'];
-	$Marca=$result['Marca'];
+	$NombreProducto=iconv('ISO-8859-1', 'UTF-8//IGNORE', $result['NombreProducto']);
+	$Marca=iconv('ISO-8859-1', 'UTF-8//IGNORE', $result['Marca']);
 	$Precio=$result['Precio'];
 	$PrecioFormat=number_format($result['Precio'], 2, '.', ',');
-	$MostrarPrecio=$result['MostrarPrecio'];
-	$Descripcion=$result['Descripcion'];
-	$Sublinea=$result['Sublinea'];
-	$IdSublinea=$result['IdSublinea'];
-	$Linea=$result['Linea'];
-	$IdLinea=$result['IdLinea'];
-	$Moneda=$result['Moneda'];
+	$MostrarPrecio=iconv('ISO-8859-1', 'UTF-8//IGNORE', $result['MostrarPrecio']);
+	$Descripcion= iconv('ISO-8859-1', 'UTF-8//IGNORE', $result['Descripcion']);
+	//$Descripcion=iconv('ISO-8859-1', 'UTF-8//IGNORE', $result['Descripcion']);
+	$Sublinea=iconv('ISO-8859-1', 'UTF-8//IGNORE', $result['Sublinea']);
+	$IdSublinea=iconv('ISO-8859-1', 'UTF-8//IGNORE', $result['IdSublinea']);
+	$Linea=iconv('ISO-8859-1', 'UTF-8//IGNORE', $result['Linea']);
+	$IdLinea=iconv('ISO-8859-1', 'UTF-8//IGNORE', $result['IdLinea']);
+	$Moneda=iconv('ISO-8859-1', 'UTF-8//IGNORE', $result['Moneda']);
 }
 $dir="Admin/assets/img/Productos/".$IdProductoGet."/";
 $images = glob($dir . "*.{jpg,jpeg,png,gif}",GLOB_BRACE);
@@ -127,8 +128,16 @@ if (mysql_num_rows($productosRelacionados)>2) {
 	}
 
 }
+$queryCaracteristicas = "
+SELECT Titulo, Valor
+FROM caracteristica
+WHERE IdProducto=".$IdProductoGet."
+";
+$caracteristicas = mysql_query($queryCaracteristicas) or die('Consulta fallida: ' . mysql_error());
+
+
 ?>
-<section id="detalle">
+<section id="detalle" class="nopaddingBottom">
 <div class="vertical backImage revealBack" style="background-image: url('assets/img/img_21.svg');"></div>
 	<div class="container">
 		<div class="row">
@@ -152,6 +161,14 @@ if (mysql_num_rows($productosRelacionados)>2) {
 					</div>
 				</div>
 				<div class="col-xs-12 col-sm-6">
+					<div class="col-xs-12 noHorizontalPadding vpadding nopaddingTop text-left">
+						<a href="productos" class="st1 pull-right">
+							<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 193 146.3" style="enable-background:new 0 0 193 146.3;" xml:space="preserve">
+								<path class="st0" d="M135.3,27.4h-110l14.7-14.7c2.9-2.9,2.9-7.6,0-10.5c-2.9-2.9-7.6-2.9-10.5,0L2.2,29.6C1.5,30.3,1,31.1,0.6,32c-0.8,1.8-0.8,3.8,0,5.7c0.4,0.9,0.9,1.7,1.6,2.4l27.4,27.4c1.4,1.4,3.3,2.2,5.2,2.2s3.8-0.7,5.2-2.2c2.9-2.9,2.9-7.6,0-10.5L25.3,42.2h110c23.6,0,42.9,19.2,42.9,42.9v3.5c0,23.6-19.2,42.9-42.9,42.9H7.4c-4.1,0-7.4,3.3-7.4,7.4c0,4.1,3.3,7.4,7.4,7.4h127.9c31.8,0,57.7-25.9,57.7-57.7v-3.5C193,53.3,167.2,27.4,135.3,27.4z"/>
+							</svg>
+							REGRESAR
+						</a>
+					</div>
 					<h4 class="col-xs-12 noHorizontalPadding vxpadding nopaddingTop nomargin thin text-center text-uppercase">
 						CATEGORÍA: <?=$Sublinea;?>
 					</h4>
@@ -172,6 +189,22 @@ if (mysql_num_rows($productosRelacionados)>2) {
 						<?=$Descripcion;?>
 					</p>
 					<div class="col-xs-12 noHorizontalPadding vpadding">
+						<ul class="caracteristicas">
+							<?php 
+								while ($resultCarac = mysql_fetch_assoc($caracteristicas)):
+									$Titulo=iconv('ISO-8859-1', 'UTF-8//IGNORE', $resultCarac['Titulo']);
+									$Valor=iconv('ISO-8859-1', 'UTF-8//IGNORE', $resultCarac['Valor']);
+							 ?>
+							<li>
+								<span><?=$Titulo;?></span>
+								<span><?=$Valor;?></span>
+							</li>
+							<?php 
+								endwhile;
+							 ?>
+						</ul>
+					</div>
+					<div class="col-xs-12 noHorizontalPadding vpadding">
 						<input type="hidden" id="IdProducto" value="<?=$IdProductoGet;?>">
 						<a href="#" class="st1 pull-left" id="Cotizar">
 							<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 180.4 165" style="enable-background:new 0 0 180.4 165;" xml:space="preserve">
@@ -189,7 +222,7 @@ if (mysql_num_rows($productosRelacionados)>2) {
 							QUITAR
 						</a>
 						<?php if ($Pdf): ?>
-						<a href="<?=$pathPdf;?>" class="st1 pull-right" target="_blank">
+						<a href="<?=$pathPdf;?>" class="st1 pull-right blue" target="_blank">
 							<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 52 52" style="enable-background:new 0 0 52 52;" xml:space="preserve">
 								<g>
 									<g>
@@ -201,7 +234,6 @@ if (mysql_num_rows($productosRelacionados)>2) {
 							FICHA TECNICA
 						</a>
 						<?php endif ?>
-
 					</div>
 				</div>
 			</div>
@@ -213,22 +245,24 @@ if (mysql_num_rows($productosRelacionados)>2) {
 	<div class="container">
 		<div class="row text-left">
 			<div class="col-xs-12">
-				<h2 class="semi-bold col-xs-12 noHorizontalPadding vxpadding text-center text-uppercase">PRODUCTO RELACIONADOS</h2>
+				<h2 class="semi-bold col-xs-12 noHorizontalPadding vxpadding nopaddingTop nomarginTop text-center text-uppercase">PRODUCTO RELACIONADOS</h2>
 				<div class="col-xs-12 nopadding" id="slideProductosRelacionados">
 
 					<?php while ($resultProductosRelacionados = mysql_fetch_assoc($objetProductosRelacionados)): 
 						$PrecioFormat=number_format($resultProductosRelacionados['Precio'], 2, '.', ',');
+						$NombreProducto=iconv('ISO-8859-1', 'UTF-8//IGNORE', $resultProductosRelacionados['NombreProducto']);
+						$Marca=iconv('ISO-8859-1', 'UTF-8//IGNORE', $resultProductosRelacionados['Marca']);
 					?>
 					<div class="col-xs-4 nopadding text-center item">
 						<div class="col-xs-12 centered">
-							<h4 class="col-xs-12 noHorizontalPadding vpadding nomargin text-center text-uppercase bold nombre"><?=$resultProductosRelacionados['NombreProducto'];?></h4>
+							<h4 class="col-xs-12 noHorizontalPadding vpadding nomargin text-center text-uppercase bold nombre"><?=$NombreProducto;?></h4>
 							<div class="col-xs-12 nopadding image">
 								<img src="Admin/assets/img/Productos/<?=$resultProductosRelacionados['IdProducto'];?>/img_1.jpg" alt="">
 							</div>
-							<h4 class="col-xs-12 nomargin nopaddingBottom vpadding text-left thin">Marca: <strong><?=$resultProductosRelacionados['Marca'];?></strong></h4>
+							<h4 class="col-xs-12 nomargin nopaddingBottom vpadding text-left thin">Marca: <strong><?=$Marca;?></strong></h4>
 							<h5 class="col-xs-12 nomargin nopaddingBottom vpadding text-left thin">Precio: <strong class="text-red"><?=$PrecioFormat;?></strong></h5>
 							<div class="col-xs-12 nopadding text-center">
-								<a href="DetalleProducto?IdProducto=<?=$resultProductosRelacionados['IdProducto'];?>">VER MAS</a>
+								<a href="DetalleProductoTwo?IdProducto=<?=$resultProductosRelacionados['IdProducto'];?>">VER MAS</a>
 							</div>
 						</div>
 					</div>

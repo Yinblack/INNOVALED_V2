@@ -143,6 +143,7 @@ $('a#btnCotizar').click(function(e){
 
 $( document ).ready(function() {
   $("form#formCotizar").validate({
+    errorElement: "div",
     rules: {
       "nombre":     {
       required :true
@@ -188,6 +189,7 @@ function sendCotizacion(form){
         beforeSend: function(){
             $('a#btnCotizar').css('pointer-events','none');
             $('a#btnCotizar').css('opacity','.5');
+            $('div.loaderCotizar').show();
             console.log('Procesando');
         },
         success: function(data){
@@ -199,12 +201,18 @@ function sendCotizacion(form){
             $('form#formCotizar')[0].reset();
             $('a#btnCotizar').css('pointer-events','auto');
             $('a#btnCotizar').css('opacity','1');
+            $('div.loaderCotizar').hide();
+            setTimeout(function()
+            {
+              location.reload();
+            }, 3000);
           }
           console.log(data);
         },
         error: function(data){
             $('a#btnCotizar').css('pointer-events','auto');
             $('a#btnCotizar').css('opacity','1');
+            $('div.loaderCotizar').hide();
             console.log('Error Ajax Peticion');
             console.log(data);
         }
